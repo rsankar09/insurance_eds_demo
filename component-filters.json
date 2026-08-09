@@ -19,9 +19,21 @@
     ]
   },
   {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "cardsntt",
+    "components": [
+      "cardsntt-item"
     ]
   },
   {
@@ -37,6 +49,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tabs-item"
     ]
   }
 ]

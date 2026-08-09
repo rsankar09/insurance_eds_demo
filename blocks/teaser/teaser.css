@@ -1,0 +1,101 @@
+.teaser {
+  display: block;
+  padding: 20px;
+}
+
+/* TITLE */
+.teaser-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* FLEX BODY */
+.teaser-body {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* IMAGE POSITIONING: author as "Teaser (image-on-left)" etc. as the block
+   name in the document — EDS adds the variant as an extra class on the
+   block automatically. */
+.teaser.image-on-left .teaser-body {
+  flex-direction: row;
+}
+
+.teaser.image-on-right .teaser-body {
+  flex-direction: row-reverse;
+}
+
+
+.image-wrapper {
+  flex: 1;
+  max-width: 50%;
+}
+
+
+/* IMAGE */
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* IMAGE ON TOP */
+.teaser.image-on-top .teaser-body {
+  flex-direction: column;
+}
+
+.teaser.image-on-top .image-wrapper {
+  flex: none;
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* IMAGE ON BOTTOM */
+.teaser.image-on-bottom .teaser-body {
+  flex-direction: column-reverse;
+}
+
+.teaser.image-on-bottom .image-wrapper {
+  flex: none;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* TOP/BOTTOM: BOTH IMAGE AND TEXT SHOULD BE HALF WIDTH */
+.teaser.image-on-top .image-wrapper,
+.teaser.image-on-top .text-wrapper,
+.teaser.image-on-bottom .image-wrapper,
+.teaser.image-on-bottom .text-wrapper {
+  flex: none;
+  width: 50%;
+  max-width: 50%;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin-left: 0;
+  margin-right: 0;  
+}
+
+
+/* TEXT */
+.text-wrapper {
+  flex: 1;
+}
+
+.teaser-description {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* CTA */
+.teaser-cta a {
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: 600;
+  text-decoration: underline;
+}
