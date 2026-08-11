@@ -50,7 +50,14 @@
         "hero",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "accordion",
+        "tabs",
+        "teaser",
+        "cardsntt",
+        "form",
+        "banner",
+        "disclaimer"
       ]
     }
   ]

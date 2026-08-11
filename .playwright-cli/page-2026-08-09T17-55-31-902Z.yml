@@ -1,0 +1,282 @@
+- generic [ref=f58e5]:
+  - banner [ref=f58e7]:
+    - generic [ref=f58e9]:
+      - generic [ref=f58e10]:
+        - button "Skip to main content" [ref=f58e12]
+        - button "Adobe CX Enterprise" [ref=f58e14]
+      - generic [ref=f58e16]:
+        - button "Launch sidebar" [ref=f58e17]
+        - button "Help" [ref=f58e23]
+        - 'button "Notifications and Announcements. unread notifications : 10 . Has new announcement" [ref=f58e30]':
+          - generic [ref=f58e31]: 9+
+        - button "Switch to another Solution" [ref=f58e36]
+        - button "Profile" [ref=f58e48]:
+          - figure [ref=f58e49]:
+            - img "User Profile" [ref=f58e50]
+  - iframe [ref=f58e53]:
+    - generic [ref=f59e6]:
+      - link "Skip to content" [ref=f59e7] [cursor=pointer]:
+        - /url: "#ue-canvas"
+      - toolbar "Editor toolbar" [ref=f59e8]:
+        - generic [ref=f59e9]:
+          - generic [ref=f59e10]:
+            - button "Home" [ref=f59e11] [cursor=pointer]
+            - button "Undo" [disabled] [ref=f59e15] [cursor=pointer]
+            - button "Redo" [disabled] [ref=f59e19] [cursor=pointer]
+            - button "Location bar" [ref=f59e24] [cursor=pointer]:
+              - generic [ref=f59e25]: author-p87305-e741707.adobeaemcloud.com
+              - generic [ref=f59e33]: /index.html
+          - generic [ref=f59e34]:
+            - button "Local developer login" [ref=f59e35] [cursor=pointer]
+            - separator [ref=f59e40]
+            - button "Responsive Mode" [ref=f59e41] [cursor=pointer]
+            - button "Preview" [ref=f59e45] [cursor=pointer]
+            - button "Open page" [ref=f59e49] [cursor=pointer]
+            - button "Publish" [ref=f59e54] [cursor=pointer]
+            - button "More actions" [ref=f59e56] [cursor=pointer]
+      - main "Content area" [ref=f59e65]:
+        - region "Editable content overlay":
+          - generic [ref=f59e67] [cursor=pointer]:
+            - button "Page" [ref=f59e68]
+            - generic: Page
+          - button [disabled] [ref=f59e69] [cursor=pointer]:
+            - button "Main" [disabled] [ref=f59e70]
+            - generic: Main
+          - button [ref=f59e71] [cursor=pointer]:
+            - button "Section" [ref=f59e72]
+            - generic: Section
+          - button [ref=f59e73] [cursor=pointer]:
+            - button "Section" [ref=f59e74]
+            - generic: Section
+          - button [ref=f59e75] [cursor=pointer]:
+            - button "Section" [ref=f59e76]
+            - generic: Section
+          - button [ref=f59e77] [cursor=pointer]:
+            - button "Section" [ref=f59e78]
+            - generic: Section
+          - button [ref=f59e79] [cursor=pointer]:
+            - button "Hero" [ref=f59e80]
+            - generic: Hero
+          - button [ref=f59e81] [cursor=pointer]:
+            - button "Title" [ref=f59e82]
+            - generic: Title
+          - button [ref=f59e83] [cursor=pointer]:
+            - button "Text" [ref=f59e84]
+            - generic: Text
+          - button [ref=f59e85] [cursor=pointer]:
+            - button "Columns" [ref=f59e86]
+            - generic: Columns
+          - button [ref=f59e87] [cursor=pointer]:
+            - button "Title" [ref=f59e88]
+            - generic: Title
+          - button [ref=f59e89] [cursor=pointer]:
+            - button "Text" [ref=f59e90]
+            - generic: Text
+          - button [ref=f59e91] [cursor=pointer]:
+            - button "Cards" [ref=f59e92]
+            - generic: Cards
+          - button [ref=f59e93] [cursor=pointer]:
+            - button "Teaser" [ref=f59e94]
+            - generic: Teaser
+          - button [disabled] [ref=f59e95] [cursor=pointer]:
+            - button "Image" [disabled] [ref=f59e96]
+            - generic: Image
+          - button [disabled] [ref=f59e97] [cursor=pointer]:
+            - button "Text" [disabled] [ref=f59e98]
+            - generic: Text
+          - button [ref=f59e99] [cursor=pointer]:
+            - button "Column" [ref=f59e100]
+            - generic: Column
+          - button [ref=f59e101] [cursor=pointer]:
+            - button "Column" [ref=f59e102]
+            - generic: Column
+          - button [ref=f59e103] [cursor=pointer]:
+            - button "Column" [ref=f59e104]
+            - generic: Column
+          - button [ref=f59e105] [cursor=pointer]:
+            - button "Column" [ref=f59e106]
+            - generic: Column
+          - button [ref=f59e107] [cursor=pointer]:
+            - button "Card" [ref=f59e108]
+            - generic: Card
+          - button [ref=f59e109] [cursor=pointer]:
+            - button "Card" [ref=f59e110]
+            - generic: Card
+          - button [ref=f59e111] [cursor=pointer]:
+            - button "Card" [ref=f59e112]
+            - generic: Card
+          - button [ref=f59e113] [cursor=pointer]:
+            - button "Card" [ref=f59e114]
+            - generic: Card
+          - button [ref=f59e115] [cursor=pointer]:
+            - button "Card" [ref=f59e116]
+            - generic: Card
+          - button [ref=f59e117] [cursor=pointer]:
+            - button "Card" [ref=f59e118]
+            - generic: Card
+          - button [ref=f59e119] [cursor=pointer]:
+            - button "Card" [ref=f59e120]
+            - generic: Card
+          - button [disabled] [ref=f59e121] [cursor=pointer]:
+            - button "Image" [disabled] [ref=f59e122]
+            - generic: Image
+          - button [disabled] [ref=f59e123] [cursor=pointer]:
+            - button "Description" [disabled] [ref=f59e124]
+            - generic: Description
+          - button [ref=f59e125] [cursor=pointer]:
+            - button "Title" [ref=f59e126]
+            - generic: Title
+          - button [ref=f59e127] [cursor=pointer]:
+            - button "Text" [ref=f59e128]
+            - generic: Text
+          - button [ref=f59e129] [cursor=pointer]:
+            - button "Title" [ref=f59e130]
+            - generic: Title
+          - button [ref=f59e131] [cursor=pointer]:
+            - button "Text" [ref=f59e132]
+            - generic: Text
+          - button [ref=f59e133] [cursor=pointer]:
+            - button "Title" [ref=f59e134]
+            - generic: Title
+          - button [ref=f59e135] [cursor=pointer]:
+            - button "Text" [ref=f59e136]
+            - generic: Text
+          - button [ref=f59e137] [cursor=pointer]:
+            - button "Text" [ref=f59e138]
+            - generic: Text
+          - button [ref=f59e139] [cursor=pointer]:
+            - button "Title" [ref=f59e140]
+            - generic: Title
+          - button [ref=f59e141] [cursor=pointer]:
+            - button "Text" [ref=f59e142]
+            - generic: Text
+          - button [disabled] [ref=f59e143] [cursor=pointer]:
+            - button "Image" [disabled] [ref=f59e144]
+            - generic: Image
+          - button [disabled] [ref=f59e145] [cursor=pointer]:
+            - button "Text" [disabled] [ref=f59e146]
+            - generic: Text
+          - button [disabled] [ref=f59e147] [cursor=pointer]:
+            - button "Image" [disabled] [ref=f59e148]
+            - generic: Image
+          - button [disabled] [ref=f59e149] [cursor=pointer]:
+            - button "Text" [disabled] [ref=f59e150]
+            - generic: Text
+          - button [disabled] [ref=f59e151] [cursor=pointer]:
+            - button "Image" [disabled] [ref=f59e152]
+            - generic: Image
+          - button [disabled] [ref=f59e153] [cursor=pointer]:
+            - button "Text" [disabled] [ref=f59e154]
+            - generic: Text
+          - button [disabled] [ref=f59e155] [cursor=pointer]:
+            - button "Image" [disabled] [ref=f59e156]
+            - generic: Image
+          - button [disabled] [ref=f59e157] [cursor=pointer]:
+            - button "Text" [disabled] [ref=f59e158]
+            - generic: Text
+          - button [disabled] [ref=f59e159] [cursor=pointer]:
+            - button "Image" [disabled] [ref=f59e160]
+            - generic: Image
+          - button [disabled] [ref=f59e161] [cursor=pointer]:
+            - button "Text" [disabled] [ref=f59e162]
+            - generic: Text
+          - button [disabled] [ref=f59e163] [cursor=pointer]:
+            - button "Image" [disabled] [ref=f59e164]
+            - generic: Image
+          - button [disabled] [ref=f59e165] [cursor=pointer]:
+            - button "Text" [disabled] [ref=f59e166]
+            - generic: Text
+          - button [disabled] [ref=f59e167] [cursor=pointer]:
+            - button "Image" [disabled] [ref=f59e168]
+            - generic: Image
+          - button [disabled] [ref=f59e169] [cursor=pointer]:
+            - button "Text" [disabled] [ref=f59e170]
+            - generic: Text
+        - status [ref=f59e171]
+        - iframe [ref=f59e172]:
+          - generic [ref=f60e1]:
+            - banner [ref=f60e2]:
+              - navigation [ref=f60e4]:
+                - button "Open navigation" [ref=f60e6]
+                - paragraph [ref=f60e10]:
+                  - link "Button" [ref=f60e11] [cursor=pointer]:
+                    - /url: "#"
+                - paragraph [ref=f60e14]
+            - main [ref=f60e16]:
+              - heading "Welcome to AEM Authoring with Edge Delivery Services" [level=1] [ref=f60e25]
+              - generic [ref=f60e27]:
+                - heading "Lorem Ipsum" [level=1] [ref=f60e28]
+                - paragraph [ref=f60e30]: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...
+              - generic [ref=f60e33]:
+                - generic [ref=f60e34]:
+                  - generic [ref=f60e35]:
+                    - heading "What is Lorem Ipsum?" [level=2] [ref=f60e36]
+                    - paragraph [ref=f60e38]:
+                      - strong [ref=f60e39]: Lorem Ipsum
+                      - text: is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  - generic [ref=f60e40]:
+                    - heading "Why do we use it?" [level=2] [ref=f60e41]
+                    - paragraph [ref=f60e43]: It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                - generic [ref=f60e44]:
+                  - generic [ref=f60e45]:
+                    - heading "Where does it come from?" [level=2] [ref=f60e46]
+                    - paragraph [ref=f60e48]: Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                    - paragraph [ref=f60e50]: The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                  - generic [ref=f60e51]:
+                    - heading "Where can I get some?" [level=2] [ref=f60e52]
+                    - paragraph [ref=f60e54]: There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+              - generic [ref=f60e55]:
+                - generic [ref=f60e56]:
+                  - heading "Boilerplate Highlights?" [level=1] [ref=f60e57]
+                  - paragraph [ref=f60e59]: "Find some of our favorite staff picks below:"
+                - list [ref=f60e62]:
+                  - listitem [ref=f60e63]:
+                    - generic [ref=f60e67]:
+                      - paragraph [ref=f60e68]:
+                        - strong [ref=f60e69]: Content at scale
+                      - paragraph [ref=f60e70]: AEM allows you to publish more content in shorter time with smaller teams
+                  - listitem [ref=f60e71]:
+                    - generic [ref=f60e75]:
+                      - paragraph [ref=f60e76]:
+                        - strong [ref=f60e77]: Unmatched speed
+                      - paragraph [ref=f60e78]: AEM is the fastest way to publish, create, and serve websites
+                  - listitem [ref=f60e79]:
+                    - generic [ref=f60e83]:
+                      - paragraph [ref=f60e84]:
+                        - strong [ref=f60e85]: Uncertainty eliminated
+                      - paragraph [ref=f60e86]: Preview content at 100% fidelity, get predictable content velocity, and shorten project durations
+                  - listitem [ref=f60e87]:
+                    - generic [ref=f60e91]:
+                      - paragraph [ref=f60e92]:
+                        - strong [ref=f60e93]: Widen the talent pool
+                      - paragraph [ref=f60e94]: Authors on AEM use Microsoft Word, Excel or Google Docs and need no training
+                  - listitem [ref=f60e95]:
+                    - generic [ref=f60e99]:
+                      - paragraph [ref=f60e100]:
+                        - strong [ref=f60e101]: The low-code way to developer productivity
+                      - paragraph [ref=f60e102]: Say goodbye to complex APIs spanning multiple languages. Anyone with a little bit of HTML, CSS, and JS can build a site on AEM.
+                  - listitem [ref=f60e103]:
+                    - generic [ref=f60e107]:
+                      - paragraph [ref=f60e108]:
+                        - strong [ref=f60e109]: Headless is here
+                      - paragraph [ref=f60e110]: Go directly from Microsoft Excel or Google Sheets to the web in mere seconds. Sanitize and collect form data at extreme scale with AEM Forms.
+                  - listitem [ref=f60e111]:
+                    - generic [ref=f60e115]:
+                      - paragraph [ref=f60e116]:
+                        - strong [ref=f60e117]: Peak performance
+                      - paragraph [ref=f60e118]: Use AEM's serverless architecture to meet any traffic need. Use AEM's PageSpeed Insights Github action to evaluate every Pull-Request for Lighthouse Score.
+                - generic [ref=f60e120]:
+                  - paragraph [ref=f60e121]: Title Teaser
+                  - paragraph [ref=f60e128]: Description
+            - contentinfo [ref=f60e129]:
+              - paragraph [ref=f60e134]: Copyright © 2021 Adobe. All rights reserved.
+      - complementary "Properties and tools" [ref=f59e173]:
+        - region "Properties" [ref=f59e175]:
+          - button "Resize panel" [ref=f59e176]
+          - generic [ref=f59e178]:
+            - heading "No component selected" [level=3] [ref=f59e182]
+            - generic [ref=f59e183]: Select a component on the canvas to activate this panel.
+        - toolbar "Editor actions" [ref=f59e184]:
+          - generic [ref=f59e185]:
+            - button "Properties" [pressed] [ref=f59e186] [cursor=pointer]
+            - button "Content tree" [ref=f59e191] [cursor=pointer]

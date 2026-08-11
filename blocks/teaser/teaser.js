@@ -5,12 +5,12 @@ export default function decorate(block) {
   const getCol = (row) => row?.children?.[0] || row;
 
   const imageCol = getCol(rows[0]);
-  const titleCol = getCol(rows[1]);
-  const descCol = getCol(rows[2]);
-  const ctaCol = getCol(rows[3]);
+  const textCol = getCol(rows[1]);
+  const ctaCol = getCol(rows[2]);
 
   const picture = imageCol?.querySelector('picture');
-  const title = titleCol?.querySelector('p, h2, h3');
+  const textChildren = textCol ? [...textCol.children] : [];
+  const title = textChildren[0]?.matches('h1, h2, h3, h4') ? textChildren.shift() : null;
 
   block.innerHTML = '';
 
@@ -32,12 +32,10 @@ export default function decorate(block) {
   const textWrapper = document.createElement('div');
   textWrapper.className = 'text-wrapper';
 
-  if (descCol) {
-    while (descCol.firstElementChild) {
-      descCol.firstElementChild.classList.add('teaser-description');
-      textWrapper.appendChild(descCol.firstElementChild);
-    }
-  }
+  textChildren.forEach((child) => {
+    child.classList.add('teaser-description');
+    textWrapper.appendChild(child);
+  });
 
   const cta = ctaCol?.querySelector('p');
   if (cta) {

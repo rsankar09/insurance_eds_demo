@@ -18,21 +18,11 @@
       "fragment",
       "accordion",
       "tabs",
+      "teaser",
       "cardsntt",
       "form",
-      "video",
-      "carousel",
-      "map",
-      "social",
-      "divider",
-      "spacer",
-      "html",
-      "teaser",
-      "list",
-      "table",
-      "quote",
-      "countdown",
-      "progress"
+      "banner",
+      "disclaimer"
     ]
   },
   {

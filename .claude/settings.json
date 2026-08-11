@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/a10359614/apps/source/aem/aem-guides-wknd/**)",
+      "Bash(mvn clean *)"
+    ]
+  }
+}

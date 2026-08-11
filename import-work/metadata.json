@@ -1,0 +1,78 @@
+{
+  "url": "https://www.jackson.com/",
+  "timestamp": "2026-08-09T17:47:26.247Z",
+  "paths": {
+    "documentPath": "/index",
+    "htmlFilePath": "/index.plain.html",
+    "mdFilePath": "/index.md",
+    "dirPath": "",
+    "filename": "index"
+  },
+  "screenshot": "import-work/screenshot.png",
+  "html": {
+    "filePath": "import-work/cleaned.html",
+    "size": 133603
+  },
+  "metadata": {
+    "title": "Jackson - Clarity for all | Jackson",
+    "description": "We are committed to helping clarify the complexity of retirement planning—for everyone. Learn more about Jackson, and how we can help reduce the confusion that complicates your plans.",
+    "template": "home-page-template",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "og:title": "Jackson - Clarity for all | Jackson",
+    "og:description": "At Jackson, we’re focused on helping Americans pursue financial freedom for retirement. Let us help you along your retirement planning journey",
+    "og:url": "https://www.jackson.com/",
+    "og:image": "https://www.jackson.com/graphics/c/social/1355067067_1200x630.jpg",
+    "og:type": "website",
+    "og:site_name": "Jackson",
+    "twitter:card": "summary_large_image",
+    "twitter:site": "@jacksonnational",
+    "twitter:creator": "@jacksonnational",
+    "google-site-verification": "VQCpcXd0VD8EJHY4A0Foj71RVwtAdhnbinrJH73hIaE",
+    "msvalidate.01": "750BECB153664691CD773DB6C97C2A5F",
+    "facebook-domain-verification": "cyze0bljxj6n9rmij4z9c0q0bq9z08",
+    "format-detection": "telephone=no",
+    "be:sdk": "js_sdk_1.5.36",
+    "be:sdk_type": "custom",
+    "be:timer": "218ms",
+    "be:orig_url": "https://www.jackson.com/",
+    "be:norm_url": "https://www.jackson.com/",
+    "be:capsule_url": "https://ixfd2-api.bc0a.com/api/ixf/1.0.0/get_capsule/f00000000099853/0537672113",
+    "be:api_dt": "py_2026; pm_08; pd_08; ph_23; pmh_21; p_epoch:1786256502068",
+    "be:mod_dt": "py_2026; pm_08; pd_08; ph_23; pmh_21; p_epoch:1786256502068",
+    "be:messages": "true"
+  },
+  "images": {
+    "count": 21,
+    "mapping": {
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/c/logo/Jackson_logo_reg_col_pos_rgb.svg": "./images/0b130262d0676c3388aca3d865999c1f.png",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/c/hero/2153020192_2560x1270.jpg": "./images/5d309df7c31e037a18d055b3229812bd.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/c/highlight/what-is-an-annuity-640229430_605x503.jpg": "./images/193415ed1222a92b8122acbe2ee70fc5.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/rebrand/icons/clipboard_list_check_icon_56x56_red.png": "./images/961207c0b715e228e03493acd1c5108c.png",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/rebrand/icons/calculator_icon_56x56_red.png": "./images/2c24719f821c4cbe71cc37b427ec0be7.png",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/rebrand/icons/book_reader_icon_56x56_red.png": "./images/ca4b9b161282fb529e1fab64a3a6312a.png",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/c/promo/541148986_605x283.jpg": "./images/c08493b0b00661033b9a1ff4287fdf42.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/c/promo/642501464_605x283.jpg": "./images/9e24714d75bd492af71802442f218cd4.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/c/spotlight/1144931471_960x536.jpg": "./images/07a71a80796d642d46f0312ba1027512.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/c/promo/1071488226_605x283.jpg": "./images/7306dbcde153f767947b3c426a614bd2.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/logos/broker-check.svg": "./images/6251ad33971ce67a64d3320093b4bcd5.png",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/icons/phone.png": "./images/dcaeadd124379f90c57c64f80dca3194.png",
+      "https://dpm.demdex.net/ibs:dpid=411&dpuuid=ani9JgAAABjpJRNT": "./images/1bf8527177f4e80f5a3e2fdacaf3bbc5.png",
+      "https://t.co/i/adsct?bci=3&cv=35%261&dv=America%2FChicago%26en-US%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2624%261280%26720%260%26na&eci=2&event_id=5aca4864-8e19-47ba-8775-0cdaaf014fda&events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&integration=advertiser&p_id=Twitter&p_user_id=0&pl_id=3b099bbf-6949-4992-9bb8-a91a3a5864f7&pt=Jackson%20-%20Clarity%20for%20all%20%7C%20Jackson&tw_document_href=https%3A%2F%2Fwww.jackson.com%2F&tw_iframe_status=0&tw_order_quantity=0&tw_pid_src=1&tw_sale_amount=0&twpid=tw.1786297638438.960898036681053104&txn_id=o0gi8&type=javascript&version=2.4.1": "./images/16395311b1a74f2da584d170306b9d44.png",
+      "https://analytics.twitter.com/i/adsct?bci=3&cv=35%261&dv=America%2FChicago%26en-US%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2624%261280%26720%260%26na&eci=2&event_id=5aca4864-8e19-47ba-8775-0cdaaf014fda&events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&integration=advertiser&p_id=Twitter&p_user_id=0&pl_id=3b099bbf-6949-4992-9bb8-a91a3a5864f7&pt=Jackson%20-%20Clarity%20for%20all%20%7C%20Jackson&tw_document_href=https%3A%2F%2Fwww.jackson.com%2F&tw_iframe_status=0&tw_order_quantity=0&tw_pid_src=1&tw_sale_amount=0&twpid=tw.1786297638438.960898036681053104&txn_id=o0gi8&type=javascript&version=2.4.1": "./images/a6de5c73743844d8334ca46ed77d65e8.png",
+      "https://cdn.cookielaw.org/logos/static/ot_close.svg": "./images/cec4a77b663a079574d478e06d310304.png",
+      "https://cdn.cookielaw.org/logos/89b98884-bb6a-4df1-b762-3d35786a2552/448ac626-c22b-464c-b46f-66e647402170/23c5f67a-9067-41c0-a437-79284f792041/Jackson_logo_120x40.png": "./images/77327c41fc1d782177e899ab30ccd6d1.png",
+      "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg": "./images/a9584a367ebcccfac48987ce1fec5eae.png",
+      "https://www.googleadservices.com/ccm/conversion/969040932/?random=1786297638972&cv=11&fst=1786297638972&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6852v877046798za200xec&gcs=G1--&gcd=13l3l3R3l5l1&dma=0&tag_exp=115938465~115938469~118131808~118897920~118897930~119337769~119527020~119896802&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.jackson.com%2F&rcb=18&gtm_ee=1&frm=0&tiba=Jackson%20-%20Clarity%20for%20all%20%7C%20Jackson&npa=0&pscdl=noapi&auid=1127071581.1786297639&label=ln9sCJHJlu8DEKTIic4D&hn=www.googleadservices.com&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.8%7CNot%253FA_Brand%3B24.0.0.0%7CHeadlessChrome%3B152.0.7977.8&uamb=0&uam=&uap=macOS&uapv=26.4.0&uaw=0&ec_mode=a&oid=1703520561.1786297639&oidsrc=3&ecsid2=1586054410.1786297639&_tu=ABA&gcl_ctr=1~0~0~0&data=event%3Dgtag.config&em=tv.1&emd=tvd.1": "./images/2b4f5e36a1aaacf59cf8d6d2609de94d.png",
+      "https://www.googleadservices.com/ccm/conversion/969040932/?random=1786297638979&cv=11&fst=1786297638979&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6852v877046798za200xec&gcs=G1--&gcd=13l3l3R3l5l1&dma=0&tag_exp=115938465~115938469~118131808~118897920~118897930~119337769~119527020~119896802&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.jackson.com%2F&rcb=18&gtm_ee=1&frm=0&tiba=Jackson%20-%20Clarity%20for%20all%20%7C%20Jackson&npa=0&pscdl=noapi&auid=1127071581.1786297639&label=ln9sCJHJlu8DEKTIic4D&hn=www.googleadservices.com&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.8%7CNot%253FA_Brand%3B24.0.0.0%7CHeadlessChrome%3B152.0.7977.8&uamb=0&uam=&uap=macOS&uapv=26.4.0&uaw=0&ec_mode=a&oid=985109780.1786297639&oidsrc=3&ecsid2=1586054410.1786297639&_tu=ABA&gcl_ctr=2~0~0~0&data=event%3Dpage_view&em=tv.1&emd=tvd.1": "./images/3a83f0e6b3be644fdbf7a67d975911fb.png",
+      "https://www.google.com/pagead/1p-user-list/969040932/?random=1786297638975&cv=11&fst=1786294800000&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6852v877046798za200xec&gcd=13l3l3R3l5l1&dma=0&tag_exp=115938465~115938469~118131808~118897920~118897930~119337769~119527020~119896802&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.jackson.com%2F&rcb=18&frm=0&tiba=Jackson%20-%20Clarity%20for%20all%20%7C%20Jackson&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1127071581.1786297639&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.8%7CNot%253FA_Brand%3B24.0.0.0%7CHeadlessChrome%3B152.0.7977.8&uamb=0&uam=&uap=macOS&uapv=26.4.0&uaw=0&data=event%3Dpage_view&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAEQoqgbVsKrIk1S4cXeRkLfHWjV-kPQkPcVJEbMi2V0XsVj3T6yygPLjQ-mb09lFFU1uJYbSXQxJhOsFp6-GJ2bDouVgkrNN5MdCygCtWN7Ucx8nTuaEsqJkeUXP-QuHB6XqhuVTPLF4P_JZM2ZGMip-u2Yn9o-8m5_a5ofW7uWWyVQaR3ns44Jcdknh0mW3jx3xQ-dMzvVHLJ6aW0EqcKX7gVhSrdVYe_zP70DqQkDH_-Qq8rezTXtzDV0NjjWk7M7AHpuZyQjCcM7HrP-imkGNL&random=2167139529&rmt_tld=0&ipr=y": "./images/fa980c5854e46eab4e79979d249f539a.png"
+    },
+    "stats": {
+      "total": 27,
+      "converted": 10,
+      "skipped": 11,
+      "failed": 6,
+      "tooLarge": 0,
+      "limitReached": 0
+    }
+  }
+}

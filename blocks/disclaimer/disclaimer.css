@@ -1,0 +1,21 @@
+.disclaimer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--light-color);
+  color: var(--dark-color);
+  font-size: var(--body-font-size-xs);
+  line-height: 1.5;
+}
+
+.disclaimer p {
+  margin: 0 0 10px;
+}
+
+.disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 900px) {
+  .disclaimer {
+    padding: 24px 32px;
+  }
+}
