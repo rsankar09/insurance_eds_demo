@@ -135,13 +135,13 @@ export default function decorate(block) {
 
   // const stylesRow = rows[5].textContent.trim(); 
   const allClasses = [...block.classList];
-  console.log(allClasses);
+  console.log('All Classes:', allClasses);
 
   const authoredClasses = [...block.classList].filter(c =>
     !['block', block.dataset.blockName].includes(c)
   );
 
-  console.log(authoredClasses);
+  console.log('Authored Classes:', authoredClasses);
   // console.log('Styles Row:', rows[5]);
   // Read the selected value from the <span>
   // const selectedClass = stylesRow.querySelector('span')?.textContent.trim() || '';
