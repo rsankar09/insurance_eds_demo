@@ -130,8 +130,8 @@ export default function decorate(block) {
   const description = rows[3].innerHTML;
   console.log('Description:', description);
 
-  const description = rows[4].textContent.trim();
-  console.log('Description:', description);
+  const cta = rows[4].textContent.trim();
+  console.log('CTA:', cta);
 
   const stylesRow = rows[5];
 
