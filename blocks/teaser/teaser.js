@@ -133,12 +133,12 @@ export default function decorate(block) {
   const cta = rows[4].textContent.trim();
   console.log('CTA:', cta);
 
-  const stylesRow = rows[5].textContent.trim(); 
-  console.log('Styles Row:', stylesRow);
+  // const stylesRow = rows[5].textContent.trim(); 
+  console.log('Styles Row:', rows[5]);
   // Read the selected value from the <span>
-  const selectedClass = stylesRow.querySelector('span')?.textContent.trim() || '';
+  // const selectedClass = stylesRow.querySelector('span')?.textContent.trim() || '';
 
-  console.log('Selected class:', selectedClass);  
+  // console.log('Selected class:', selectedClass);  
   // EDS multi-select fields → spans
   // const styles = [...stylesRow.querySelectorAll('span')]
   //   .map(span => span.textContent.trim());
