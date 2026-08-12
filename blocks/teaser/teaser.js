@@ -107,7 +107,7 @@ export default function decorate(block) {
   }
 
   const title = rows[1].textContent.trim();
-  console.log('Title:', title);
+  console.log('Title :', title);
   
   const subtitle = rows[2].textContent.trim();
   console.log('Subtitle:', subtitle);
