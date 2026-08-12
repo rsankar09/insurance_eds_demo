@@ -134,7 +134,9 @@ export default function decorate(block) {
   console.log('CTA:', cta);
 
   // const stylesRow = rows[5].textContent.trim(); 
-  console.log('Styles Row:', rows[5]);
+  const allClasses = [...block.classList];
+  console.log(allClasses);
+  // console.log('Styles Row:', rows[5]);
   // Read the selected value from the <span>
   // const selectedClass = stylesRow.querySelector('span')?.textContent.trim() || '';
 
