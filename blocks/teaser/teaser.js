@@ -96,15 +96,29 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 export default function decorate(block) {
   const rows = [...block.children];
 
-  const img = rows[0].textContent.trim();
-  console.log('Image:', img);
+  // Get the <img> element from row 0
+  const img = rows[0].querySelector('img');
 
-  if(img) {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    moveInstrumentation(img, optimizedPic.querySelector('img'));
-    img.closest('picture').replaceWith(optimizedPic);
-    console.log('Optimized Picture:', optimizedPic);
+  if (!img) {
+    console.warn('No image found in row 0');
+    return;
   }
+
+  // Create optimized picture
+  const optimizedPic = createOptimizedPicture(
+    img.src,
+    img.alt,
+    false,
+    [{ width: '750' }]
+  );
+
+  // Move instrumentation (EDS analytics)
+  moveInstrumentation(img, optimizedPic.querySelector('img'));
+
+  // Replace original picture with optimized one
+  img.closest('picture').replaceWith(optimizedPic);
+
+  console.log('Optimized Picture:', optimizedPic);
 
   const title = rows[1].textContent.trim();
   console.log('Title :', title);
