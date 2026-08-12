@@ -31,21 +31,21 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "content_title",
+          "name": "title",
           "label": "Title",
           "value": ""
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "content_subtitle",
+          "name": "subtitle",
           "label": "Subtitle",
           "value": ""
         },
         {
           "component": "richtext",
           "valueType": "string",
-          "name": "content_text",
+          "name": "text",
           "label": "Text",
           "value": ""
         },
