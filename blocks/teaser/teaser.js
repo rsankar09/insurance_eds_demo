@@ -130,6 +130,16 @@ export default function decorate(block) {
   const description = rows[3].innerHTML;
   console.log('Description:', description);
 
+  const description = rows[4].textContent.trim();
+  console.log('Description:', description);
+
+  const stylesRow = rows[5];
+
+  // EDS multi-select fields → spans
+  const styles = [...stylesRow.querySelectorAll('span')]
+    .map(span => span.textContent.trim());
+
+  console.log('Styles array:', styles);
 
   // // Now you can rebuild your HTML
   // block.innerHTML = `
