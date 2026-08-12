@@ -31,28 +31,28 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "content_title",
+          "name": "title",
           "label": "Title",
           "value": ""
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "content_subtitle",
+          "name": "subtitle",
           "label": "Subtitle",
           "value": ""
         },
         {
           "component": "richtext",
           "valueType": "string",
-          "name": "content_text",
+          "name": "text",
           "label": "Text",
           "value": ""
         },
         {
           "component": "richtext",
           "valueType": "string",
-          "name": "content_cta",
+          "name": "cta",
           "label": "CTA link (as a link inside text)",
           "value": ""
         },
