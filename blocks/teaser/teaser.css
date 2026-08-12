@@ -1,101 +1,99 @@
+/* break out of the default section padding so the image can run full-bleed */
+.teaser-container .teaser-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
 .teaser {
-  display: block;
-  padding: 20px;
-}
-
-/* TITLE */
-.teaser-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-/* FLEX BODY */
-.teaser-body {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-/* IMAGE POSITIONING: author as "Teaser (image-on-left)" etc. as the block
-   name in the document — EDS adds the variant as an extra class on the
-   block automatically. */
-.teaser.image-on-left .teaser-body {
-  flex-direction: row;
-}
-
-.teaser.image-on-right .teaser-body {
-  flex-direction: row-reverse;
-}
-
-
-.image-wrapper {
-  flex: 1;
-  max-width: 50%;
-}
-
-
-/* IMAGE */
-.image-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
-}
-
-/* IMAGE ON TOP */
-.teaser.image-on-top .teaser-body {
   flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.teaser.image-on-top .image-wrapper {
-  flex: none;
-  max-width: 100%;
+.teaser-image {
   width: 100%;
-  margin-bottom: 20px;
 }
 
-/* IMAGE ON BOTTOM */
-.teaser.image-on-bottom .teaser-body {
-  flex-direction: column-reverse;
-}
-
-.teaser.image-on-bottom .image-wrapper {
-  flex: none;
-  max-width: 100%;
+.teaser-image picture {
+  display: block;
   width: 100%;
-  margin-top: 20px;
+  height: 100%;
 }
 
-/* TOP/BOTTOM: BOTH IMAGE AND TEXT SHOULD BE HALF WIDTH */
-.teaser.image-on-top .image-wrapper,
-.teaser.image-on-top .text-wrapper,
-.teaser.image-on-bottom .image-wrapper,
-.teaser.image-on-bottom .text-wrapper {
-  flex: none;
-  width: 50%;
-  max-width: 50%;
-  /* margin-left: auto;
-  margin-right: auto; */
-  margin-left: 0;
-  margin-right: 0;  
+.teaser-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
+.teaser-content {
+  padding: 32px 24px;
+}
 
-/* TEXT */
-.text-wrapper {
-  flex: 1;
+.teaser-subtitle {
+  margin: 0 0 8px;
+  color: var(--brand-red-color);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.teaser-title {
+  margin: 0 0 16px;
+  color: var(--brand-plum-color);
 }
 
 .teaser-description {
-  margin-top: 10px;
+  margin: 0;
   line-height: 1.5;
 }
 
-/* CTA */
-.teaser-cta a {
-  display: inline-block;
-  margin-top: 15px;
-  font-weight: 600;
-  text-decoration: underline;
+.teaser-cta {
+  margin: 24px 0 0;
+}
+
+/* IMAGE POSITIONING: authored via the "Style" field on the teaser model,
+   which adds the variant as an extra class on the block automatically. */
+@media (width >= 900px) {
+  .teaser {
+    flex-direction: row;
+    min-height: 480px;
+  }
+
+  .teaser.image-on-right {
+    flex-direction: row-reverse;
+  }
+
+  .teaser.image-on-top {
+    flex-direction: column;
+  }
+
+  .teaser.image-on-bottom {
+    flex-direction: column-reverse;
+  }
+
+  .teaser-image {
+    flex: 0 0 50%;
+  }
+
+  .teaser-content {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 64px;
+  }
+
+  .teaser.image-on-top .teaser-image,
+  .teaser.image-on-top .teaser-content,
+  .teaser.image-on-bottom .teaser-image,
+  .teaser.image-on-bottom .teaser-content {
+    flex: none;
+    width: 100%;
+    min-height: 0;
+  }
 }

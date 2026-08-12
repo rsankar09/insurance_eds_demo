@@ -1,48 +1,53 @@
+/**
+ * loads and decorates the block
+ * @param {Element} block The block element
+ */
 export default function decorate(block) {
-  block.classList.add('teaser');
+  const getCol = (row) => row?.children?.[0];
 
-  const rows = [...block.children];
-  const getCol = (row) => row?.children?.[0] || row;
+  const [imageRow, titleRow, subtitleRow, textRow, ctaRow] = [...block.children];
 
-  const imageCol = getCol(rows[0]);
-  const textCol = getCol(rows[1]);
-  const ctaCol = getCol(rows[2]);
+  const picture = getCol(imageRow)?.querySelector('picture');
+  const title = getCol(titleRow)?.textContent.trim();
+  const subtitle = getCol(subtitleRow)?.textContent.trim();
+  const description = getCol(textRow);
+  const cta = getCol(ctaRow)?.querySelector('a');
 
-  const picture = imageCol?.querySelector('picture');
-  const textChildren = textCol ? [...textCol.children] : [];
-  const title = textChildren[0]?.matches('h1, h2, h3, h4') ? textChildren.shift() : null;
+  block.textContent = '';
 
-  block.innerHTML = '';
+  const imageWrapper = document.createElement('div');
+  imageWrapper.className = 'teaser-image';
+  if (picture) imageWrapper.append(picture);
+
+  const content = document.createElement('div');
+  content.className = 'teaser-content';
+
+  if (subtitle) {
+    const subtitleEl = document.createElement('p');
+    subtitleEl.className = 'teaser-subtitle';
+    subtitleEl.textContent = subtitle;
+    content.append(subtitleEl);
+  }
 
   if (title) {
-    title.classList.add('teaser-title');
-    block.appendChild(title);
+    const titleEl = document.createElement('h2');
+    titleEl.className = 'teaser-title';
+    titleEl.textContent = title;
+    content.append(titleEl);
   }
 
-  const body = document.createElement('div');
-  body.className = 'teaser-body';
-
-  if (picture) {
-    const imageWrapper = document.createElement('div');
-    imageWrapper.className = 'image-wrapper';
-    imageWrapper.appendChild(picture);
-    body.appendChild(imageWrapper);
+  if (description) {
+    description.className = 'teaser-description';
+    content.append(...description.children);
   }
 
-  const textWrapper = document.createElement('div');
-  textWrapper.className = 'text-wrapper';
-
-  textChildren.forEach((child) => {
-    child.classList.add('teaser-description');
-    textWrapper.appendChild(child);
-  });
-
-  const cta = ctaCol?.querySelector('p');
   if (cta) {
-    cta.classList.add('teaser-cta');
-    textWrapper.appendChild(cta);
+    cta.classList.add('button', 'primary');
+    const ctaWrapper = document.createElement('p');
+    ctaWrapper.className = 'teaser-cta';
+    ctaWrapper.append(cta);
+    content.append(ctaWrapper);
   }
 
-  body.appendChild(textWrapper);
-  block.appendChild(body);
+  block.append(imageWrapper, content);
 }
