@@ -134,12 +134,12 @@ export default function decorate(block) {
   console.log('CTA:', cta);
 
   const stylesRow = rows[5];
-
+  console.log('Styles Row:', stylesRow);
   // EDS multi-select fields → spans
-  const styles = [...stylesRow.querySelectorAll('span')]
-    .map(span => span.textContent.trim());
+  // const styles = [...stylesRow.querySelectorAll('span')]
+  //   .map(span => span.textContent.trim());
 
-  console.log('Styles array:', styles);
+  // console.log('Styles array:', styles);
 
   // // Now you can rebuild your HTML
   // block.innerHTML = `
