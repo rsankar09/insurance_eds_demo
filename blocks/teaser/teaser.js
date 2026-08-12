@@ -89,13 +89,33 @@
 //   });
 // }
 
+import { createOptimizedPicture } from '../../scripts/aem.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
+
 export default function decorate(block) {
   const rows = [...block.children];
 
-  const title = rows[0].textContent.trim();
+  const img = rows[0].textContent.trim();
+  console.log('Image:', img);
+
+  if(img) {
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+    moveInstrumentation(img, optimizedPic.querySelector('img'));
+    img.closest('picture').replaceWith(optimizedPic);
+    console.log('Optimized Picture:', optimizedPic);
+  }
+
+  const title = rows[1].textContent.trim();
   console.log('Title:', title);
-  const description = rows[1].innerHTML;
+  
+  const subtitle = rows[2].textContent.trim();
+  console.log('Subtitle:', subtitle);
+  
+
+  const description = rows[3].innerHTML;
   console.log('Description:', description);
+
 
   // // Now you can rebuild your HTML
   // block.innerHTML = `
