@@ -80,11 +80,26 @@
 // }
 
 
+// export default function decorate(block) {
+//   [...block.children].forEach((row) => {
+//     const label = row.children[0];
+//     console.log('Label:', label);
+//     const content = row.children[1];
+//     console.log('Content:', content);
+//   });
+// }
+
 export default function decorate(block) {
-  [...block.children].forEach((row) => {
-    const label = row.children[0];
-    console.log('Label:', label);
-    const content = row.children[1];
-    console.log('Content:', content);
-  });
+  const rows = [...block.children];
+
+  const title = rows[0].textContent.trim();
+  console.log('Title:', title);
+  const description = rows[1].innerHTML;
+  console.log('Description:', description);
+
+  // // Now you can rebuild your HTML
+  // block.innerHTML = `
+  //   <h2>${title}</h2>
+  //   <div class="desc">${description}</div>
+  // `;
 }
