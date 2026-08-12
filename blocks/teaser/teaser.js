@@ -135,6 +135,10 @@ export default function decorate(block) {
 
   const stylesRow = rows[5];
   console.log('Styles Row:', stylesRow);
+  // Read the selected value from the <span>
+  const selectedClass = stylesRow.querySelector('span')?.textContent.trim() || '';
+
+  console.log('Selected class:', selectedClass);  
   // EDS multi-select fields → spans
   // const styles = [...stylesRow.querySelectorAll('span')]
   //   .map(span => span.textContent.trim());
