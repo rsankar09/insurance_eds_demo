@@ -142,20 +142,20 @@ export default function decorate(block) {
   );
 
   console.log('Authored Classes:', authoredClasses);
-  // console.log('Styles Row:', rows[5]);
-  // Read the selected value from the <span>
-  // const selectedClass = stylesRow.querySelector('span')?.textContent.trim() || '';
 
-  // console.log('Selected class:', selectedClass);  
-  // EDS multi-select fields → spans
-  // const styles = [...stylesRow.querySelectorAll('span')]
-  //   .map(span => span.textContent.trim());
+   // REBUILD HTML
+  block.innerHTML = `
+    <div class="teaser-wrapper ${authoredClasses.join(' ')}">
+      <div class="teaser-image"></div>
+      <div class="teaser-content">
+        <h3>${title}</h3>
+        <h4>${subtitle}</h4>
+        <div class="teaser-description">${description}</div>
+        <button class="teaser-cta">${cta}</button>
+      </div>
+    </div>
+  `;
 
-  // console.log('Styles array:', styles);
-
-  // // Now you can rebuild your HTML
-  // block.innerHTML = `
-  //   <h2>${title}</h2>
-  //   <div class="desc">${description}</div>
-  // `;
+  // INSERT OPTIMIZED IMAGE
+  block.querySelector('.teaser-image').appendChild(optimizedPic);
 }
