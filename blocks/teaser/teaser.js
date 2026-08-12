@@ -8,10 +8,15 @@ export default function decorate(block) {
   const [imageRow, titleRow, subtitleRow, textRow, ctaRow] = [...block.children];
 
   const picture = getCol(imageRow)?.querySelector('picture');
+  console.log('picture', picture);
   const title = getCol(titleRow)?.textContent.trim();
+  console.log('title', title);    
   const subtitle = getCol(subtitleRow)?.textContent.trim();
+  console.log('subtitle', subtitle);  
   const description = getCol(textRow);
+  console.log('description', description);
   const cta = getCol(ctaRow)?.querySelector('a');
+  console.log('cta', cta);
 
   block.textContent = '';
 
