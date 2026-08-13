@@ -1,71 +1,65 @@
-.teaser-wrapper {
+/* Outer wrapper must stretch full width */
+.teaser-wrapper,
+.teaser.image-on-left.bg-plum {
   width: 100%;
+  max-width: none;
+  padding: 0; /* remove vertical padding that creates boxed look */
 }
 
-.teaser.image-on-left.bg-plum {
+/* Remove boxed layout */
+.teaser {
   display: flex;
-  background-color: #4b2e5d; /* plum */
-  color: #fff;
-  padding: 40px 0;
-  align-items: stretch;
+  gap: 40px;
+  width: 100%;
+  max-width: none;   /* remove 1280px constraint */
+  margin: 0;         /* remove centering */
+  padding: 60px 80px; /* match screenshot spacing */
+}
+
+/* Left image: full height, flush left */
+.teaser-background {
+  flex: 1 1 50%;
 }
 
 .teaser-background img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 0; /* screenshot has NO rounded corners */
 }
 
-.teaser {
-  display: flex;
-  gap: 40px;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.teaser-background {
-  flex: 1 1 45%;
-}
-
+/* Right content: flush right, vertically centered */
 .teaser-content {
-  flex: 1 1 55%;
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 40px; /* spacing between image and text */
 }
 
+/* Title styling */
 .teaser-text .title {
-  font-size: 32px;
+  font-size: 36px; /* screenshot uses larger type */
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   line-height: 1.2;
 }
 
-.teaser-text .description p {
-  margin-bottom: 16px;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.teaser-text ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
+/* Body text */
+.teaser-text .description p,
 .teaser-text li {
-  margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 20px; /* screenshot uses larger body text */
+  line-height: 1.6;
 }
 
+/* CTA button */
 .teaser-cta {
-  margin-top: 30px;
+  margin-top: 32px;
 }
 
 .teaser-cta .button {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 14px 28px;
   background: #fff;
   color: #4b2e5d;
   border-radius: 4px;
@@ -73,21 +67,14 @@
   text-decoration: none;
 }
 
-.teaser-cta .button.secondary:hover {
-  background: #e6e6e6;
-}
-
-/* Responsive */
+/* Mobile */
 @media (max-width: 900px) {
   .teaser {
     flex-direction: column;
-  }
-
-  .teaser-background {
-    flex: none;
+    padding: 40px 20px;
   }
 
   .teaser-content {
-    padding-top: 20px;
+    padding-left: 0;
   }
 }
