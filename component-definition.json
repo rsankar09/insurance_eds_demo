@@ -303,7 +303,8 @@
                   "name": "Teaser",
                   "model": "teaser",
                   "classes": [
-                    "image-on-left"
+                    "image-on-left",
+                    "bg-white"
                   ]
                 }
               }
