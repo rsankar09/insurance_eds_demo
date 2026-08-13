@@ -1,15 +1,27 @@
 /* ==========================================================================
-   Teaser block — styled to match jackson.com/financial-professional.html
-   Image-on-left, plum background feature teaser (e.g. "Products as diverse
-   as your clients")
+   Teaser block â€” matched to the live jackson.com/financial-professional.html
+   feature teaser ("Products as diverse as your clients"), color-sampled
+   directly from production screenshots.
+
+   Two themes are included:
+   - .bg-plum  â†’ the current live jackson.com styling (dark plum + gold)
+   - .bg-blush â†’ an alternate/redesign styling (blush + white pill button)
    ========================================================================== */
 
 .teaser.block {
-  --teaser-plum: #4b1e40;
-  --teaser-plum-dark: #391630;
-  --teaser-gold: #b7986a;
-  --teaser-gold-hover: #a5865a;
+  /* Plum theme (live site) tokens */
+  --teaser-plum-bg: #391a33;
+  --teaser-plum-bg-dark: #2f1529;
+  --teaser-gold: #b29970;
+  --teaser-gold-hover: #a08762;
+  --teaser-plum-text: #35182f;
+
+  /* Blush theme tokens */
+  --teaser-blush-bg: #cfb6a6;
+  --teaser-blush-heading: #3a1030;
+
   --teaser-text-light: #ffffff;
+  --teaser-text-dark: #1a1a1a;
   --teaser-heading-font: Georgia, 'Times New Roman', serif;
   --teaser-body-font: Arial, Helvetica, sans-serif;
 
@@ -24,8 +36,6 @@
   flex-direction: row;
   align-items: stretch;
   min-height: 480px;
-  background-color: var(--teaser-plum);
-  color: var(--teaser-text-light);
 }
 
 /* Background/feature image */
@@ -45,28 +55,13 @@
   display: block;
 }
 
-/* image-on-left modifier: image first, content second (default source order) */
-.teaser.block.image-on-left .teaser-background {
-  order: 1;
-}
+/* image-on-left: image first, content second (default source order) */
+.teaser.block.image-on-left .teaser-background { order: 1; }
+.teaser.block.image-on-left .teaser-content { order: 2; }
 
-.teaser.block.image-on-left .teaser-content {
-  order: 2;
-}
-
-/* Support an image-on-right modifier for reuse */
-.teaser.block.image-on-right .teaser-background {
-  order: 2;
-}
-
-.teaser.block.image-on-right .teaser-content {
-  order: 1;
-}
-
-/* Plum background modifier */
-.teaser.block.bg-plum .teaser {
-  background: linear-gradient(180deg, var(--teaser-plum) 0%, var(--teaser-plum-dark) 100%);
-}
+/* image-on-right modifier for reuse */
+.teaser.block.image-on-right .teaser-background { order: 2; }
+.teaser.block.image-on-right .teaser-content { order: 1; }
 
 /* Content column */
 .teaser.block .teaser-content {
@@ -74,32 +69,14 @@
   max-width: 50%;
   display: flex;
   align-items: center;
-  padding: 56px 64px;
+  padding: 64px 88px;
   box-sizing: border-box;
 }
 
-.teaser.block .teaser-text {
-  width: 100%;
-}
-
-.teaser.block .teaser-text .title {
-  font-family: var(--teaser-heading-font);
-  font-weight: 400;
-  font-size: 2.25rem;
-  line-height: 1.2;
-  color: var(--teaser-text-light);
-  margin: 0 0 20px;
-}
-
-.teaser.block .teaser-text .description {
-  font-family: var(--teaser-body-font);
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--teaser-text-light);
-}
+.teaser.block .teaser-text { width: 100%; }
 
 .teaser.block .teaser-text .description p {
-  margin: 0 0 16px;
+  margin: 0 0 24px;
 }
 
 .teaser.block .teaser-text .description ul {
@@ -110,8 +87,8 @@
 
 .teaser.block .teaser-text .description ul li {
   position: relative;
-  padding-left: 24px;
-  margin-bottom: 12px;
+  padding-left: 28px;
+  margin-bottom: 18px;
   line-height: 1.5;
 }
 
@@ -119,10 +96,9 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 0.55em;
-  width: 8px;
-  height: 8px;
-  background-color: var(--teaser-gold);
+  top: 0.5em;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
 }
 
@@ -130,45 +106,108 @@
   font-size: 0.65em;
 }
 
-/* CTA button */
-.teaser.block .teaser-cta {
-  margin-top: 28px;
-}
+.teaser.block .teaser-cta { margin-top: 32px; }
 
 .teaser.block .teaser-cta .button,
 .teaser.block .teaser-cta a.button {
   display: inline-block;
   font-family: var(--teaser-body-font);
-  font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
   text-decoration: none;
-  color: var(--teaser-plum-dark);
-  background-color: var(--teaser-gold);
-  border: 2px solid var(--teaser-gold);
-  padding: 14px 32px;
-  border-radius: 2px;
+  box-sizing: border-box;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.teaser.block .teaser-cta .button:hover,
-.teaser.block .teaser-cta a.button:hover {
-  background-color: transparent;
-  border-color: var(--teaser-text-light);
+/* ==========================================================================
+   Theme: bg-plum â€” matches the live jackson.com page
+   ========================================================================== */
+
+.teaser.block.bg-plum .teaser {
+  background-color: var(--teaser-plum-bg);
   color: var(--teaser-text-light);
 }
 
-.teaser.block .teaser-cta .button.secondary {
-  background-color: var(--teaser-gold);
-  color: var(--teaser-plum-dark);
-  border-color: var(--teaser-gold);
+.teaser.block.bg-plum .teaser-text .title {
+  font-family: var(--teaser-heading-font);
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1.25;
+  color: var(--teaser-text-light);
+  margin: 0 0 28px;
 }
 
-.teaser.block .teaser-cta .button.secondary:hover {
+.teaser.block.bg-plum .teaser-text .description {
+  font-family: var(--teaser-body-font);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--teaser-text-light);
+}
+
+.teaser.block.bg-plum .teaser-text .description ul li::before {
+  background-color: var(--teaser-gold);
+}
+
+.teaser.block.bg-plum .teaser-cta .button,
+.teaser.block.bg-plum .teaser-cta a.button {
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--teaser-plum-text);
+  background-color: var(--teaser-gold);
+  border: none;
+  border-radius: 2px;
+  padding: 20px 36px;
+}
+
+.teaser.block.bg-plum .teaser-cta .button:hover,
+.teaser.block.bg-plum .teaser-cta a.button:hover {
   background-color: var(--teaser-gold-hover);
-  border-color: var(--teaser-gold-hover);
-  color: var(--teaser-plum-dark);
+}
+
+/* ==========================================================================
+   Theme: bg-blush â€” alternate/redesign styling
+   ========================================================================== */
+
+.teaser.block.bg-blush .teaser {
+  background-color: var(--teaser-blush-bg);
+  color: var(--teaser-text-dark);
+}
+
+.teaser.block.bg-blush .teaser-text .title {
+  font-family: var(--teaser-heading-font);
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 1.15;
+  color: var(--teaser-blush-heading);
+  margin: 0 0 24px;
+}
+
+.teaser.block.bg-blush .teaser-text .description {
+  font-family: var(--teaser-body-font);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--teaser-text-dark);
+}
+
+.teaser.block.bg-blush .teaser-text .description ul li::before {
+  background-color: var(--teaser-text-dark);
+}
+
+.teaser.block.bg-blush .teaser-cta .button,
+.teaser.block.bg-blush .teaser-cta a.button {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--teaser-text-dark);
+  background-color: #ffffff;
+  border: 2px solid var(--teaser-text-dark);
+  border-radius: 999px;
+  padding: 20px 40px;
+}
+
+.teaser.block.bg-blush .teaser-cta .button:hover,
+.teaser.block.bg-blush .teaser-cta a.button:hover {
+  background-color: var(--teaser-text-dark);
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -188,23 +227,13 @@
     order: initial;
   }
 
-  .teaser.block .teaser-background img {
-    min-height: 260px;
-  }
-
-  .teaser.block .teaser-content {
-    padding: 40px 24px;
-  }
-
-  .teaser.block .teaser-text .title {
-    font-size: 1.75rem;
-  }
+  .teaser.block .teaser-background img { min-height: 260px; }
+  .teaser.block .teaser-content { padding: 40px 24px; }
+  .teaser.block .teaser-text .title { font-size: 1.85rem; }
 }
 
 @media (max-width: 480px) {
-  .teaser.block .teaser-content {
-    padding: 32px 20px;
-  }
+  .teaser.block .teaser-content { padding: 32px 20px; }
 
   .teaser.block .teaser-cta .button,
   .teaser.block .teaser-cta a.button {
