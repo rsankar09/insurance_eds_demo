@@ -4,7 +4,6 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 export default function decorate(block) {
   const rows = [...block.children];
 
-  // IMAGE
   const img = rows[0].querySelector('img');
   if (!img) return;
 
@@ -17,18 +16,15 @@ export default function decorate(block) {
 
   moveInstrumentation(img, optimizedPic.querySelector('img'));
 
-  // TEXT FIELDS
   const title = rows[1].textContent.trim();
   const subtitle = rows[2].textContent.trim();
   const description = rows[3].innerHTML;
   const cta = rows[4].textContent.trim();
 
-  // AUTHORED CLASSES (Style field)
   const authoredClasses = [...block.classList].filter(
     c => !['block', block.dataset.blockName].includes(c)
   );
 
-  // BUILD TEASER MARKUP
   block.innerHTML = `
     <div class="teaser ${authoredClasses.join(' ')}">
       <div class="teaser__wrapper">
@@ -62,6 +58,5 @@ export default function decorate(block) {
     </div>
   `;
 
-  // Insert optimized image
   block.querySelector('.teaser__image-inner').appendChild(optimizedPic);
 }
