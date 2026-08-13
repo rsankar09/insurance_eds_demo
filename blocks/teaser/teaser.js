@@ -1,6 +1,34 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
+
+function buildTeaserMarkup(title, subtitle, descriptionHtml, ctaText, imagePath, imageAlt) {
+
+  const imageMarkup = imagePath
+    ? `<img src="${imagePath}" alt="${imageAlt}" data-aue-prop="teaserImage" data-aue-label="Image" data-aue-type="media" loading="lazy">`
+    : '';
+  const ctaMarkup = ctaText
+    ? `<a href="${ctaText}" data-aue-prop="ctaText" data-aue-label="Button Text" data-aue-type="text" class="button secondary">${ctaText}</a>`
+    : '';
+
+  return `
+  <div class="teaser" data-aue-resource="" data-aue-label="CF Teaser" data-aue-type="reference">
+    <div class="teaser-background">
+      ${imageMarkup}
+    </div>
+    <div class="teaser-content">
+      <div class="teaser-text">
+        <h3 data-aue-prop="teaserTitle" data-aue-label="Title" data-aue-type="text" class="title">${title}</h3>
+        <div data-aue-prop="teaserDescription" data-aue-label="Description" data-aue-type="richtext" class="description">
+          ${descriptionHtml}
+        </div>
+      </div>
+      ${ctaMarkup ? `<div class="teaser-cta">${ctaMarkup}</div>` : ''}
+    </div>
+  </div>`;
+}
+
+
 export default function decorate(block) {
   const rows = [...block.children];
 
@@ -24,6 +52,15 @@ export default function decorate(block) {
   const authoredClasses = [...block.classList].filter(
     c => !['block', block.dataset.blockName].includes(c)
   );
+
+  block.innerHTML = buildTeaserMarkup(
+    title,
+    subtitle,
+    description,
+    cta,
+    img.src,
+    img.alt 
+    );
 
   // block.innerHTML = `
   //   <div class="teaser ${authoredClasses.join(' ')}">
