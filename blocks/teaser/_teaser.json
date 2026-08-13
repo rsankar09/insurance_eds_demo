@@ -10,7 +10,7 @@
             "template": {
               "name": "Teaser",
               "model": "teaser",
-              "classes": ["image-on-left"]
+              "classes": ["image-on-left","bg-white"]
             }
           }
         }
@@ -61,14 +61,19 @@
           "valueType": "string",
           "name": "classes",
           "label": "Style",
-          "maxSize": 1,
+          "maxSize": 2,
           "options": [
             { "name": "Image on left", "value": "image-on-left" },
             { "name": "Image on right", "value": "image-on-right" },
             { "name": "Image on top", "value": "image-on-top" },
-            { "name": "Image on bottom", "value": "image-on-bottom" }
+            { "name": "Image on bottom", "value": "image-on-bottom" },
+
+            { "name": "White Background", "value": "bg-white" },
+            { "name": "Tan Background", "value": "bg-tan" },
+            { "name": "Plum Background", "value": "bg-plum" },
+            { "name": "Red–Plum Gradient", "value": "color-grad-red-plum-diag" }
           ]
-        }
+        }        
       ]
     }
   ],
