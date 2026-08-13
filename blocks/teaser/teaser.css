@@ -1,80 +1,214 @@
-/* Outer wrapper must stretch full width */
-.teaser-wrapper,
-.teaser.image-on-left.bg-plum {
+/* ==========================================================================
+   Teaser block — styled to match jackson.com/financial-professional.html
+   Image-on-left, plum background feature teaser (e.g. "Products as diverse
+   as your clients")
+   ========================================================================== */
+
+.teaser.block {
+  --teaser-plum: #4b1e40;
+  --teaser-plum-dark: #391630;
+  --teaser-gold: #b7986a;
+  --teaser-gold-hover: #a5865a;
+  --teaser-text-light: #ffffff;
+  --teaser-heading-font: Georgia, 'Times New Roman', serif;
+  --teaser-body-font: Arial, Helvetica, sans-serif;
+
+  position: relative;
   width: 100%;
-  max-width: none;
-  padding: 0; /* remove vertical padding that creates boxed look */
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-/* Remove boxed layout */
-.teaser {
+.teaser.block .teaser {
   display: flex;
-  gap: 40px;
-  width: 100%;
-  max-width: none;   /* remove 1280px constraint */
-  margin: 0;         /* remove centering */
-  padding: 60px 80px; /* match screenshot spacing */
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 480px;
+  background-color: var(--teaser-plum);
+  color: var(--teaser-text-light);
 }
 
-/* Left image: full height, flush left */
-.teaser-background {
-  flex: 1 1 50%;
+/* Background/feature image */
+.teaser.block .teaser-background {
+  position: relative;
+  flex: 0 0 50%;
+  max-width: 50%;
+  overflow: hidden;
 }
 
-.teaser-background img {
+.teaser.block .teaser-background img {
   width: 100%;
   height: 100%;
+  min-height: 480px;
   object-fit: cover;
-  border-radius: 0; /* screenshot has NO rounded corners */
+  object-position: center;
+  display: block;
 }
 
-/* Right content: flush right, vertically centered */
-.teaser-content {
-  flex: 1 1 50%;
+/* image-on-left modifier: image first, content second (default source order) */
+.teaser.block.image-on-left .teaser-background {
+  order: 1;
+}
+
+.teaser.block.image-on-left .teaser-content {
+  order: 2;
+}
+
+/* Support an image-on-right modifier for reuse */
+.teaser.block.image-on-right .teaser-background {
+  order: 2;
+}
+
+.teaser.block.image-on-right .teaser-content {
+  order: 1;
+}
+
+/* Plum background modifier */
+.teaser.block.bg-plum .teaser {
+  background: linear-gradient(180deg, var(--teaser-plum) 0%, var(--teaser-plum-dark) 100%);
+}
+
+/* Content column */
+.teaser.block .teaser-content {
+  flex: 0 0 50%;
+  max-width: 50%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 40px; /* spacing between image and text */
+  align-items: center;
+  padding: 56px 64px;
+  box-sizing: border-box;
 }
 
-/* Title styling */
-.teaser-text .title {
-  font-size: 36px; /* screenshot uses larger type */
-  font-weight: 600;
-  margin-bottom: 24px;
+.teaser.block .teaser-text {
+  width: 100%;
+}
+
+.teaser.block .teaser-text .title {
+  font-family: var(--teaser-heading-font);
+  font-weight: 400;
+  font-size: 2.25rem;
   line-height: 1.2;
+  color: var(--teaser-text-light);
+  margin: 0 0 20px;
 }
 
-/* Body text */
-.teaser-text .description p,
-.teaser-text li {
-  font-size: 20px; /* screenshot uses larger body text */
+.teaser.block .teaser-text .description {
+  font-family: var(--teaser-body-font);
+  font-size: 1rem;
   line-height: 1.6;
+  color: var(--teaser-text-light);
+}
+
+.teaser.block .teaser-text .description p {
+  margin: 0 0 16px;
+}
+
+.teaser.block .teaser-text .description ul {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.teaser.block .teaser-text .description ul li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.teaser.block .teaser-text .description ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  background-color: var(--teaser-gold);
+  border-radius: 50%;
+}
+
+.teaser.block .teaser-text .description sup {
+  font-size: 0.65em;
 }
 
 /* CTA button */
-.teaser-cta {
-  margin-top: 32px;
+.teaser.block .teaser-cta {
+  margin-top: 28px;
 }
 
-.teaser-cta .button {
+.teaser.block .teaser-cta .button,
+.teaser.block .teaser-cta a.button {
   display: inline-block;
-  padding: 14px 28px;
-  background: #fff;
-  color: #4b2e5d;
-  border-radius: 4px;
-  font-weight: 600;
+  font-family: var(--teaser-body-font);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   text-decoration: none;
+  color: var(--teaser-plum-dark);
+  background-color: var(--teaser-gold);
+  border: 2px solid var(--teaser-gold);
+  padding: 14px 32px;
+  border-radius: 2px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Mobile */
+.teaser.block .teaser-cta .button:hover,
+.teaser.block .teaser-cta a.button:hover {
+  background-color: transparent;
+  border-color: var(--teaser-text-light);
+  color: var(--teaser-text-light);
+}
+
+.teaser.block .teaser-cta .button.secondary {
+  background-color: var(--teaser-gold);
+  color: var(--teaser-plum-dark);
+  border-color: var(--teaser-gold);
+}
+
+.teaser.block .teaser-cta .button.secondary:hover {
+  background-color: var(--teaser-gold-hover);
+  border-color: var(--teaser-gold-hover);
+  color: var(--teaser-plum-dark);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
 @media (max-width: 900px) {
-  .teaser {
+  .teaser.block .teaser {
     flex-direction: column;
-    padding: 40px 20px;
+    min-height: auto;
   }
 
-  .teaser-content {
-    padding-left: 0;
+  .teaser.block .teaser-background,
+  .teaser.block .teaser-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    order: initial;
+  }
+
+  .teaser.block .teaser-background img {
+    min-height: 260px;
+  }
+
+  .teaser.block .teaser-content {
+    padding: 40px 24px;
+  }
+
+  .teaser.block .teaser-text .title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teaser.block .teaser-content {
+    padding: 32px 20px;
+  }
+
+  .teaser.block .teaser-cta .button,
+  .teaser.block .teaser-cta a.button {
+    display: block;
+    text-align: center;
   }
 }
