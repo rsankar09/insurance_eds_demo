@@ -1,39 +1,45 @@
-/* break out of the default section padding so the image can run full-bleed */
-.teaser-container .teaser-wrapper {
-  max-width: unset;
+/* ROOT TEASER BLOCK */
+.teaser {
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 0;
 }
 
-.teaser {
+/* WRAPPER */
+.teaser__wrapper {
+  width: 100%;
+}
+
+/* FLEX LAYOUT */
+.teaser__content {
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
-  margin: 0 auto;
   overflow: hidden;
 }
 
-.teaser-image {
+/* IMAGE */
+.teaser__image {
   width: 100%;
 }
 
-.teaser-image picture {
+.teaser__image picture {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.teaser-image img {
+.teaser__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-.teaser-content {
+/* CONTENT AREA */
+.teaser__card-content {
   padding: 32px 24px;
 }
 
-.teaser-subtitle {
+.teaser__subtitle {
   margin: 0 0 8px;
   color: var(--brand-red-color);
   font-size: 0.875rem;
@@ -42,45 +48,45 @@
   text-transform: uppercase;
 }
 
-.teaser-title {
+.teaser__title {
   margin: 0 0 16px;
   color: var(--brand-plum-color);
 }
 
-.teaser-description {
+.teaser__description {
   margin: 0;
   line-height: 1.5;
 }
 
-.teaser-cta {
-  margin: 24px 0 0;
+.teaser__links {
+  margin-top: 24px;
 }
 
-/* IMAGE POSITIONING: authored via the "Style" field on the teaser model,
-   which adds the variant as an extra class on the block automatically. */
+/* DESKTOP LAYOUT */
 @media (width >= 900px) {
-  .teaser {
+  .teaser__content {
     flex-direction: row;
     min-height: 480px;
   }
 
-  .teaser.image-on-right {
+  /* IMAGE POSITIONING VIA AUTHORED CLASSES */
+  .teaser.image-on-right .teaser__content {
     flex-direction: row-reverse;
   }
 
-  .teaser.image-on-top {
+  .teaser.image-on-top .teaser__content {
     flex-direction: column;
   }
 
-  .teaser.image-on-bottom {
+  .teaser.image-on-bottom .teaser__content {
     flex-direction: column-reverse;
   }
 
-  .teaser-image {
+  .teaser__image {
     flex: 0 0 50%;
   }
 
-  .teaser-content {
+  .teaser__card-content {
     flex: 0 0 50%;
     display: flex;
     flex-direction: column;
@@ -88,10 +94,8 @@
     padding: 48px 64px;
   }
 
-  .teaser.image-on-top .teaser-image,
-  .teaser.image-on-top .teaser-content,
-  .teaser.image-on-bottom .teaser-image,
-  .teaser.image-on-bottom .teaser-content {
+  .teaser.image-on-top .teaser__image,
+  .teaser.image-on-bottom .teaser__image {
     flex: none;
     width: 100%;
     min-height: 0;

@@ -143,19 +143,40 @@ export default function decorate(block) {
 
   console.log('Authored Classes:', authoredClasses);
 
-   // REBUILD HTML
+// BUILD TEASER MARKUP
   block.innerHTML = `
-    <div class="teaser-wrapper ${authoredClasses.join(' ')}">
-      <div class="teaser-image"></div>
-      <div class="teaser-content">
-        <h3>${title}</h3>
-        <h4>${subtitle}</h4>
-        <div class="teaser-description">${description}</div>
-        <button class="teaser-cta">${cta}</button>
+    <div class="teaser ${authoredClasses.join(' ')}">
+      <div class="teaser__wrapper">
+        <div class="teaser__block">
+          <div class="teaser__content">
+
+            <div class="teaser__image">
+              <div class="teaser__image-inner"></div>
+            </div>
+
+            <div class="teaser__card">
+              <div class="teaser__card-content">
+                <div class="teaser__content-inner">
+
+                  <h2 class="teaser__title">${title}</h2>
+                  <h3 class="teaser__subtitle">${subtitle}</h3>
+
+                  <div class="teaser__description">${description}</div>
+
+                  <div class="teaser__links">
+                    <a class="primary-button">${cta}</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   `;
 
-  // INSERT OPTIMIZED IMAGE
-  block.querySelector('.teaser-image').appendChild(optimizedPic);
+  // Insert optimized image
+  block.querySelector('.teaser__image-inner').appendChild(optimizedPic);
 }
