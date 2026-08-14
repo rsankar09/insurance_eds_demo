@@ -25,7 +25,10 @@
 
   /* fonts */
   --body-font-family: apercu, apercu-fallback, sans-serif;
-  --heading-font-family: superior-title, superior-title-fallback, sans-serif;
+
+  /* Superior Title is a high-contrast serif display face, so it falls back to a
+     serif rather than the boilerplate's Arial */
+  --heading-font-family: superior-title, superior-title-fallback, serif;
 
   /* body sizes — jackson.com's body is 16px/24px at every breakpoint */
   --body-font-size-m: 16px;
@@ -58,7 +61,7 @@
 @font-face {
   font-family: superior-title-fallback;
   size-adjust: 100%;
-  src: local('Arial');
+  src: local('Georgia'), local('Times New Roman');
 }
 
 @font-face {
