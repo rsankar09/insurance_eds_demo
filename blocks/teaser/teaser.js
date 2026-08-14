@@ -60,7 +60,7 @@ function buildTeaserMarkup(title, subtitle, descriptionHtml, ctaText, pictureHtm
     </div>
   </div>
 `;
-
+}
 
 export default function decorate(block) {
   const rows = [...block.children];
