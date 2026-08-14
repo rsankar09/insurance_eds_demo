@@ -25,6 +25,16 @@
   font-size: 0.65em;
 }
 
+/* Author-selectable variants */
+.disclaimer.bg-white { background-color: #fff; }
+.disclaimer.bg-gray { background-color: #ebebeb; }
+.disclaimer.bg-tan { background-color: #f5f0eb; }
+
+.disclaimer.spacing-compact {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
 @media (width <= 768px) {
   .disclaimer {
     padding: 80px 24px 42px;

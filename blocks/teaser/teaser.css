@@ -16,17 +16,15 @@
   --teaser-gold: #b29970;
   --teaser-gold-hover: #a08762;
 
-  /* Blush theme tokens */
-  --teaser-blush-bg: #cfb6a6;
-  --teaser-blush-heading: var(--brand-plum-color);
-
-  /* Tan / white theme tokens */
+  /* Light theme tokens — values taken from the live page's --bg-color */
+  --teaser-blush-bg: #d4b5a3;
   --teaser-tan-bg: #f5f0eb;
+  --teaser-gray-bg: #ebebeb;
   --teaser-white-bg: #fff;
-
   --teaser-text-light: #fff;
-  --teaser-text-dark: #1a1a1a;
-  --teaser-plum-heading: var(--brand-plum-color);
+
+  /* jackson.com's `body { color: #000 }`, which the feature titles inherit */
+  --teaser-text-dark: #000;
 
   position: relative;
   width: 100%;
@@ -76,6 +74,33 @@
   margin: 0 0 16px;
 }
 
+/* Subtitle — eyebrow above the title by default, or a standfirst below it */
+.teaser.block .teaser-text .subtitle {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.teaser.block.subtitle-below .teaser-text .subtitle {
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  margin: -4px 0 16px;
+}
+
+/* Content alignment — author-selectable */
+.teaser.block.content-center .teaser-text {
+  text-align: center;
+}
+
+.teaser.block.content-right .teaser-text {
+  text-align: right;
+}
+
 .teaser.block .teaser-text .description {
   font-family: var(--body-font-family);
   font-size: 16px;
@@ -114,6 +139,13 @@
   font-size: 0.65em;
 }
 
+/* Centred/right-aligned content keeps its bullet list left-aligned as a block */
+.teaser.block.content-center .teaser-text .description ul,
+.teaser.block.content-right .teaser-text .description ul {
+  display: inline-block;
+  text-align: left;
+}
+
 .teaser.block .teaser-cta {
   margin-top: 16px;
 }
@@ -141,6 +173,10 @@
   color: var(--teaser-text-light);
 }
 
+.teaser.block.bg-plum .teaser-text .subtitle {
+  color: var(--teaser-gold);
+}
+
 .teaser.block.bg-plum .teaser-text .description ul li::before {
   background-color: var(--teaser-gold);
 }
@@ -166,7 +202,9 @@
    ========================================================================== */
 
 .teaser.block.bg-white .teaser,
-.teaser.block.bg-tan .teaser {
+.teaser.block.bg-tan .teaser,
+.teaser.block.bg-gray .teaser,
+.teaser.block.bg-blush .teaser {
   color: var(--teaser-text-dark);
 }
 
@@ -178,25 +216,48 @@
   background-color: var(--teaser-tan-bg);
 }
 
-.teaser.block.bg-white .teaser-text .title,
-.teaser.block.bg-tan .teaser-text .title {
-  color: var(--teaser-plum-heading);
+.teaser.block.bg-gray .teaser {
+  background-color: var(--teaser-gray-bg);
 }
 
+.teaser.block.bg-blush .teaser {
+  background-color: var(--teaser-blush-bg);
+}
+
+/* Titles inherit jackson.com's black body colour on every light theme */
+.teaser.block.bg-white .teaser-text .title,
+.teaser.block.bg-tan .teaser-text .title,
+.teaser.block.bg-gray .teaser-text .title,
+.teaser.block.bg-blush .teaser-text .title,
 .teaser.block.bg-white .teaser-text .description,
-.teaser.block.bg-tan .teaser-text .description {
+.teaser.block.bg-tan .teaser-text .description,
+.teaser.block.bg-gray .teaser-text .description,
+.teaser.block.bg-blush .teaser-text .description {
   color: var(--teaser-text-dark);
 }
 
+.teaser.block.bg-white .teaser-text .subtitle,
+.teaser.block.bg-tan .teaser-text .subtitle,
+.teaser.block.bg-gray .teaser-text .subtitle,
+.teaser.block.bg-blush .teaser-text .subtitle {
+  color: var(--brand-red-color);
+}
+
 .teaser.block.bg-white .teaser-text .description ul li::before,
-.teaser.block.bg-tan .teaser-text .description ul li::before {
+.teaser.block.bg-tan .teaser-text .description ul li::before,
+.teaser.block.bg-gray .teaser-text .description ul li::before,
+.teaser.block.bg-blush .teaser-text .description ul li::before {
   background-color: var(--brand-red-color);
 }
 
 .teaser.block.bg-white .teaser-cta .button,
 .teaser.block.bg-white .teaser-cta a.button,
 .teaser.block.bg-tan .teaser-cta .button,
-.teaser.block.bg-tan .teaser-cta a.button {
+.teaser.block.bg-tan .teaser-cta a.button,
+.teaser.block.bg-gray .teaser-cta .button,
+.teaser.block.bg-gray .teaser-cta a.button,
+.teaser.block.bg-blush .teaser-cta .button,
+.teaser.block.bg-blush .teaser-cta a.button {
   font-weight: 700;
   color: #000;
   background-color: #fff;
@@ -208,7 +269,11 @@
 .teaser.block.bg-white .teaser-cta .button:hover,
 .teaser.block.bg-white .teaser-cta a.button:hover,
 .teaser.block.bg-tan .teaser-cta .button:hover,
-.teaser.block.bg-tan .teaser-cta a.button:hover {
+.teaser.block.bg-tan .teaser-cta a.button:hover,
+.teaser.block.bg-gray .teaser-cta .button:hover,
+.teaser.block.bg-gray .teaser-cta a.button:hover,
+.teaser.block.bg-blush .teaser-cta .button:hover,
+.teaser.block.bg-blush .teaser-cta a.button:hover {
   color: #fff;
   background-color: var(--brand-red-color);
   border-color: #fff;
@@ -224,7 +289,8 @@
 }
 
 .teaser.block.color-grad-red-plum-diag .teaser-text .title,
-.teaser.block.color-grad-red-plum-diag .teaser-text .description {
+.teaser.block.color-grad-red-plum-diag .teaser-text .description,
+.teaser.block.color-grad-red-plum-diag .teaser-text .subtitle {
   color: var(--teaser-text-light);
 }
 
@@ -249,60 +315,48 @@
   border-color: #fff;
 }
 
-/* ==========================================================================
-   Theme: bg-blush — alternate/redesign styling
-   ========================================================================== */
-
-.teaser.block.bg-blush .teaser {
-  background-color: var(--teaser-blush-bg);
-  color: var(--teaser-text-dark);
-}
-
-.teaser.block.bg-blush .teaser-text .title {
-  color: var(--teaser-blush-heading);
-}
-
-.teaser.block.bg-blush .teaser-text .description {
-  color: var(--teaser-text-dark);
-}
-
-.teaser.block.bg-blush .teaser-text .description ul li::before {
-  background-color: var(--teaser-text-dark);
-}
-
-.teaser.block.bg-blush .teaser-cta .button,
-.teaser.block.bg-blush .teaser-cta a.button {
-  font-weight: 700;
-  color: var(--teaser-text-dark);
-  background-color: #fff;
-  border: 2px solid var(--teaser-text-dark);
-  border-radius: 999px;
-  padding: 20px 40px;
-}
-
-.teaser.block.bg-blush .teaser-cta .button:hover,
-.teaser.block.bg-blush .teaser-cta a.button:hover {
-  background-color: var(--teaser-text-dark);
-  color: #fff;
-}
 /* stylelint-enable no-descending-specificity */
 
 /* ==========================================================================
    Desktop layout (matches feature-50-50's 50/50 image+card split)
    ========================================================================== */
 
+/* ==========================================================================
+   Stacked layouts: image above or below the content, at every breakpoint
+   ========================================================================== */
+
+.teaser.block.image-on-top .teaser-background { order: 1; }
+.teaser.block.image-on-top .teaser-content { order: 2; }
+.teaser.block.image-on-bottom .teaser-background { order: 2; }
+.teaser.block.image-on-bottom .teaser-content { order: 1; }
+
+.teaser.block.image-on-top .teaser-background img,
+.teaser.block.image-on-bottom .teaser-background img {
+  width: 100%;
+  max-height: 480px;
+}
+
+/* ==========================================================================
+   Desktop layout (matches feature-50-50's 50/50 image+card split).
+   The stacked and no-image variants opt out of the side-by-side split.
+   ========================================================================== */
+
 @media (width >= 900px) {
-  .teaser.block .teaser {
+  /* image-on-left: image first, content second (default source order) */
+  .teaser.block.image-on-left .teaser-background { order: 1; }
+  .teaser.block.image-on-left .teaser-content { order: 2; }
+
+  /* image-on-right modifier for reuse */
+  .teaser.block.image-on-right .teaser-background { order: 2; }
+  .teaser.block.image-on-right .teaser-content { order: 1; }
+
+  .teaser.block:not(.image-on-top, .image-on-bottom) .teaser:not(.teaser-no-image) {
     flex-direction: row;
     min-height: 600px;
   }
 
-  .teaser.block .teaser-background {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-
-  .teaser.block .teaser-content {
+  .teaser.block:not(.image-on-top, .image-on-bottom) .teaser:not(.teaser-no-image) .teaser-background,
+  .teaser.block:not(.image-on-top, .image-on-bottom) .teaser:not(.teaser-no-image) .teaser-content {
     flex: 0 0 50%;
     max-width: 50%;
   }
@@ -317,13 +371,16 @@
     line-height: 58px;
   }
 
-  /* image-on-left: image first, content second (default source order) */
-  .teaser.block.image-on-left .teaser-background { order: 1; }
-  .teaser.block.image-on-left .teaser-content { order: 2; }
-
-  /* image-on-right modifier for reuse */
-  .teaser.block.image-on-right .teaser-background { order: 2; }
-  .teaser.block.image-on-right .teaser-content { order: 1; }
+  /* stacked and image-less variants centre their content column instead */
+  .teaser.block.image-on-top .teaser-text,
+  .teaser.block.image-on-bottom .teaser-text,
+  .teaser.block .teaser-no-image .teaser-text {
+    width: 100%;
+    max-width: 1140px;
+    margin-inline: auto;
+    padding-inline: 48px;
+    box-sizing: border-box;
+  }
 
   .teaser.block .teaser-cta .button,
   .teaser.block .teaser-cta a.button {
@@ -331,5 +388,10 @@
     margin-right: 32px;
     margin-bottom: 16px;
     text-align: left;
+  }
+
+  .teaser.block.content-center .teaser-cta .button,
+  .teaser.block.content-right .teaser-cta .button {
+    text-align: center;
   }
 }

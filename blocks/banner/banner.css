@@ -1,37 +1,185 @@
-.banner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 120px;
-  padding: 24px;
-  background-color: var(--light-color);
+/* ==========================================================================
+   Banner block — ported from jackson.com's full-image-feature component
+   (styles/jackson.css). A full-bleed background image with a content panel
+   overlaid on top. Values authored there in rem against that site's
+   `html { font-size: 10px }` base are converted to px for this project's
+   default 16px root.
+   ========================================================================== */
+
+.banner-container .banner-wrapper {
+  max-width: unset;
+  padding: 0;
 }
 
-.banner picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-}
-
-.banner img {
+.banner.block {
   width: 100%;
-  height: 100%;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+.banner.block .banner-inner {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.banner.block .banner-image {
+  line-height: 0;
+}
+
+.banner.block .banner-image img {
+  width: 100%;
+  min-height: 390px;
   object-fit: cover;
+  display: block;
 }
 
-.banner p {
+.banner.block .banner-content {
+  box-sizing: border-box;
+  padding: 32px 24px;
+}
+
+.banner.block .banner-title {
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
   margin: 0;
+  color: var(--brand-plum-color);
 }
 
-@media (width >= 600px) {
-  .banner {
-    padding: 32px;
-  }
+.banner.block .banner-description {
+  padding: 15px 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 1.6;
 }
+
+.banner.block .banner-description p {
+  margin: 0 0 16px;
+}
+
+.banner.block .banner-description p:last-child {
+  margin-bottom: 0;
+}
+
+.banner.block .banner-cta {
+  margin-top: 8px;
+}
+
+.banner.block .banner-cta .button,
+.banner.block .banner-cta a.button {
+  font-weight: 700;
+  border-radius: 27px;
+  padding: 15px 32px 14px;
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  margin-right: 16px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.banner.block .banner-cta .button:hover,
+.banner.block .banner-cta .button:focus-visible {
+  color: #fff;
+  background-color: var(--brand-red-color);
+  border-color: #fff;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Author-selectable overlay tint
+   ========================================================================== */
+
+.banner.block.overlay-light .banner-content {
+  background-color: rgb(255 255 255 / 40%);
+}
+
+.banner.block.overlay-dark .banner-content {
+  background-color: rgb(0 0 0 / 25%);
+}
+
+/* ==========================================================================
+   Author-selectable text colour
+   ========================================================================== */
+
+.banner.block.text-light .banner-title,
+.banner.block.text-light .banner-description {
+  color: #fff;
+}
+
+.banner.block.text-dark .banner-title {
+  color: var(--brand-plum-color);
+}
+
+.banner.block.text-dark .banner-description {
+  color: var(--text-color);
+}
+
+.banner.block.text-light .banner-cta .button {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--brand-plum-color);
+}
+
+/* Content alignment inside the panel */
+.banner.block.content-center .banner-content {
+  text-align: center;
+}
+
+.banner.block.content-right .banner-content {
+  text-align: right;
+}
+
+/* ==========================================================================
+   Desktop — the panel floats over the image, matching full-image-feature
+   ========================================================================== */
 
 @media (width >= 900px) {
-  .banner {
-    min-height: 160px;
-    padding: 40px 32px;
+  .banner.block .banner-image img {
+    min-height: 600px;
+  }
+
+  /* an image-less banner is a plain centred content strip */
+  .banner.block .banner-no-image .banner-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 64px 48px;
+  }
+
+  .banner.block .banner-inner:not(.banner-no-image) .banner-content {
+    position: absolute;
+    top: 13%;
+    height: 73%;
+    min-height: fit-content;
+    width: 46%;
+    padding: 6% 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* panel on the right of the image (jackson.com default) */
+  .banner.block:not(.panel-left, .panel-center) .banner-inner:not(.banner-no-image) .banner-content,
+  .banner.block.panel-right .banner-inner:not(.banner-no-image) .banner-content {
+    left: 73%;
+    transform: translateX(-50%);
+  }
+
+  .banner.block.panel-left .banner-inner:not(.banner-no-image) .banner-content {
+    left: 27%;
+    transform: translateX(-50%);
+  }
+
+  .banner.block.panel-center .banner-inner:not(.banner-no-image) .banner-content {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .banner.block .banner-title {
+    font-size: 48px;
+    line-height: 58px;
   }
 }

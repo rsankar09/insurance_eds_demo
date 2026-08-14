@@ -10,7 +10,7 @@
             "template": {
               "name": "Teaser",
               "model": "teaser",
-              "classes": ["image-on-left","bg-white"]
+              "classes": ["image-on-left", "bg-white", "content-left"]
             }
           }
         }
@@ -27,6 +27,13 @@
           "name": "image",
           "label": "Image",
           "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "value": ""
         },
         {
           "component": "text",
@@ -61,20 +68,27 @@
           "valueType": "string",
           "name": "classes",
           "label": "Style",
-          "maxSize": 2,
           "options": [
-            { "name": "Image on left", "value": "image-on-left" },
-            { "name": "Image on right", "value": "image-on-right" },
-            { "name": "Image on top", "value": "image-on-top" },
-            { "name": "Image on bottom", "value": "image-on-bottom" },
+            { "name": "Image: on left", "value": "image-on-left" },
+            { "name": "Image: on right", "value": "image-on-right" },
+            { "name": "Image: on top", "value": "image-on-top" },
+            { "name": "Image: on bottom", "value": "image-on-bottom" },
 
-            { "name": "White Background", "value": "bg-white" },
-            { "name": "Tan Background", "value": "bg-tan" },
-            { "name": "Plum Background", "value": "bg-plum" },
-            { "name": "Blush Background", "value": "bg-blush" },
-            { "name": "Red–Plum Gradient", "value": "color-grad-red-plum-diag" }
+            { "name": "Background: white", "value": "bg-white" },
+            { "name": "Background: gray", "value": "bg-gray" },
+            { "name": "Background: tan", "value": "bg-tan" },
+            { "name": "Background: blush", "value": "bg-blush" },
+            { "name": "Background: plum", "value": "bg-plum" },
+            { "name": "Background: red-plum gradient", "value": "color-grad-red-plum-diag" },
+
+            { "name": "Align: left", "value": "content-left" },
+            { "name": "Align: center", "value": "content-center" },
+            { "name": "Align: right", "value": "content-right" },
+
+            { "name": "Subtitle: above title", "value": "subtitle-above" },
+            { "name": "Subtitle: below title", "value": "subtitle-below" }
           ]
-        }        
+        }
       ]
     }
   ],

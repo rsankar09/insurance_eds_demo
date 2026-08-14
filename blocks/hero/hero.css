@@ -87,9 +87,50 @@
   text-decoration: none;
 }
 
+/* ==========================================================================
+   Author-selectable style variants
+   ========================================================================== */
+
+/* Height */
+.hero.block.height-short .hero-image img { height: 420px; }
+.hero.block.height-tall .hero-image img { height: 760px; }
+
+/* Content position */
+.hero.block.content-center .hero-content {
+  align-items: center;
+  text-align: center;
+}
+
+.hero.block.content-center .hero-text h1 {
+  max-width: 100%;
+}
+
+.hero.block.content-right .hero-content {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Text colour */
+.hero.block.text-light .hero-text h1,
+.hero.block.text-light .hero-text > p,
+.hero.block.text-light .hero-description {
+  color: #fff;
+}
+
+.hero.block.text-light .hero-text h1 .accent {
+  color: #fff;
+}
+
 @media (width >= 900px) {
   .hero.block .hero-text h1 {
     font-size: 55px;
+  }
+
+  .hero.block.content-center .hero-text,
+  .hero.block.content-center .hero-cta,
+  .hero.block.content-right .hero-text,
+  .hero.block.content-right .hero-cta {
+    padding-inline: 90px;
   }
 }
 

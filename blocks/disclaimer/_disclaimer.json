@@ -26,6 +26,20 @@
           "name": "text",
           "label": "Text",
           "value": ""
+        },
+        {
+          "component": "multiselect",
+          "valueType": "string",
+          "name": "classes",
+          "label": "Style",
+          "options": [
+            { "name": "Background: white", "value": "bg-white" },
+            { "name": "Background: gray", "value": "bg-gray" },
+            { "name": "Background: tan", "value": "bg-tan" },
+
+            { "name": "Spacing: standard", "value": "spacing-standard" },
+            { "name": "Spacing: compact", "value": "spacing-compact" }
+          ]
         }
       ]
     }

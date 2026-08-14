@@ -174,7 +174,14 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt",
+        "label": "Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
         "value": ""
       },
       {
@@ -190,6 +197,58 @@
         "name": "cta",
         "label": "CTA link (as a link inside text)",
         "value": ""
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Panel: right",
+            "value": "panel-right"
+          },
+          {
+            "name": "Panel: left",
+            "value": "panel-left"
+          },
+          {
+            "name": "Panel: center",
+            "value": "panel-center"
+          },
+          {
+            "name": "Overlay: none",
+            "value": "overlay-none"
+          },
+          {
+            "name": "Overlay: light",
+            "value": "overlay-light"
+          },
+          {
+            "name": "Overlay: dark",
+            "value": "overlay-dark"
+          },
+          {
+            "name": "Text: dark",
+            "value": "text-dark"
+          },
+          {
+            "name": "Text: light",
+            "value": "text-light"
+          },
+          {
+            "name": "Align: left",
+            "value": "content-left"
+          },
+          {
+            "name": "Align: center",
+            "value": "content-center"
+          },
+          {
+            "name": "Align: right",
+            "value": "content-right"
+          }
+        ]
       }
     ]
   },
@@ -217,20 +276,48 @@
         "label": "Style",
         "options": [
           {
-            "name": "Gray background",
+            "name": "Background: white",
+            "value": "bg-white"
+          },
+          {
+            "name": "Background: gray",
             "value": "bg-gray"
           },
           {
-            "name": "Four columns",
+            "name": "Background: tan",
+            "value": "bg-tan"
+          },
+          {
+            "name": "Background: plum",
+            "value": "bg-plum"
+          },
+          {
+            "name": "Background: red-plum gradient",
+            "value": "color-grad-red-plum-diag"
+          },
+          {
+            "name": "Columns: four",
             "value": "four-column"
           },
           {
-            "name": "Three columns",
+            "name": "Columns: three",
             "value": "three-column"
           },
           {
-            "name": "Two columns",
+            "name": "Columns: two",
             "value": "two-column"
+          },
+          {
+            "name": "Title: center",
+            "value": "title-center"
+          },
+          {
+            "name": "Title: left",
+            "value": "title-left"
+          },
+          {
+            "name": "Title: right",
+            "value": "title-right"
           }
         ]
       }
@@ -245,6 +332,13 @@
         "name": "image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "value": ""
       },
       {
         "component": "richtext",
@@ -321,6 +415,34 @@
         "name": "text",
         "label": "Text",
         "value": ""
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Background: white",
+            "value": "bg-white"
+          },
+          {
+            "name": "Background: gray",
+            "value": "bg-gray"
+          },
+          {
+            "name": "Background: tan",
+            "value": "bg-tan"
+          },
+          {
+            "name": "Spacing: standard",
+            "value": "spacing-standard"
+          },
+          {
+            "name": "Spacing: compact",
+            "value": "spacing-compact"
+          }
+        ]
       }
     ]
   },
@@ -372,6 +494,46 @@
         "value": "",
         "label": "Content (heading, description, CTA links)",
         "valueType": "string"
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Content: left",
+            "value": "content-left"
+          },
+          {
+            "name": "Content: center",
+            "value": "content-center"
+          },
+          {
+            "name": "Content: right",
+            "value": "content-right"
+          },
+          {
+            "name": "Text: dark",
+            "value": "text-dark"
+          },
+          {
+            "name": "Text: light",
+            "value": "text-light"
+          },
+          {
+            "name": "Height: standard",
+            "value": "height-standard"
+          },
+          {
+            "name": "Height: short",
+            "value": "height-short"
+          },
+          {
+            "name": "Height: tall",
+            "value": "height-tall"
+          }
+        ]
       }
     ]
   },
@@ -407,6 +569,13 @@
       {
         "component": "text",
         "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
         "name": "title",
         "label": "Title",
         "value": ""
@@ -437,43 +606,66 @@
         "valueType": "string",
         "name": "classes",
         "label": "Style",
-        "maxSize": 2,
         "options": [
           {
-            "name": "Image on left",
+            "name": "Image: on left",
             "value": "image-on-left"
           },
           {
-            "name": "Image on right",
+            "name": "Image: on right",
             "value": "image-on-right"
           },
           {
-            "name": "Image on top",
+            "name": "Image: on top",
             "value": "image-on-top"
           },
           {
-            "name": "Image on bottom",
+            "name": "Image: on bottom",
             "value": "image-on-bottom"
           },
           {
-            "name": "White Background",
+            "name": "Background: white",
             "value": "bg-white"
           },
           {
-            "name": "Tan Background",
+            "name": "Background: gray",
+            "value": "bg-gray"
+          },
+          {
+            "name": "Background: tan",
             "value": "bg-tan"
           },
           {
-            "name": "Plum Background",
-            "value": "bg-plum"
-          },
-          {
-            "name": "Blush Background",
+            "name": "Background: blush",
             "value": "bg-blush"
           },
           {
-            "name": "Red–Plum Gradient",
+            "name": "Background: plum",
+            "value": "bg-plum"
+          },
+          {
+            "name": "Background: red-plum gradient",
             "value": "color-grad-red-plum-diag"
+          },
+          {
+            "name": "Align: left",
+            "value": "content-left"
+          },
+          {
+            "name": "Align: center",
+            "value": "content-center"
+          },
+          {
+            "name": "Align: right",
+            "value": "content-right"
+          },
+          {
+            "name": "Subtitle: above title",
+            "value": "subtitle-above"
+          },
+          {
+            "name": "Subtitle: below title",
+            "value": "subtitle-below"
           }
         ]
       }

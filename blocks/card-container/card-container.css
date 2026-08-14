@@ -5,8 +5,25 @@
   background-color: var(--background-color);
 }
 
+/* Author-selectable background themes */
+.card-container.block.bg-white {
+  background-color: #fff;
+}
+
 .card-container.block.bg-gray {
   background-color: #ebebeb;
+}
+
+.card-container.block.bg-tan {
+  background-color: #f5f0eb;
+}
+
+.card-container.block.bg-plum {
+  background-color: var(--brand-plum-color);
+}
+
+.card-container.block.color-grad-red-plum-diag {
+  background: linear-gradient(135deg, #eb0028, #760014, #5c2642);
 }
 
 .card-container.block .card-container-inner {
@@ -15,9 +32,18 @@
   padding: 104px 48px;
 }
 
+/* Heading alignment — centred by default, matching jackson.com's center-align */
 .card-container.block .card-container-header {
   text-align: center;
   margin-bottom: 40px;
+}
+
+.card-container.block.title-left .card-container-header {
+  text-align: left;
+}
+
+.card-container.block.title-right .card-container-header {
+  text-align: right;
 }
 
 .card-container.block .card-container-header h2 {
@@ -32,6 +58,14 @@
 .card-container.block .card-container-description {
   margin-top: 16px;
   font-size: 16px;
+}
+
+/* On dark themes the heading and description invert */
+.card-container.block.bg-plum .card-container-header h2,
+.card-container.block.color-grad-red-plum-diag .card-container-header h2,
+.card-container.block.bg-plum .card-container-description,
+.card-container.block.color-grad-red-plum-diag .card-container-description {
+  color: #fff;
 }
 
 .card-container.block .card-container-cards {
@@ -111,8 +145,8 @@
     margin-bottom: 32px;
   }
 
-  .card-container.block.four-column .product-card,
-  .card-container.block .product-card {
+  .card-container.block .product-card,
+  .card-container.block.four-column .product-card {
     width: 342px;
   }
 
