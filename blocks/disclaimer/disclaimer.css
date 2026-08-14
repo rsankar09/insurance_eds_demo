@@ -1,21 +1,32 @@
 .disclaimer {
-  padding: 20px 24px;
-  border-top: 1px solid var(--light-color);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 104px 24px;
   color: var(--dark-color);
-  font-size: var(--body-font-size-xs);
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .disclaimer p {
-  margin: 0 0 10px;
+  margin: 0 0 16px;
 }
 
 .disclaimer p:last-child {
   margin-bottom: 0;
 }
 
-@media (width >= 900px) {
+.disclaimer hr {
+  border: 0;
+  border-top: 1px solid var(--light-color);
+  margin: 24px 0;
+}
+
+.disclaimer sup {
+  font-size: 0.65em;
+}
+
+@media (width <= 768px) {
   .disclaimer {
-    padding: 24px 32px;
+    padding: 80px 24px 42px;
   }
 }

@@ -19,8 +19,14 @@
   /* Blush theme tokens */
   --teaser-blush-bg: #cfb6a6;
   --teaser-blush-heading: var(--brand-plum-color);
+
+  /* Tan / white theme tokens */
+  --teaser-tan-bg: #f5f0eb;
+  --teaser-white-bg: #fff;
+
   --teaser-text-light: #fff;
   --teaser-text-dark: #1a1a1a;
+  --teaser-plum-heading: var(--brand-plum-color);
 
   position: relative;
   width: 100%;
@@ -153,6 +159,94 @@
 .teaser.block.bg-plum .teaser-cta .button:hover,
 .teaser.block.bg-plum .teaser-cta a.button:hover {
   background-color: var(--teaser-gold-hover);
+}
+
+/* ==========================================================================
+   Theme: bg-white / bg-tan — light backgrounds (Jackson FP page sections)
+   ========================================================================== */
+
+.teaser.block.bg-white .teaser,
+.teaser.block.bg-tan .teaser {
+  color: var(--teaser-text-dark);
+}
+
+.teaser.block.bg-white .teaser {
+  background-color: var(--teaser-white-bg);
+}
+
+.teaser.block.bg-tan .teaser {
+  background-color: var(--teaser-tan-bg);
+}
+
+.teaser.block.bg-white .teaser-text .title,
+.teaser.block.bg-tan .teaser-text .title {
+  color: var(--teaser-plum-heading);
+}
+
+.teaser.block.bg-white .teaser-text .description,
+.teaser.block.bg-tan .teaser-text .description {
+  color: var(--teaser-text-dark);
+}
+
+.teaser.block.bg-white .teaser-text .description ul li::before,
+.teaser.block.bg-tan .teaser-text .description ul li::before {
+  background-color: var(--brand-red-color);
+}
+
+.teaser.block.bg-white .teaser-cta .button,
+.teaser.block.bg-white .teaser-cta a.button,
+.teaser.block.bg-tan .teaser-cta .button,
+.teaser.block.bg-tan .teaser-cta a.button {
+  font-weight: 700;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 27px;
+  padding: 15px 32px 14px;
+}
+
+.teaser.block.bg-white .teaser-cta .button:hover,
+.teaser.block.bg-white .teaser-cta a.button:hover,
+.teaser.block.bg-tan .teaser-cta .button:hover,
+.teaser.block.bg-tan .teaser-cta a.button:hover {
+  color: #fff;
+  background-color: var(--brand-red-color);
+  border-color: #fff;
+}
+
+/* ==========================================================================
+   Theme: color-grad-red-plum-diag — gradient card (Why Jackson section)
+   ========================================================================== */
+
+.teaser.block.color-grad-red-plum-diag .teaser {
+  background: linear-gradient(135deg, #eb0028, #760014, #5c2642);
+  color: var(--teaser-text-light);
+}
+
+.teaser.block.color-grad-red-plum-diag .teaser-text .title,
+.teaser.block.color-grad-red-plum-diag .teaser-text .description {
+  color: var(--teaser-text-light);
+}
+
+.teaser.block.color-grad-red-plum-diag .teaser-text .description ul li::before {
+  background-color: var(--teaser-text-light);
+}
+
+.teaser.block.color-grad-red-plum-diag .teaser-cta .button,
+.teaser.block.color-grad-red-plum-diag .teaser-cta a.button {
+  font-weight: 700;
+  color: var(--brand-plum-color);
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 27px;
+  padding: 15px 32px 14px;
+}
+
+.teaser.block.color-grad-red-plum-diag .teaser-cta .button:hover,
+.teaser.block.color-grad-red-plum-diag .teaser-cta a.button:hover {
+  color: #fff;
+  background-color: var(--brand-red-color);
+  border-color: #fff;
 }
 
 /* ==========================================================================

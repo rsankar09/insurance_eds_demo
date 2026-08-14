@@ -1,0 +1,68 @@
+{
+  "url": "https://www.jackson.com/financial-professional.html",
+  "timestamp": "2026-08-14T13:41:35.799Z",
+  "paths": {
+    "documentPath": "/financial-professional",
+    "htmlFilePath": "/financial-professional.plain.html",
+    "mdFilePath": "/financial-professional.md",
+    "dirPath": "",
+    "filename": "financial-professional"
+  },
+  "screenshot": "import-work/financial-professional/screenshot.png",
+  "html": {
+    "filePath": "import-work/financial-professional/cleaned.html",
+    "size": 128239
+  },
+  "metadata": {
+    "title": "Financial professional | Jackson",
+    "template": "home-page-template",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "og:title": "Advisors | Jackson",
+    "og:url": "https://www.jackson.com/financial-professional.html",
+    "og:type": "website",
+    "og:site_name": "Jackson",
+    "twitter:card": "summary",
+    "twitter:site": "@jacksonnational",
+    "twitter:creator": "@jacksonnational",
+    "google-site-verification": "VQCpcXd0VD8EJHY4A0Foj71RVwtAdhnbinrJH73hIaE",
+    "msvalidate.01": "750BECB153664691CD773DB6C97C2A5F",
+    "facebook-domain-verification": "cyze0bljxj6n9rmij4z9c0q0bq9z08",
+    "format-detection": "telephone=no"
+  },
+  "images": {
+    "count": 23,
+    "mapping": {
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/hero/financial-professional_528913601_2240x600.jpg": "./images/9058a163e603f34c290747e3e222a305.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/cards/financial-professional_1794500922_306x94.jpg": "./images/459798957bf59ff04043c578ae6ff420.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/cards/financial-professional_1499382959_desat50_306x94.jpg": "./images/0b65bf793fe175a1c8d28ede82055548.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/logos/fp_masthead_logo.svg": "./images/2836b892b8a0d092094dc50a52b51869.png",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/cards/financial-professional_636266948_306x94.jpg": "./images/c61eac62093e5e09d6e2b8d07a365ebd.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/cards/financial-professional_1419105701_306x94.jpg": "./images/be6bcd6501441326645ec25de87de2b4.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/feature-images/financial_1047669486_720x600.jpg": "./images/b8e7116538b844a40b0045bb10ce7b20.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/feature-images/financial-professional_1399777169_720x600.jpg": "./images/3e9ab2687f05162e52829509695c5113.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/feature-images/financial_691047201_720x600.jpg": "./images/5db0baeafbb495700d8cdcad6c8ee4ff.jpg",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/fp-site/feature-images/ProductMatchPro_720x600.jpg": "./images/02ff9611bc0cb99761638e4912029482.jpg",
+      "https://www.jackson.com/etc.clientlibs/jackson-fp/clientlibs/jackson-fp-base/css/resources/socialicons/linkedin-light-default.svg": "./images/bfd9a406c21aef8a5be1509082362e38.png",
+      "https://www.jackson.com/etc.clientlibs/jackson-fp/clientlibs/jackson-fp-base/css/resources/socialicons/youtube-light-default.svg": "./images/2e97620e79bcabb27e8ddecf12d26c0b.png",
+      "https://www.jackson.com/etc.clientlibs/jackson-fp/clientlibs/jackson-fp-base/css/resources/socialicons/x-light-default.svg": "./images/143c4e5a9ff76b4b62bb848c86895278.png",
+      "https://www.jackson.com/etc.clientlibs/jackson-fp/clientlibs/jackson-fp-base/css/resources/socialicons/instagram-light-default.svg": "./images/995e2c0e289c503b5b34a2e01e913a60.png",
+      "https://www.jackson.com/etc.clientlibs/jackson-fp/clientlibs/jackson-fp-base/css/resources/socialicons/facebook-light-default.svg": "./images/10b0c941f550df6bfb4295d987ae0c24.png",
+      "https://www.jackson.com/content/dam/jacksoncom/graphics/logos/broker-check.svg": "./images/6251ad33971ce67a64d3320093b4bcd5.png",
+      "https://dpm.demdex.net/ibs:dpid=411&dpuuid=an8bBwAAAC0AigZB": "./images/d43413f1159749c9271a449ed2733a25.png",
+      "https://cdn.cookielaw.org/logos/static/ot_close.svg": "./images/cec4a77b663a079574d478e06d310304.png",
+      "https://cdn.cookielaw.org/logos/89b98884-bb6a-4df1-b762-3d35786a2552/448ac626-c22b-464c-b46f-66e647402170/23c5f67a-9067-41c0-a437-79284f792041/Jackson_logo_120x40.png": "./images/77327c41fc1d782177e899ab30ccd6d1.png",
+      "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg": "./images/a9584a367ebcccfac48987ce1fec5eae.png",
+      "https://www.googleadservices.com/ccm/conversion/969040932/?random=1786714887779&cv=11&fst=1786714887779&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be68c1v877046798za200xec&gcs=G1--&gcd=13l3l3R3l5l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~119367802~119367810~119527019~120385423&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.jackson.com%2Ffinancial-professional.html&rcb=6&gtm_ee=1&frm=0&tiba=Financial%20professional%20%7C%20Jackson&npa=0&pscdl=noapi&auid=1734075259.1786714888&label=ln9sCJHJlu8DEKTIic4D&hn=www.googleadservices.com&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.8%7CNot%253FA_Brand%3B24.0.0.0%7CHeadlessChrome%3B152.0.7977.8&uamb=0&uam=&uap=macOS&uapv=15.6.1&uaw=0&ec_mode=a&oid=1661762564.1786714888&oidsrc=3&ecsid2=1674369522.1786714888&_tu=ABA&gcl_ctr=2~0~0~0&data=event%3Dpage_view&em=tv.1&emd=tvd.1": "./images/6bd66d5135ae7594991310a42645cb8a.png",
+      "https://www.googleadservices.com/ccm/conversion/969040932/?random=1786714887770&cv=11&fst=1786714887770&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be68c1v877046798za200xec&gcs=G1--&gcd=13l3l3R3l5l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~119367802~119367810~119527019~120385423&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.jackson.com%2Ffinancial-professional.html&rcb=6&gtm_ee=1&frm=0&tiba=Financial%20professional%20%7C%20Jackson&npa=0&pscdl=noapi&auid=1734075259.1786714888&label=ln9sCJHJlu8DEKTIic4D&hn=www.googleadservices.com&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.8%7CNot%253FA_Brand%3B24.0.0.0%7CHeadlessChrome%3B152.0.7977.8&uamb=0&uam=&uap=macOS&uapv=15.6.1&uaw=0&ec_mode=a&oid=960343421.1786714888&oidsrc=3&ecsid2=1674369522.1786714888&_tu=ABA&gcl_ctr=1~0~0~0&data=event%3Dgtag.config&em=tv.1&emd=tvd.1": "./images/6267c6718e2e56b93d040b15fcec382b.png",
+      "https://www.google.com/pagead/1p-user-list/969040932/?random=1786714887774&cv=11&fst=1786712400000&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be68c1v877046798za200xec&gcd=13l3l3R3l5l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~119367802~119367810~119527019~120385423&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.jackson.com%2Ffinancial-professional.html&rcb=6&frm=0&tiba=Financial%20professional%20%7C%20Jackson&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1734075259.1786714888&uaa=arm&uab=64&uafvl=Chromium%3B152.0.7977.8%7CNot%253FA_Brand%3B24.0.0.0%7CHeadlessChrome%3B152.0.7977.8&uamb=0&uam=&uap=macOS&uapv=15.6.1&uaw=0&data=event%3Dpage_view&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAEQoqgThE6OW6DR01xJnn9Rd4NDKMld4O80JhDe2f2a15lzNqIgfgE-kIKp1MB7c20H0dcmCEAdDlwMstSA0B9nKLXfvQjOVoSLPPbpM1v-McL3X-_ifV68mKcW1imUsV4VCxfyg2o_EV3lh0qGTaWUUQFVuhKe3pnah7WxXLh9PSljX96b4Ut8UBic7VWbBwZxgu-ZWrMqO_726YCEKLC55HQ_bMw0-AEinP_vaxJzBkks-crzrW_78O_rJ_19CZSWnIh74x5N-PtxwxiFO0bE9O&random=2008906545&rmt_tld=0&ipr=y": "./images/23e7547e6ea1ae9078a81bd4bebd2ad4.png"
+    },
+    "stats": {
+      "total": 29,
+      "converted": 13,
+      "skipped": 10,
+      "failed": 6,
+      "tooLarge": 0,
+      "limitReached": 0
+    }
+  }
+}
