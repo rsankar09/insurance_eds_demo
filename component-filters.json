@@ -19,6 +19,7 @@
       "accordion",
       "tabs",
       "teaser",
+      "card-container",
       "cardsntt",
       "form",
       "banner",
@@ -29,6 +30,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "card-container",
+    "components": [
+      "product-card"
     ]
   },
   {

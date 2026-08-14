@@ -194,6 +194,68 @@
     ]
   },
   {
+    "id": "card-container",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Section Title",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Section Description",
+        "value": ""
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Gray background",
+            "value": "bg-gray"
+          },
+          {
+            "name": "Four columns",
+            "value": "four-column"
+          },
+          {
+            "name": "Three columns",
+            "value": "three-column"
+          },
+          {
+            "name": "Two columns",
+            "value": "two-column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "product-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "links",
+        "label": "Links",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -294,21 +356,21 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Background Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt",
+        "label": "Image Alt Text",
         "value": ""
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Text",
+        "label": "Content (heading, description, CTA links)",
         "valueType": "string"
       }
     ]
@@ -404,6 +466,10 @@
           {
             "name": "Plum Background",
             "value": "bg-plum"
+          },
+          {
+            "name": "Blush Background",
+            "value": "bg-blush"
           },
           {
             "name": "Red–Plum Gradient",

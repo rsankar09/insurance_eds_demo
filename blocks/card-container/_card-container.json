@@ -10,7 +10,8 @@
             "template": {
               "name": "Card Container",
               "model": "card-container",
-              "filter": "card-container"
+              "filter": "card-container",
+              "classes": ["bg-gray", "four-column"]
             }
           }
         }
@@ -49,6 +50,18 @@
           "name": "description",
           "label": "Section Description",
           "value": ""
+        },
+        {
+          "component": "multiselect",
+          "valueType": "string",
+          "name": "classes",
+          "label": "Style",
+          "options": [
+            { "name": "Gray background", "value": "bg-gray" },
+            { "name": "Four columns", "value": "four-column" },
+            { "name": "Three columns", "value": "three-column" },
+            { "name": "Two columns", "value": "two-column" }
+          ]
         }
       ]
     },

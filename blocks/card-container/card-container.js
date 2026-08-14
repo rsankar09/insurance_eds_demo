@@ -70,7 +70,7 @@ export default function decorate(block) {
         const linkWrap = document.createElement('p');
         linkWrap.className = 'product-card-link';
         const cloned = link.cloneNode(true);
-        cloned.classList.add('forward-link');
+        cloned.classList.add('forward-link-dark');
         linkWrap.append(cloned);
         linksWrap.append(linkWrap);
       });
