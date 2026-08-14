@@ -139,10 +139,17 @@ main > .section.card-container-container {
   text-decoration: none;
 }
 
+/* jackson.com renders this as Line Awesome's `arrow-alt-circle-right` (\f138).
+   That icon font isn't part of this project, so the glyph is drawn as an inline
+   SVG mask instead, which keeps it tintable from the brand token. */
 .card-container.block .product-card-link a.forward-link-dark::after {
-  content: '→';
+  content: '';
+  flex: none;
+  width: 20px;
+  height: 20px;
   margin-left: 9px;
-  font-size: 20px;
+  background-color: var(--brand-red-color);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10.25'/%3E%3Cpath d='M10.5 8.25 14.25 12l-3.75 3.75'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 @media (width <= 900px) {
