@@ -1,29 +1,26 @@
 /* ==========================================================================
-   Teaser block â€” matched to the live jackson.com/financial-professional.html
-   feature teaser ("Products as diverse as your clients"), color-sampled
-   directly from production screenshots.
+   Teaser block — layout, sizing and typography ported from jackson.com's
+   feature-50-50 component (styles/jackson.css). Values originally authored
+   in rem against that site's `html { font-size: 10px }` base have been
+   converted to px so they render at the same physical size on this project's
+   default 16px root.
 
    Two themes are included:
-   - .bg-plum  â†’ the current live jackson.com styling (dark plum + gold)
-   - .bg-blush â†’ an alternate/redesign styling (blush + white pill button)
+   - .bg-plum  → the current live jackson.com styling (dark plum + gold)
+   - .bg-blush → an alternate/redesign styling (blush + white pill button)
    ========================================================================== */
 
 .teaser.block {
   /* Plum theme (live site) tokens */
-  --teaser-plum-bg: #391a33;
-  --teaser-plum-bg-dark: #2f1529;
+  --teaser-plum-bg: var(--brand-plum-color);
   --teaser-gold: #b29970;
   --teaser-gold-hover: #a08762;
-  --teaser-plum-text: #35182f;
 
   /* Blush theme tokens */
   --teaser-blush-bg: #cfb6a6;
-  --teaser-blush-heading: #3a1030;
-
-  --teaser-text-light: #ffffff;
+  --teaser-blush-heading: var(--brand-plum-color);
+  --teaser-text-light: #fff;
   --teaser-text-dark: #1a1a1a;
-  --teaser-heading-font: Georgia, 'Times New Roman', serif;
-  --teaser-body-font: Arial, Helvetica, sans-serif;
 
   position: relative;
   width: 100%;
@@ -33,47 +30,52 @@
 
 .teaser.block .teaser {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
-  min-height: 480px;
+  min-height: auto;
 }
 
 /* Background/feature image */
 .teaser.block .teaser-background {
   position: relative;
-  flex: 0 0 50%;
-  max-width: 50%;
   overflow: hidden;
 }
 
 .teaser.block .teaser-background img {
   width: 100%;
   height: 100%;
-  min-height: 480px;
+  min-height: 260px;
   object-fit: cover;
   object-position: center;
   display: block;
 }
 
-/* image-on-left: image first, content second (default source order) */
-.teaser.block.image-on-left .teaser-background { order: 1; }
-.teaser.block.image-on-left .teaser-content { order: 2; }
-
-/* image-on-right modifier for reuse */
-.teaser.block.image-on-right .teaser-background { order: 2; }
-.teaser.block.image-on-right .teaser-content { order: 1; }
-
 /* Content column */
 .teaser.block .teaser-content {
-  flex: 0 0 50%;
-  max-width: 50%;
   display: flex;
   align-items: center;
-  padding: 64px 88px;
-  box-sizing: border-box;
+  justify-content: center;
 }
 
-.teaser.block .teaser-text { width: 100%; }
+.teaser.block .teaser-text {
+  width: 100%;
+  margin: 48px 24px;
+}
+
+.teaser.block .teaser-text .title {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  margin: 0 0 16px;
+}
+
+.teaser.block .teaser-text .description {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 16px;
+}
 
 .teaser.block .teaser-text .description p {
   margin: 0 0 24px;
@@ -106,19 +108,21 @@
   font-size: 0.65em;
 }
 
-.teaser.block .teaser-cta { margin-top: 32px; }
+.teaser.block .teaser-cta {
+  margin-top: 16px;
+}
 
 .teaser.block .teaser-cta .button,
 .teaser.block .teaser-cta a.button {
-  display: inline-block;
-  font-family: var(--teaser-body-font);
+  display: block;
+  text-align: center;
   text-decoration: none;
   box-sizing: border-box;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 /* ==========================================================================
-   Theme: bg-plum â€” matches the live jackson.com page
+   Theme: bg-plum — matches the live jackson.com page
    ========================================================================== */
 
 .teaser.block.bg-plum .teaser {
@@ -126,19 +130,8 @@
   color: var(--teaser-text-light);
 }
 
-.teaser.block.bg-plum .teaser-text .title {
-  font-family: var(--teaser-heading-font);
-  font-weight: 400;
-  font-size: 2.5rem;
-  line-height: 1.25;
-  color: var(--teaser-text-light);
-  margin: 0 0 28px;
-}
-
+.teaser.block.bg-plum .teaser-text .title,
 .teaser.block.bg-plum .teaser-text .description {
-  font-family: var(--teaser-body-font);
-  font-size: 1.05rem;
-  line-height: 1.6;
   color: var(--teaser-text-light);
 }
 
@@ -146,13 +139,11 @@
   background-color: var(--teaser-gold);
 }
 
+/* stylelint-disable no-descending-specificity -- bg-plum/bg-blush CTA rules below are mutually exclusive modifiers, never applied together */
 .teaser.block.bg-plum .teaser-cta .button,
 .teaser.block.bg-plum .teaser-cta a.button {
   font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--teaser-plum-text);
+  color: var(--teaser-plum-bg);
   background-color: var(--teaser-gold);
   border: none;
   border-radius: 2px;
@@ -165,7 +156,7 @@
 }
 
 /* ==========================================================================
-   Theme: bg-blush â€” alternate/redesign styling
+   Theme: bg-blush — alternate/redesign styling
    ========================================================================== */
 
 .teaser.block.bg-blush .teaser {
@@ -174,18 +165,10 @@
 }
 
 .teaser.block.bg-blush .teaser-text .title {
-  font-family: var(--teaser-heading-font);
-  font-weight: 700;
-  font-size: 2.75rem;
-  line-height: 1.15;
   color: var(--teaser-blush-heading);
-  margin: 0 0 24px;
 }
 
 .teaser.block.bg-blush .teaser-text .description {
-  font-family: var(--teaser-body-font);
-  font-size: 1.05rem;
-  line-height: 1.6;
   color: var(--teaser-text-dark);
 }
 
@@ -196,9 +179,8 @@
 .teaser.block.bg-blush .teaser-cta .button,
 .teaser.block.bg-blush .teaser-cta a.button {
   font-weight: 700;
-  font-size: 1rem;
   color: var(--teaser-text-dark);
-  background-color: #ffffff;
+  background-color: #fff;
   border: 2px solid var(--teaser-text-dark);
   border-radius: 999px;
   padding: 20px 40px;
@@ -207,37 +189,53 @@
 .teaser.block.bg-blush .teaser-cta .button:hover,
 .teaser.block.bg-blush .teaser-cta a.button:hover {
   background-color: var(--teaser-text-dark);
-  color: #ffffff;
+  color: #fff;
 }
+/* stylelint-enable no-descending-specificity */
 
 /* ==========================================================================
-   Responsive
+   Desktop layout (matches feature-50-50's 50/50 image+card split)
    ========================================================================== */
 
-@media (max-width: 900px) {
+@media (width >= 900px) {
   .teaser.block .teaser {
-    flex-direction: column;
-    min-height: auto;
+    flex-direction: row;
+    min-height: 600px;
   }
 
-  .teaser.block .teaser-background,
+  .teaser.block .teaser-background {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
   .teaser.block .teaser-content {
-    flex: 0 0 100%;
-    max-width: 100%;
-    order: initial;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 
-  .teaser.block .teaser-background img { min-height: 260px; }
-  .teaser.block .teaser-content { padding: 40px 24px; }
-  .teaser.block .teaser-text .title { font-size: 1.85rem; }
-}
+  .teaser.block .teaser-text {
+    width: 66%;
+    margin: 48px 0;
+  }
 
-@media (max-width: 480px) {
-  .teaser.block .teaser-content { padding: 32px 20px; }
+  .teaser.block .teaser-text .title {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  /* image-on-left: image first, content second (default source order) */
+  .teaser.block.image-on-left .teaser-background { order: 1; }
+  .teaser.block.image-on-left .teaser-content { order: 2; }
+
+  /* image-on-right modifier for reuse */
+  .teaser.block.image-on-right .teaser-background { order: 2; }
+  .teaser.block.image-on-right .teaser-content { order: 1; }
 
   .teaser.block .teaser-cta .button,
   .teaser.block .teaser-cta a.button {
-    display: block;
-    text-align: center;
+    display: inline-block;
+    margin-right: 32px;
+    margin-bottom: 16px;
+    text-align: left;
   }
 }
