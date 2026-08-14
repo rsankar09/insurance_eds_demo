@@ -441,6 +441,10 @@
           {
             "name": "Spacing: compact",
             "value": "spacing-compact"
+          },
+          {
+            "name": "Text size: small",
+            "value": "text-small"
           }
         ]
       }

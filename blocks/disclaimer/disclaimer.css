@@ -1,10 +1,28 @@
+/* Disclaimer — Jackson text-block with `disclosure-padding` (ported from jackson.css).
+   The block itself plays the role of `text-block__wrapper` (full-bleed background)
+   and its authored row plays `text-block__block` (1440px box carrying the padding). */
+
+main > .section.disclaimer-container {
+  margin: 0;
+}
+
+.disclaimer-container .disclaimer-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
 .disclaimer {
+  width: 100%;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+}
+
+.disclaimer > div {
   max-width: 1440px;
   margin: 0 auto;
   padding: 104px 24px;
-  color: var(--dark-color);
-  font-size: 14px;
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
 .disclaimer p {
@@ -30,13 +48,19 @@
 .disclaimer.bg-gray { background-color: #ebebeb; }
 .disclaimer.bg-tan { background-color: #f5f0eb; }
 
-.disclaimer.spacing-compact {
+/* Footnote sizing — jackson.com's `text__disclaimer--large` */
+.disclaimer.text-small {
+  font-size: var(--body-font-size-s);
+  line-height: 21px;
+}
+
+.disclaimer.spacing-compact > div {
   padding-top: 32px;
   padding-bottom: 32px;
 }
 
 @media (width <= 768px) {
-  .disclaimer {
+  .disclaimer > div {
     padding: 80px 24px 42px;
   }
 }

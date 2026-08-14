@@ -38,7 +38,9 @@
             { "name": "Background: tan", "value": "bg-tan" },
 
             { "name": "Spacing: standard", "value": "spacing-standard" },
-            { "name": "Spacing: compact", "value": "spacing-compact" }
+            { "name": "Spacing: compact", "value": "spacing-compact" },
+
+            { "name": "Text size: small", "value": "text-small" }
           ]
         }
       ]

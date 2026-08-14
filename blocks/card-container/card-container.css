@@ -1,5 +1,16 @@
 /* Card Container — Jackson card-container + product-card grid (ported from jackson.css) */
 
+/* Full-bleed section: the background spans the viewport and the inner content
+   is constrained to 1440px, matching jackson.com's `card-container__wrapper`. */
+main > .section.card-container-container {
+  margin: 0;
+}
+
+.card-container-container .card-container-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
 .card-container.block {
   width: 100%;
   background-color: var(--background-color);

@@ -10,6 +10,18 @@
    - .bg-blush → an alternate/redesign styling (blush + white pill button)
    ========================================================================== */
 
+/* Full-bleed section: `.teaser.block` plays jackson.com's `feature-50-50__wrapper`
+   (background spans the viewport) and the inner `.teaser` plays `feature-50-50__block`
+   (content constrained to 1440px). */
+main > .section.teaser-container {
+  margin: 0;
+}
+
+.teaser-container .teaser-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
 .teaser.block {
   /* Plum theme (live site) tokens */
   --teaser-plum-bg: var(--brand-plum-color);
@@ -37,6 +49,8 @@
   flex-direction: column;
   align-items: stretch;
   min-height: auto;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 /* Background/feature image */
@@ -163,8 +177,11 @@
    Theme: bg-plum — matches the live jackson.com page
    ========================================================================== */
 
-.teaser.block.bg-plum .teaser {
+.teaser.block.bg-plum {
   background-color: var(--teaser-plum-bg);
+}
+
+.teaser.block.bg-plum .teaser {
   color: var(--teaser-text-light);
 }
 
@@ -208,19 +225,19 @@
   color: var(--teaser-text-dark);
 }
 
-.teaser.block.bg-white .teaser {
+.teaser.block.bg-white {
   background-color: var(--teaser-white-bg);
 }
 
-.teaser.block.bg-tan .teaser {
+.teaser.block.bg-tan {
   background-color: var(--teaser-tan-bg);
 }
 
-.teaser.block.bg-gray .teaser {
+.teaser.block.bg-gray {
   background-color: var(--teaser-gray-bg);
 }
 
-.teaser.block.bg-blush .teaser {
+.teaser.block.bg-blush {
   background-color: var(--teaser-blush-bg);
 }
 
@@ -283,8 +300,11 @@
    Theme: color-grad-red-plum-diag — gradient card (Why Jackson section)
    ========================================================================== */
 
-.teaser.block.color-grad-red-plum-diag .teaser {
+.teaser.block.color-grad-red-plum-diag {
   background: linear-gradient(135deg, #eb0028, #760014, #5c2642);
+}
+
+.teaser.block.color-grad-red-plum-diag .teaser {
   color: var(--teaser-text-light);
 }
 
@@ -341,7 +361,21 @@
    The stacked and no-image variants opt out of the side-by-side split.
    ========================================================================== */
 
-@media (width >= 900px) {
+/* jackson.com steps the feature title down at 624px and stacks the split at 768px */
+@media (width >= 481px) {
+  .teaser.block .teaser-text {
+    margin: 48px;
+  }
+}
+
+@media (width >= 625px) {
+  .teaser.block .teaser-text .title {
+    font-size: 48px;
+    line-height: 58px;
+  }
+}
+
+@media (width >= 769px) {
   /* image-on-left: image first, content second (default source order) */
   .teaser.block.image-on-left .teaser-background { order: 1; }
   .teaser.block.image-on-left .teaser-content { order: 2; }
@@ -364,11 +398,6 @@
   .teaser.block .teaser-text {
     width: 66%;
     margin: 48px 0;
-  }
-
-  .teaser.block .teaser-text .title {
-    font-size: 48px;
-    line-height: 58px;
   }
 
   /* stacked and image-less variants centre their content column instead */

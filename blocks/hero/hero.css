@@ -1,5 +1,11 @@
 /* Hero — Jackson home-page-hero overlay layout (ported from styles/jackson.css) */
 
+/* Full-bleed section: the block paints edge to edge and butts against the
+   next section, as jackson.com's `home-page-hero__wrapper` does. */
+main > .section.hero-container {
+  margin: 0;
+}
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -43,14 +49,11 @@
   pointer-events: auto;
 }
 
+/* Size, weight and colour come from the global h1 scale, matching
+   jackson.com's `home-page-hero__title`, which only constrains its width. */
 .hero.block .hero-text h1 {
   max-width: 67%;
-  color: var(--brand-plum-color);
-  margin: 0 0 16px;
-  font-family: var(--heading-font-family);
-  font-size: 55px;
-  font-weight: 700;
-  line-height: 1.1;
+  margin: 0;
 }
 
 .hero.block .hero-text h1 .accent {
@@ -122,10 +125,6 @@
 }
 
 @media (width >= 900px) {
-  .hero.block .hero-text h1 {
-    font-size: 55px;
-  }
-
   .hero.block.content-center .hero-text,
   .hero.block.content-center .hero-cta,
   .hero.block.content-right .hero-text,
@@ -153,7 +152,6 @@
 
   .hero.block .hero-text h1 {
     max-width: 100%;
-    font-size: 36px;
   }
 
   .hero.block .hero-description,

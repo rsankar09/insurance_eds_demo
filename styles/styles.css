@@ -27,18 +27,28 @@
   --body-font-family: apercu, apercu-fallback, sans-serif;
   --heading-font-family: superior-title, superior-title-fallback, sans-serif;
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* body sizes — jackson.com's body is 16px/24px at every breakpoint */
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
+  /* heading sizes — jackson.com's mobile scale (<= 768px).
+     jackson.css declares these as rem against `html { font-size: 10px }`;
+     they are restated here in px so blocks can consume them as tokens. */
+  --heading-font-size-xxl: 48px;
+  --heading-font-size-xl: 36px;
+  --heading-font-size-l: 28px;
+  --heading-font-size-m: 28px;
   --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xs: 20px;
+
+  /* matching heading line heights */
+  --heading-line-height-xxl: 56px;
+  --heading-line-height-xl: 49px;
+  --heading-line-height-l: 38px;
+  --heading-line-height-m: 38px;
+  --heading-line-height-s: 32px;
+  --heading-line-height-xs: 28px;
 
   /* nav height */
   --nav-height: 64px;
@@ -57,20 +67,24 @@
   src: local('Arial');
 }
 
-@media (width >= 900px) {
+/* jackson.com switches to its desktop type scale above 768px */
+@media (width >= 769px) {
   :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
     /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
+    --heading-font-size-xxl: 72px;
+    --heading-font-size-xl: 48px;
+    --heading-font-size-l: 40px;
+    --heading-font-size-m: 34px;
+    --heading-font-size-s: 28px;
+    --heading-font-size-xs: 22px;
+
+    /* matching heading line heights */
+    --heading-line-height-xxl: 80px;
+    --heading-line-height-xl: 58px;
+    --heading-line-height-l: 54px;
+    --heading-line-height-m: 46px;
+    --heading-line-height-s: 38px;
+    --heading-line-height-xs: 30px;
   }
 }
 
@@ -102,6 +116,8 @@ footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
 
+/* These element selectors intentionally win over jackson.css's zero-specificity
+   `:where(h1)` defaults, so they must carry jackson.com's own values. */
 h1,
 h2,
 h3,
@@ -110,18 +126,41 @@ h5,
 h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
+  color: var(--brand-plum-color);
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height-xxl);
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height-l);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+  line-height: var(--heading-line-height-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+  line-height: var(--heading-line-height-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+  line-height: var(--heading-line-height-xs);
+}
 
 p,
 dl,
