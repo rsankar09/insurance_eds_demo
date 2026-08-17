@@ -39,6 +39,8 @@ function decorateCta(container, sourceRow) {
  */
 export default function decorate(block) {
   const rows = [...block.children];
+  console.log('Inside Teaser');
+  console.log('rows :', rows);
   const img = rows[0]?.querySelector('img');
 
   const titleHtml = cellHtml(rows[1], true);
