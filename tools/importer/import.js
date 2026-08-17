@@ -105,11 +105,12 @@ const createTeaserBlock = (document, block) => {
   const rows = [
     ['Teaser'],
     [teaser.Image || ''],
+    [''],
     [teaser.Title || ''],
     [''],
     [teaser.Description || ''],
     [teaser.CTA || ''],
-    ["image-on-right"]
+    [classesCell]
   ];
 
   return WebImporter.DOMUtils.createTable(rows, document);
