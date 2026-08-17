@@ -65,7 +65,7 @@
         {
           "component": "multiselect",
           "valueType": "string",
-          "name": "styleids",
+          "name": "classes",
           "label": "Style",
           "options": [
             { "name": "Image: on left", "value": "image-on-left" },
