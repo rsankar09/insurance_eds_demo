@@ -105,7 +105,6 @@ const createTeaserBlock = (document, block) => {
   const rows = [
     ['Teaser'],
     [teaser.Image || ''],
-    [''],
     [teaser.Title || ''],
     [''],
     [teaser.Description || ''],
