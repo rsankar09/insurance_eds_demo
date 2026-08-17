@@ -44,9 +44,11 @@ export default function decorate(block) {
   const titleHtml = cellHtml(rows[1], true);
   const subtitleHtml = cellHtml(rows[2], true);
   const descriptionHtml = cellHtml(rows[3]);
+  const styleids = cellHtml(rows[5]);
 
+  console.log('Teaser styleids:', styleids);
   const teaser = document.createElement('div');
-  teaser.className = 'teaser image-on-right bg-plum content-left';
+  teaser.className = 'teaser';
 
   if (img) {
     const background = document.createElement('div');

@@ -99,9 +99,8 @@ const createTeaserBlock = (document, block) => {
 
   // CLASSES (the part you asked for)
   const classes = extractTeaserClasses(block);
-  const classesCell = `[${classes.map(c => `"${c}"`).join(',')}]`;
+  console.log('Teaser classes:', classes);
 
-  console.log('Teaser classesCell:', classesCell);
   const rows = [
     ['Teaser'],
     [teaser.Image || ''],
@@ -109,7 +108,7 @@ const createTeaserBlock = (document, block) => {
     [''],
     [teaser.Description || ''],
     [teaser.CTA || ''],
-    ['image-on-right']
+    [classes.join(',') || ''],
   ];
 
   return WebImporter.DOMUtils.createTable(rows, document);
