@@ -37,6 +37,12 @@ function decorateCta(container, sourceRow) {
  * content alignment and subtitle placement.
  * @param {Element} block The block element
  */
+
+function extractStyleIds(block) {
+  const items = [...block.querySelectorAll('[data-aue-prop^="styleid/"]')];
+  return items.map(li => li.textContent.trim());
+}
+
 export default function decorate(block) {
   const rows = [...block.children];
   console.log('Inside Teaser');
@@ -46,8 +52,10 @@ export default function decorate(block) {
   const titleHtml = cellHtml(rows[1], true);
   const subtitleHtml = cellHtml(rows[2], true);
   const descriptionHtml = cellHtml(rows[3]);
-  const styleids = cellHtml(rows[5]);
+  // const styleids = cellHtml(rows[5]);
 
+  const styleidsArray = extractStyleIds(block);
+ const styleids = styleidsArray.join(' ');
   console.log('Teaser styleids:', styleids);
   const teaser = document.createElement('div');
   teaser.className = 'teaser';
