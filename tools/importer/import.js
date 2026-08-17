@@ -1,7 +1,7 @@
 
 const createTeaserBlock = (main, document) => {
     const teaser = {};
-    const cell = {'teaser': []};
+    // const cell = {'teaser': []};
 
     // IMAGE
     const image = document.querySelector('.feature-50-50__image img');
@@ -43,11 +43,17 @@ const createTeaserBlock = (main, document) => {
     // div.append(teaser.Description);
     // div.append(teaser.CTA);
     // div.append(teaser.Background);
+    // const cells = [
+    //     ['Hero'],
+    //     // [image, title,'','','',["image-on-left","bg-white"]],
+    //     [image, '']
+    // ];
     const cells = [
-        ['Teaser'],
+        ['Teaser'], // block name row
         // [image, title,'','','',["image-on-left","bg-white"]],
-        [image,title,'','',''],
+        [image, '','','','','']
     ];
+
     const table = WebImporter.DOMUtils.createTable(cells, document);
     main.prepend(table);
 

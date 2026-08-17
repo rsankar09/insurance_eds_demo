@@ -9,7 +9,8 @@
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Teaser",
-              "model": "teaser"
+              "model": "teaser",
+              "classes": ["image-on-left", "bg-white", "content-left"]
             }
           }
         }
@@ -61,6 +62,32 @@
           "name": "cta",
           "label": "CTA link (as a link inside text)",
           "value": ""
+        },
+        {
+          "component": "multiselect",
+          "valueType": "string",
+          "name": "classes",
+          "label": "Style",
+          "options": [
+            { "name": "Image: on left", "value": "image-on-left" },
+            { "name": "Image: on right", "value": "image-on-right" },
+            { "name": "Image: on top", "value": "image-on-top" },
+            { "name": "Image: on bottom", "value": "image-on-bottom" },
+
+            { "name": "Background: white", "value": "bg-white" },
+            { "name": "Background: gray", "value": "bg-gray" },
+            { "name": "Background: tan", "value": "bg-tan" },
+            { "name": "Background: blush", "value": "bg-blush" },
+            { "name": "Background: plum", "value": "bg-plum" },
+            { "name": "Background: red-plum gradient", "value": "color-grad-red-plum-diag" },
+
+            { "name": "Align: left", "value": "content-left" },
+            { "name": "Align: center", "value": "content-center" },
+            { "name": "Align: right", "value": "content-right" },
+
+            { "name": "Subtitle: above title", "value": "subtitle-above" },
+            { "name": "Subtitle: below title", "value": "subtitle-below" }
+          ]
         }
       ]
     }
