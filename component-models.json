@@ -601,7 +601,7 @@
       {
         "component": "multiselect",
         "valueType": "string",
-        "name": "styleids",
+        "name": "classes",
         "label": "Style",
         "options": [
           {

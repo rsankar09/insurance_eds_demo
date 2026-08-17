@@ -109,7 +109,7 @@ const createTeaserBlock = (document, block) => {
     [''],
     [teaser.Description || ''],
     [teaser.CTA || ''],
-    ['']
+    ['image-on-right']
   ];
 
   return WebImporter.DOMUtils.createTable(rows, document);
