@@ -140,7 +140,7 @@ export default function decorate(block) {
 
           <div class="footer-brand">
             <a class="footer-logo" href="${ROOT}/financial-professional.html" aria-label="Jackson home">
-              <img src="content/dam/insurance-demo/jacksoncom/logo/fp_masthead_logo.svg" alt="Jackson" width="205" height="37" loading="lazy">
+              <img src="/content/dam/insurance-demo/jacksoncom/logo/fp_masthead_logo.svg" alt="Jackson" width="205" height="37" loading="lazy">
             </a>
             <div class="footer-legal">
               <p class="footer-copyright">&copy;${new Date().getFullYear()} All rights reserved.</p>
