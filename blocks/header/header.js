@@ -183,7 +183,7 @@ export default function decorate(block) {
         </ul>
 
         <a class="masthead-logo" href="/financial-professional.html">
-          <img src="/content/dam/jacksoncom/graphics/fp-site/logos/fp_masthead_logo.svg" alt="Jackson">
+          <img src="/content/dam/insurance-demo/jacksoncom/logo/fp_masthead_logo.svg" alt="Jackson">
         </a>
 
         <div class="masthead-icons">
