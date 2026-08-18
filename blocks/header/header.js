@@ -22,37 +22,37 @@ const PERSON = `
 
 const NAV_ITEMS = [
   ['Choose your firm', [
-    ['Bank', '/financial-professional/bank.html'],
-    ['Credit union', '/financial-professional/credit-union.html'],
-    ['Wirehouse', '/financial-professional/wirehouse.html'],
-    ['Regional broker/dealer', '/financial-professional/regional.html'],
-    ['Independent broker/dealer', '/financial-professional/independent.html'],
-    ['Insurance professional', '/financial-professional/insurance-professional.html'],
-    ['RIA & Wealth Manager', '/financial-professional/ria-and-wealth-manager.html'],
+    ['Bank', '/content/insurance-demo/financial-professional/bank.html'],
+    ['Credit union', '/content/insurance-demo/financial-professional/credit-union.html'],
+    ['Wirehouse', '/content/insurance-demo/financial-professional/wirehouse.html'],
+    ['Regional broker/dealer', '/content/insurance-demo/financial-professional/regional.html'],
+    ['Independent broker/dealer', '/content/insurance-demo/financial-professional/independent.html'],
+    ['Insurance professional', '/content/insurance-demo/financial-professional/insurance-professional.html'],
+    ['RIA & Wealth Manager', '/content/insurance-demo/financial-professional/ria-and-wealth-manager.html'],
   ]],
   ['Our products', [
-    ['Overview', '/financial-professional/annuity-products.html'],
-    ['Product Match Pro', '/financial-professional/annuity-products/product-match-pro.html'],
-    ['Variable annuities', '/financial-professional/annuity-products/variable-annuities.html'],
-    ['Registered index-linked annuities', '/financial-professional/annuity-products/registered-index-linked-annuities.html'],
-    ['Fixed index annuities', '/financial-professional/annuity-products/fixed-index-annuities.html'],
-    ['Fixed annuities', '/financial-professional/annuity-products/fixed-annuities.html'],
-    ['Fee-based annuities', '/financial-professional/annuity-products/fee-based-annuities.html'],
-    ['Client needs', '/financial-professional/annuity-products/client-needs.html'],
+    ['Overview', '/content/insurance-demo/financial-professional/annuity-products.html'],
+    ['Product Match Pro', '/content/insurance-demo/financial-professional/annuity-products/product-match-pro.html'],
+    ['Variable annuities', '/content/insurance-demo/financial-professional/annuity-products/variable-annuities.html'],
+    ['Registered index-linked annuities', '/content/insurance-demo/financial-professional/annuity-products/registered-index-linked-annuities.html'],
+    ['Fixed index annuities', '/content/insurance-demo/financial-professional/annuity-products/fixed-index-annuities.html'],
+    ['Fixed annuities', '/content/insurance-demo/financial-professional/annuity-products/fixed-annuities.html'],
+    ['Fee-based annuities', '/content/insurance-demo/financial-professional/annuity-products/fee-based-annuities.html'],
+    ['Client needs', '/content/insurance-demo/financial-professional/annuity-products/client-needs.html'],
   ]],
   ['Tools and resources', [
-    ['Overview', '/financial-professional/resources.html'],
-    ['Calculators and tools', '/financial-professional/resources/annuity-calculator-and-tools.html'],
-    ['Client resources', '/financial-professional/resources/client-resources.html'],
-    ['Retirement articles and insights', '/financial-professional/resources/retirement-articles.html'],
-    ['Retirement research center', '/financial-professional/resources/retirement-research.html'],
+    ['Overview', '/content/insurance-demo/financial-professional/resources.html'],
+    ['Calculators and tools', '/content/insurance-demo/financial-professional/resources/annuity-calculator-and-tools.html'],
+    ['Client resources', '/content/insurance-demo/financial-professional/resources/client-resources.html'],
+    ['Retirement articles and insights', '/content/insurance-demo/financial-professional/resources/retirement-articles.html'],
+    ['Retirement research center', '/content/insurance-demo/financial-professional/resources/retirement-research.html'],
   ]],
   ['Why Jackson?', [
-    ['Overview', '/financial-professional/why-jackson.html'],
-    ['Wholesaler support', '/financial-professional/why-jackson/wholesaler-support.html'],
-    ['Financial strength', '/financial-professional/why-jackson/financial-strength.html'],
-    ['Value-added services', '/financial-professional/why-jackson/value-added-services.html'],
-    ['Customer care', '/financial-professional/why-jackson/customer-care.html'],
+    ['Overview', '/content/insurance-demo/financial-professional/why-jackson.html'],
+    ['Wholesaler support', '/content/insurance-demo/financial-professional/why-jackson/wholesaler-support.html'],
+    ['Financial strength', '/content/insurance-demo/financial-professional/why-jackson/financial-strength.html'],
+    ['Value-added services', '/content/insurance-demo/financial-professional/why-jackson/value-added-services.html'],
+    ['Customer care', '/content/insurance-demo/financial-professional/why-jackson/customer-care.html'],
   ]],
 ];
 
@@ -88,17 +88,17 @@ export default function decorate(block) {
       <div class="masthead-utility">
         <ul class="site-selector">
           <li><a href="/">Individuals</a></li>
-          <li class="active"><a href="/financial-professional.html" aria-current="page">Financial professionals</a></li>
+          <li class="active"><a href="/content/insurance-demo/financial-professional.html" aria-current="page">Financial professionals</a></li>
         </ul>
       </div>
 
       <div class="masthead-main">
-        <a class="masthead-logo" href="/financial-professional.html" aria-label="Jackson home">
+        <a class="masthead-logo" href="/content/insurance-demo/financial-professional.html" aria-label="Jackson home">
           <img src="/icons/fp_masthead_logo.svg" alt="Jackson" width="205" height="37" loading="eager">
         </a>
 
         <div class="masthead-actions">
-          <a class="secondary-button" href="/financial-professional/get-appointed.html">Get appointed</a>
+          <a class="secondary-button" href="/content/insurance-demo/financial-professional/get-appointed.html">Get appointed</a>
           <a class="primary-button" href="/login/login.xhtml?showFpSiteNavigation=true">
             ${PERSON}<span>Sign in</span>
           </a>
