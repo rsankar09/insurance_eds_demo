@@ -174,139 +174,104 @@
 const DESKTOP = window.matchMedia('(min-width: 900px)');
 
 export default function decorate(block) {
-  // Inject full header HTML
   block.innerHTML = `
-    <div class="header-top">
-      <ul class="site-selector">
-        <li><a href="/">Individuals</a></li>
-        <li class="active"><a href="/financial-professional.html">Financial professionals</a></li>
-      </ul>
+    <div class="masthead">
+      <div class="masthead-top">
+        <ul class="site-selector">
+          <li><a href="/">Individuals</a></li>
+          <li class="active"><a href="/financial-professional.html">Financial professionals</a></li>
+        </ul>
 
-      <a class="header-logo" href="/financial-professional.html">
-        <img src="/content/dam/jacksoncom/graphics/fp-site/logos/fp_masthead_logo.svg" alt="Jackson">
-      </a>
+        <a class="masthead-logo" href="/financial-professional.html">
+          <img src="/content/dam/jacksoncom/graphics/fp-site/logos/fp_masthead_logo.svg" alt="Jackson">
+        </a>
 
-      <button class="hamburger" type="button" aria-label="Open navigation">
-        <span class="hamburger-icon"></span>
-      </button>
-    </div>
+        <div class="masthead-icons">
+          <button class="search-icon" aria-label="Search"></button>
+          <button class="hamburger" aria-label="Menu"></button>
+        </div>
 
-    <nav class="header-nav" aria-expanded="false">
-      <ul class="nav-sections">
-        ${buildDrop(
-          'Choose your firm',
-          [
-            ['Bank', '/content/jackson-aem/us/financial-professional/bank.html'],
-            ['Credit union', '/content/jackson-aem/us/financial-professional/credit-union.html'],
-            ['Wirehouse', '/content/jackson-aem/us/financial-professional/wirehouse.html'],
-            ['Regional broker/dealer', '/content/jackson-aem/us/financial-professional/regional.html'],
-            ['Independent broker/dealer', '/content/jackson-aem/us/financial-professional/independent.html'],
-            ['Insurance professional', '/content/jackson-aem/us/financial-professional/insurance-professional.html'],
-            ['RIA & Wealth Manager', '/content/jackson-aem/us/financial-professional/ria-and-wealth-manager.html'],
-          ]
-        )}
-
-        ${buildDrop(
-          'Our products',
-          [
-            ['Overview', '/content/jackson-aem/us/financial-professional/annuity-products.html'],
-            ['Product Match Pro', '/content/jackson-aem/us/financial-professional/annuity-products/product-match-pro.html'],
-            ['Variable annuities', '/financial-professional/annuity-products/variable-annuities.html'],
-            ['Registered index-linked annuities', '/financial-professional/annuity-products/registered-index-linked-annuities.html'],
-            ['Fixed index annuities', '/financial-professional/annuity-products/fixed-index-annuities.html'],
-            ['Fixed annuities', '/financial-professional/annuity-products/fixed-annuities.html'],
-            ['Fee-based annuities', '/content/jackson-aem/us/financial-professional/annuity-products/fee-based-annuities.html'],
-            ['Client needs', '/content/jackson-aem/us/financial-professional/annuity-products/client-needs.html'],
-          ]
-        )}
-
-        ${buildDrop(
-          'Tools and resources',
-          [
-            ['Overview', '/content/jackson-aem/us/financial-professional/resources.html'],
-            ['Calculators and tools', '/content/jackson-aem/us/financial-professional/resources/annuity-calculator-and-tools.html'],
-            ['Client resources', '/content/jackson-aem/us/financial-professional/resources/client-resources.html'],
-            ['Retirement articles and insights', '/content/jackson-aem/us/financial-professional/resources/retirement-articles.html'],
-            ['Retirement research center', '/content/jackson-aem/us/financial-professional/resources/retirement-research.html'],
-          ]
-        )}
-
-        ${buildDrop(
-          'Why Jackson?',
-          [
-            ['Overview', '/content/jackson-aem/us/financial-professional/why-jackson.html'],
-            ['Wholesaler support', '/content/jackson-aem/us/financial-professional/why-jackson/wholesaler-support.html'],
-            ['Financial strength', '/content/jackson-aem/us/financial-professional/why-jackson/financial-strength.html'],
-            ['Value-added services', '/content/jackson-aem/us/financial-professional/why-jackson/value-added-services.html'],
-            ['Customer care', '/content/jackson-aem/us/financial-professional/why-jackson/customer-care.html'],
-          ]
-        )}
-      </ul>
-
-      <div class="header-actions">
-        <a class="secondary-button" href="/financial-professional/get-appointed.html">Get appointed</a>
-        <a class="secondary-button hidden" href="/registration/ria.xhtml">RIA registration</a>
-        <a class="primary-button" href="/login/login.xhtml?showFpSiteNavigation=true">Sign in</a>
+        <div class="masthead-actions">
+          <a class="secondary-button" href="/financial-professional/get-appointed.html">Get appointed</a>
+          <a class="primary-button" href="/login/login.xhtml?showFpSiteNavigation=true">Sign in</a>
+        </div>
       </div>
-    </nav>
+
+      <nav class="masthead-nav" aria-expanded="false">
+        ${buildDrop('Choose your firm', [
+          ['Bank', '/financial-professional/bank.html'],
+          ['Credit union', '/financial-professional/credit-union.html'],
+          ['Wirehouse', '/financial-professional/wirehouse.html'],
+          ['Regional broker/dealer', '/financial-professional/regional.html'],
+          ['Independent broker/dealer', '/financial-professional/independent.html'],
+          ['Insurance professional', '/financial-professional/insurance-professional.html'],
+          ['RIA & Wealth Manager', '/financial-professional/ria-and-wealth-manager.html'],
+        ])}
+
+        ${buildDrop('Our products', [
+          ['Overview', '/financial-professional/annuity-products.html'],
+          ['Product Match Pro', '/financial-professional/annuity-products/product-match-pro.html'],
+          ['Variable annuities', '/financial-professional/annuity-products/variable-annuities.html'],
+          ['Registered index-linked annuities', '/financial-professional/annuity-products/registered-index-linked-annuities.html'],
+          ['Fixed index annuities', '/financial-professional/annuity-products/fixed-index-annuities.html'],
+          ['Fixed annuities', '/financial-professional/annuity-products/fixed-annuities.html'],
+          ['Fee-based annuities', '/financial-professional/annuity-products/fee-based-annuities.html'],
+          ['Client needs', '/financial-professional/annuity-products/client-needs.html'],
+        ])}
+
+        ${buildDrop('Tools and resources', [
+          ['Overview', '/financial-professional/resources.html'],
+          ['Calculators and tools', '/financial-professional/resources/annuity-calculator-and-tools.html'],
+          ['Client resources', '/financial-professional/resources/client-resources.html'],
+          ['Retirement articles and insights', '/financial-professional/resources/retirement-articles.html'],
+          ['Retirement research center', '/financial-professional/resources/retirement-research.html'],
+        ])}
+
+        ${buildDrop('Why Jackson?', [
+          ['Overview', '/financial-professional/why-jackson.html'],
+          ['Wholesaler support', '/financial-professional/why-jackson/wholesaler-support.html'],
+          ['Financial strength', '/financial-professional/why-jackson/financial-strength.html'],
+          ['Value-added services', '/financial-professional/why-jackson/value-added-services.html'],
+          ['Customer care', '/financial-professional/why-jackson/customer-care.html'],
+        ])}
+      </nav>
+    </div>
   `;
 
-  const nav = block.querySelector('.header-nav');
+  const nav = block.querySelector('.masthead-nav');
   const hamburger = block.querySelector('.hamburger');
   const drops = block.querySelectorAll('.nav-item');
 
-  function setNav(expanded) {
-    nav.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    hamburger.setAttribute('aria-label', expanded ? 'Close navigation' : 'Open navigation');
-    document.body.style.overflowY = expanded && !DESKTOP.matches ? 'hidden' : '';
-  }
-
   function toggleNav() {
     const expanded = nav.getAttribute('aria-expanded') === 'true';
-    setNav(!expanded);
-  }
-
-  function closeAllDrops() {
-    drops.forEach((d) => {
-      d.classList.remove('expanded');
-      const trigger = d.querySelector('.nav-trigger');
-      if (trigger) trigger.setAttribute('aria-expanded', 'false');
-    });
-  }
-
-  function toggleDrop(drop) {
-    const isOpen = drop.classList.contains('expanded');
-    if (DESKTOP.matches) closeAllDrops();
-    drop.classList.toggle('expanded', !isOpen);
-
-    const trigger = drop.querySelector('.nav-trigger');
-    if (trigger) trigger.setAttribute('aria-expanded', drop.classList.contains('expanded') ? 'true' : 'false');
+    nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    document.body.style.overflowY = expanded || DESKTOP.matches ? '' : 'hidden';
   }
 
   hamburger.addEventListener('click', toggleNav);
 
   drops.forEach((drop) => {
     const trigger = drop.querySelector('.nav-trigger');
-    if (!trigger) return;
-    trigger.addEventListener('click', () => toggleDrop(drop));
+    trigger.addEventListener('click', () => {
+      const open = drop.classList.contains('expanded');
+      drops.forEach((d) => d.classList.remove('expanded'));
+      drop.classList.toggle('expanded', !open);
+    });
   });
 
   DESKTOP.addEventListener('change', () => {
-    setNav(false);
-    closeAllDrops();
+    nav.setAttribute('aria-expanded', 'false');
+    drops.forEach((d) => d.classList.remove('expanded'));
   });
 }
 
-// Helper: build dropdown HTML
 function buildDrop(label, items) {
   return `
-    <li class="nav-item nav-drop">
-      <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">
-        ${label}
-      </button>
+    <div class="nav-item">
+      <button class="nav-trigger">${label}</button>
       <ul class="nav-dropdown">
         ${items.map(([text, href]) => `<li><a href="${href}">${text}</a></li>`).join('')}
       </ul>
-    </li>
+    </div>
   `;
 }
