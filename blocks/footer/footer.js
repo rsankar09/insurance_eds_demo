@@ -140,7 +140,7 @@ export default function decorate(block) {
 
           <div class="footer-brand">
             <a class="footer-logo" href="${ROOT}/financial-professional.html" aria-label="Jackson home">
-              <img src="/icons/fp_masthead_logo.svg" alt="Jackson" width="205" height="37" loading="lazy">
+              <img src="content/dam/insurance-demo/jacksoncom/logo/fp_masthead_logo.svg" alt="Jackson" width="205" height="37" loading="lazy">
             </a>
             <div class="footer-legal">
               <p class="footer-copyright">&copy;${new Date().getFullYear()} All rights reserved.</p>
@@ -170,6 +170,7 @@ export default function decorate(block) {
           </div>
 
           <a class="footer-brokercheck" href="https://brokercheck.finra.org/" target="_blank" rel="noopener">
+            <img src="/content/dam/insurance-demo/jacksoncom/logo/broker-check.svg" alt="" title="Broker Check">
             <span class="footer-brokercheck-prompt">Check the background of this firm&gt;&gt;&gt;</span>
             <span class="footer-brokercheck-brand">
               Broker<span class="footer-brokercheck-mark">Check</span><sup>&reg;</sup>
