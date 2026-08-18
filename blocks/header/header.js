@@ -4,21 +4,26 @@ export default function decorate(block) {
   block.innerHTML = `
     <div class="masthead">
       <div class="masthead-top">
-        <ul class="site-selector">
-          <li><a href="/">Individuals</a></li>
-          <li class="active"><a href="/financial-professional.html">Financial professionals</a></li>
-        </ul>
+        <div class="masthead-left">
+          <ul class="site-selector">
+            <li><a href="/">Individuals</a></li>
+            <li class="active"><a href="/financial-professional.html">Financial professionals</a></li>
+          </ul>
 
-        <a class="masthead-logo" href="/financial-professional.html">
-          <img src="/content/dam/insurance-demo/jacksoncom/logo/fp_masthead_logo.svg" alt="Jackson">
-        </a>
-
-        <div class="masthead-icons">
-          <button class="search-icon" aria-label="Search"></button>
-          <button class="hamburger" aria-label="Menu"></button>
+          <a class="masthead-logo" href="/financial-professional.html">
+            <img src="/content/dam/insurance-demo/jacksoncom/logo/fp_masthead_logo.svg" alt="Jackson">
+          </a>
         </div>
 
-        <div class="masthead-actions">
+        <div class="masthead-right">
+          <button class="search-icon" aria-label="Search">
+            <span class="search-icon-inner"></span>
+          </button>
+
+          <button class="hamburger" aria-label="Menu">
+            <span class="hamburger-icon"></span>
+          </button>
+
           <a class="secondary-button" href="/financial-professional/get-appointed.html">Get appointed</a>
           <a class="primary-button" href="/login/login.xhtml?showFpSiteNavigation=true">Sign in</a>
         </div>
