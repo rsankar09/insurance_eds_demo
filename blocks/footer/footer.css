@@ -1,20 +1,324 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+/* ===========================
+   FOOTER WRAPPER
+   =========================== */
+.global-footer {
+  --footer-gutter: 24px;
+  --footer-max-width: 1320px;
+
+  box-sizing: border-box;
+  width: 100%;
+  color: #fff;
+  font-family: var(--body-font-family);
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
-}
-
-footer .footer p {
+.global-footer p {
   margin: 0;
 }
 
+.global-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.global-footer a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.global-footer a:hover {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===========================
+   SITEMAP (link columns, logo, legal)
+   =========================== */
+.global-footer .footer-sitemap {
+  background: #000;
+}
+
+.global-footer .footer-sitemap-inner {
+  box-sizing: border-box;
+  max-width: var(--footer-max-width);
+  margin: 0 auto;
+  padding: 40px var(--footer-gutter) 32px;
+}
+
+.global-footer .footer-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.global-footer .footer-column-title {
+  margin: 0 0 20px;
+  padding-left: 16px;
+  border-left: 3px solid var(--brand-red-color);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.global-footer .footer-links li + li {
+  margin-top: 14px;
+}
+
+.global-footer .footer-links a {
+  display: inline-block;
+  padding-left: 16px;
+  font-size: var(--body-font-size-m);
+  line-height: 1.3;
+}
+
+/* ===========================
+   SOCIAL ICONS
+   =========================== */
+.global-footer .footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-left: 16px;
+}
+
+.global-footer .footer-social a {
+  display: block;
+  line-height: 0;
+}
+
+.global-footer .social-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  transition: opacity 0.2s;
+}
+
+.global-footer .footer-social a:hover .social-icon {
+  opacity: 0.7;
+}
+
+/* ===========================
+   LOGO + LEGAL ROW
+   =========================== */
+.global-footer .footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.global-footer .footer-logo {
+  display: block;
+  line-height: 0;
+}
+
+.global-footer .footer-logo img {
+  width: auto;
+  height: 36px;
+}
+
+.global-footer .footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  font-size: var(--body-font-size-s);
+}
+
+.global-footer .footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.global-footer .footer-legal-links li + li {
+  border-left: 1px solid rgb(255 255 255 / 50%);
+  padding-left: 8px;
+}
+
+.global-footer .footer-legal-links a {
+  font-size: var(--body-font-size-s);
+}
+
+/* ===========================
+   DISCLOSURES
+   =========================== */
+.global-footer .footer-disclosures {
+  background: #55565a;
+  color: #fff;
+}
+
+.global-footer .footer-disclosures-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  box-sizing: border-box;
+  max-width: var(--footer-max-width);
+  margin: 0 auto;
+  padding: 32px var(--footer-gutter) 40px;
+  gap: 24px;
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+.global-footer .footer-disclosures a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.global-footer .footer-bank-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 12px;
+  margin-bottom: 20px;
+  padding: 12px 20px;
+  border: 1px solid #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.global-footer .footer-bullet {
+  color: rgb(255 255 255 / 70%);
+}
+
+/* the BrokerCheck badge is rendered in markup so it scales with the type */
+.global-footer .footer-brokercheck {
+  display: inline-flex;
+  flex-direction: column;
+  align-self: start;
+  width: fit-content;
+  background: #fff;
+  color: #000;
+}
+
+.global-footer .footer-brokercheck:hover {
+  text-decoration: none;
+}
+
+.global-footer .footer-brokercheck-prompt {
+  padding: 8px 14px;
+  border: 1px solid #767676;
+  font-size: var(--body-font-size-s);
+  line-height: 1.25;
+}
+
+.global-footer .footer-brokercheck-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 10px 14px 12px;
+  border: 1px solid #767676;
+  border-top: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.global-footer .footer-brokercheck-mark {
+  color: var(--brand-red-color);
+}
+
+.global-footer .footer-brokercheck sup {
+  font-size: 10px;
+}
+
+.global-footer .footer-brokercheck em {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.global-footer .footer-address {
+  font-size: var(--body-font-size-s);
+  font-style: normal;
+  line-height: 1.5;
+}
+
+/* ===========================
+   TABLET
+   =========================== */
+@media (width >= 600px) {
+  .global-footer .footer-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+
+  .global-footer .footer-bank-box {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* ===========================
+   DESKTOP
+   =========================== */
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  .global-footer {
+    --footer-gutter: 32px;
+  }
+
+  .global-footer .footer-sitemap-inner {
+    padding: 56px var(--footer-gutter) 40px;
+  }
+
+  .global-footer .footer-columns {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .global-footer .footer-brand {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 96px;
+  }
+
+  .global-footer .footer-legal {
+    justify-content: flex-end;
+    font-size: var(--body-font-size-xs);
+  }
+
+  .global-footer .footer-legal-links a {
+    font-size: var(--body-font-size-xs);
+  }
+
+  /* the disclosure copy and the BrokerCheck badge share the top row,
+     with the form number and address stacked underneath */
+  .global-footer .footer-disclosures-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    padding: 40px var(--footer-gutter) 56px;
+    gap: 24px 40px;
+    font-size: var(--body-font-size-xs);
+  }
+
+  .global-footer .footer-disclosures-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .global-footer .footer-brokercheck {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .global-footer .footer-form-number,
+  .global-footer .footer-address {
+    grid-column: 1;
+    font-size: var(--body-font-size-xs);
+  }
+}
+
+@media (width >= 1200px) {
+  .global-footer {
+    --footer-gutter: 48px;
   }
 }
