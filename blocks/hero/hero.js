@@ -26,29 +26,40 @@ function decorateAccent(heading) {
 }
 
 /**
- * Decorate hero block — Jackson home-page-hero overlay layout.
+ * Decorate hero block — covers both of jackson.com's hero layouts from a single
+ * block, chosen by whether the author supplied a background image:
+ *  - image authored    → `home-page-hero`, content overlaid on the image
+ *  - image left empty  → `no-image-hero`, content on a flat background band,
+ *                        marked with `.no-image` so the CSS can switch layout
  * Authored rows: image, then rich text (heading, description, optional CTA links).
  * @param {Element} block The block element
  */
 export default function decorate(block) {
   const rows = [...block.children];
-  if (rows.length < 2) return;
+  if (!rows.length) return;
 
-  const imageRow = rows[0];
-  const contentRow = rows[1];
+  // an author who skips the image still leaves an empty cell behind, so locate
+  // the rows by what they hold rather than by their position
+  const imageRow = rows.find((row) => row.querySelector('img'));
+  const contentRow = rows.find((row) => row !== imageRow && row.textContent.trim());
+  if (!contentRow) return;
 
-  const img = imageRow.querySelector('img');
-  if (!img) return;
-
-  const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '2000' }]);
-  moveInstrumentation(img, optimizedPic.querySelector('img'));
+  const img = imageRow?.querySelector('img');
 
   const inner = document.createElement('div');
   inner.className = 'hero-inner';
 
-  const imageWrap = document.createElement('div');
-  imageWrap.className = 'hero-image';
-  imageWrap.append(optimizedPic);
+  if (img) {
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '2000' }]);
+    moveInstrumentation(img, optimizedPic.querySelector('img'));
+
+    const imageWrap = document.createElement('div');
+    imageWrap.className = 'hero-image';
+    imageWrap.append(optimizedPic);
+    inner.append(imageWrap);
+  } else {
+    block.classList.add('no-image');
+  }
 
   const contentWrap = document.createElement('div');
   contentWrap.className = 'hero-content';
@@ -81,6 +92,6 @@ export default function decorate(block) {
   contentWrap.append(textWrap);
   if (ctaWrap.childElementCount) contentWrap.append(ctaWrap);
 
-  inner.append(imageWrap, contentWrap);
+  inner.append(contentWrap);
   block.replaceChildren(inner);
 }

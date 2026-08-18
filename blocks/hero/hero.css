@@ -94,6 +94,25 @@ main > .section.hero-container {
    Author-selectable style variants
    ========================================================================== */
 
+/* Background themes — shared with the other Jackson blocks (card-container,
+   teaser, disclaimer). Only meaningful on the no-image variant, where the
+   band's colour shows; an authored image covers it. */
+.hero.block.bg-white {
+  background-color: #fff;
+}
+
+.hero.block.bg-gray {
+  background-color: #ebebeb;
+}
+
+.hero.block.bg-tan {
+  background-color: #f5f0eb;
+}
+
+.hero.block.bg-plum {
+  background-color: var(--brand-plum-color);
+}
+
 /* Height */
 .hero.block.height-short .hero-image img { height: 420px; }
 .hero.block.height-tall .hero-image img { height: 760px; }
@@ -158,4 +177,85 @@ main > .section.hero-container {
   .hero.block .hero-text > p {
     max-width: 100%;
   }
+}
+
+/* ==========================================================================
+   No-image variant — jackson.com's `no-image-hero`: a flat colour band with
+   centred content. Applied automatically (by hero.js) when the author leaves
+   the background image empty, so the same block serves both hero layouts.
+   ========================================================================== */
+
+.hero.block.no-image .hero-content {
+  position: static;
+  max-width: 1440px;
+  align-items: center;
+  padding: 80px 48px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hero.block.no-image .hero-text,
+.hero.block.no-image .hero-cta {
+  width: 100%;
+  padding-left: 0;
+}
+
+.hero.block.no-image .hero-text h1 {
+  max-width: 100%;
+  margin-bottom: 16px;
+  color: var(--brand-plum-color);
+}
+
+/* the source constrains the description to 45% of the band, loosening it as
+   the viewport narrows */
+.hero.block.no-image .hero-description,
+.hero.block.no-image .hero-text > p {
+  max-width: 45%;
+  padding: 0;
+  margin-inline: auto;
+}
+
+.hero.block.no-image .hero-cta {
+  padding-top: 30px;
+}
+
+/* the band centres its content by default; `content-left` opts back out */
+.hero.block.no-image.content-left .hero-content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero.block.no-image.content-left .hero-description,
+.hero.block.no-image.content-left .hero-text > p {
+  margin-inline: 0;
+}
+
+@media (width <= 1024px) {
+  .hero.block.no-image .hero-content {
+    padding: 72px 24px;
+  }
+
+  .hero.block.no-image .hero-description,
+  .hero.block.no-image .hero-text > p {
+    max-width: 75%;
+  }
+}
+
+@media (width <= 768px) {
+  .hero.block.no-image .hero-description,
+  .hero.block.no-image .hero-text > p {
+    max-width: 100%;
+  }
+}
+
+/* The band's title takes the plum brand colour above, which would otherwise
+   out-order the shared `text-light` rule — so both light-type cases are
+   restated here, at a specificity that beats it. */
+.hero.block.no-image.bg-plum .hero-text h1,
+.hero.block.no-image.bg-plum .hero-text > p,
+.hero.block.no-image.bg-plum .hero-description,
+.hero.block.no-image.text-light .hero-text h1,
+.hero.block.no-image.text-light .hero-text > p,
+.hero.block.no-image.text-light .hero-description {
+  color: #fff;
 }

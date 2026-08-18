@@ -483,6 +483,7 @@
         "valueType": "string",
         "name": "image",
         "label": "Background Image",
+        "description": "Optional. With an image the content is overlaid on it; leave it empty for a flat colour band, set by the Background style below.",
         "multi": false
       },
       {
@@ -516,6 +517,22 @@
           {
             "name": "Content: right",
             "value": "content-right"
+          },
+          {
+            "name": "Background: white",
+            "value": "bg-white"
+          },
+          {
+            "name": "Background: gray",
+            "value": "bg-gray"
+          },
+          {
+            "name": "Background: tan",
+            "value": "bg-tan"
+          },
+          {
+            "name": "Background: plum",
+            "value": "bg-plum"
           },
           {
             "name": "Text: dark",
