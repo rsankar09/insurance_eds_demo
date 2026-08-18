@@ -117,45 +117,92 @@ const createTeaserBlock = (document, block) => {
 /* ---------------------------
    CARD LIST (card-container)
    --------------------------- */
-// const createCardListBlock = (document, block) => {
-//   const title = block.querySelector('.card-container__title');
-//   const desc = block.querySelector('.card-container__description');
+const createCardListBlock = (document, block) => {
+  const title = block.querySelector('.card-container__title');
+  const desc = block.querySelector('.card-container__description');
 
-//   const cards = [...block.querySelectorAll('.product-card__block')].map((card) => {
-//     const img = card.querySelector('.product-card__image img');
-//     const line = card.querySelector('.product-card__product-line');
-//     const name = card.querySelector('.product-card__product-name');
-//     const text = card.querySelector('.product-card__product-description');
-//     const link = card.querySelector('.product-card__links a');
+  const cards = [...block.querySelectorAll('.product-card__block')].map((card) => {
+    const img = card.querySelector('.product-card__image img');
+    const line = card.querySelector('.product-card__product-line');
+    const name = card.querySelector('.product-card__product-name');
+    const text = card.querySelector('.product-card__product-description');
+    const link = card.querySelector('.product-card__links a');
 
-//     const imgEl = img ? (() => {
-//       const el = document.createElement('img');
-//       el.src = img.src;
-//       return el;
-//     })() : '';
+    const imgEl = img ? (() => {
+      const el = document.createElement('img');
+      el.src = img.src;
+      return el;
+    })() : '';
 
-//     const ctaHtml = link
-//       ? `<p><a href="${link.href}">${link.textContent.trim()}</a></p>`
-//       : '';
+    const ctaHtml = link
+      ? `<p><a href="${link.href}">${link.textContent.trim()}</a></p>`
+      : '';
 
-//     return [
-//       imgEl,
-//       line ? line.textContent.trim() : '',
-//       name ? name.innerHTML.trim() : '',
-//       text ? text.innerHTML.trim() : '',
-//       ctaHtml,
-//     ];
-//   });
+    return [
+      imgEl,
+      line ? line.textContent.trim() : '',
+      name ? name.innerHTML.trim() : '',
+      text ? text.innerHTML.trim() : '',
+      ctaHtml,
+    ];
+  });
 
-//   const rows = [
-//     ['card-list'],
-//     [title ? title.textContent.trim() : ''],
-//     [desc ? desc.innerHTML.trim() : ''],
-//     ...cards,
-//   ];
+  const rows = [
+    ['card-list'],
+    [title ? title.textContent.trim() : ''],
+    [desc ? desc.innerHTML.trim() : ''],
+    ...cards,
+  ];
 
-//   return WebImporter.DOMUtils.createTable(rows, document);
-// };
+  return WebImporter.DOMUtils.createTable(rows, document);
+};
+
+
+const createCardsBlock = (document, block) => {
+  // Find all product-card blocks
+  const cardItems = [...block.querySelectorAll('.product-card__block')];
+
+  const cardRows = cardItems.map((card) => {
+    // IMAGE
+    const img = card.querySelector('.product-card__image img');
+    const imgEl = img ? (() => {
+      const el = document.createElement('img');
+      el.src = img.src;
+      el.alt = img.alt || '';
+      return el;
+    })() : '';
+
+    // TEXT (richtext: line + name + description + CTA)
+    const line = card.querySelector('.product-card__product-line');
+    const name = card.querySelector('.product-card__product-name');
+    const desc = card.querySelector('.product-card__product-description');
+    const link = card.querySelector('.product-card__links a');
+
+    let textHtml = '';
+
+    if (line) textHtml += `<p>${line.textContent.trim()}</p>`;
+    if (name) textHtml += `<p>${name.innerHTML.trim()}</p>`;
+    if (desc) textHtml += desc.innerHTML.trim();
+    if (link) textHtml += `<p><a href="${link.href}">${link.textContent.trim()}</a></p>`;
+
+    return [
+      imgEl || '',
+      textHtml || ''
+    ];
+  });
+
+  // Build final table
+  const rows = [
+    ['Cards'],   // block name
+    // [''],        // empty row (matches model)
+    // [''],        // empty row (matches model)
+    ...cardRows  // all card rows
+  ];
+
+  return WebImporter.DOMUtils.createTable(rows, document);
+};
+
+
 
 /* ---------------------------
    TEXT BLOCK (text-block)
@@ -214,8 +261,8 @@ export default {
         // table = createSectionHeader(document, el);
       } else if (el.classList.contains('feature-50-50')) {
         table = createTeaserBlock(document, el);
-    //   } else if (el.classList.contains('card-container')) {
-    //     table = createCardListBlock(document, el);
+      } else if (el.classList.contains('card-container')) {
+        table = createCardsBlock(document, el);
       } else if (el.classList.contains('text-block')) {
         table = createTextBlock(document, el);
       } else if (el.classList.contains('icon-feature')) {
