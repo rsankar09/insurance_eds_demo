@@ -170,12 +170,7 @@ export default function decorate(block) {
           </div>
 
           <a class="footer-brokercheck" href="https://brokercheck.finra.org/" target="_blank" rel="noopener">
-            <img src="/content/dam/insurance-demo/jacksoncom/logo/broker-check.svg" alt="" title="Broker Check">
-            <span class="footer-brokercheck-prompt">Check the background of this firm&gt;&gt;&gt;</span>
-            <span class="footer-brokercheck-brand">
-              Broker<span class="footer-brokercheck-mark">Check</span><sup>&reg;</sup>
-              <em>by FINRA</em>
-            </span>
+            <img src="/content/dam/insurance-demo/jacksoncom/logo/broker-check.svg" alt="Check the background of this firm on BrokerCheck by FINRA" width="171" height="88" loading="lazy">
           </a>
 
           <p class="footer-form-number">CMC109957 04/26</p>

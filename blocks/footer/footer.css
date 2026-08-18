@@ -185,54 +185,23 @@
   color: rgb(255 255 255 / 70%);
 }
 
-/* the BrokerCheck badge is rendered in markup so it scales with the type */
+/* the badge artwork is white, so it sits directly on the disclosures band */
 .global-footer .footer-brokercheck {
-  display: inline-flex;
-  flex-direction: column;
+  display: block;
   align-self: start;
   width: fit-content;
-  background: #fff;
-  color: #000;
+  line-height: 0;
 }
 
 .global-footer .footer-brokercheck:hover {
   text-decoration: none;
+  opacity: 0.8;
 }
 
-.global-footer .footer-brokercheck-prompt {
-  padding: 8px 14px;
-  border: 1px solid #767676;
-  font-size: var(--body-font-size-s);
-  line-height: 1.25;
-}
-
-.global-footer .footer-brokercheck-brand {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  padding: 10px 14px 12px;
-  border: 1px solid #767676;
-  border-top: 0;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.global-footer .footer-brokercheck-mark {
-  color: var(--brand-red-color);
-}
-
-.global-footer .footer-brokercheck sup {
-  font-size: 10px;
-}
-
-.global-footer .footer-brokercheck em {
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.global-footer .footer-brokercheck img {
+  display: block;
+  width: 171px;
+  height: auto;
 }
 
 .global-footer .footer-address {
