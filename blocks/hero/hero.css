@@ -51,22 +51,39 @@ main > .section.hero-container {
 
 /* Size, weight and colour come from the global h1 scale, matching
    jackson.com's `home-page-hero__title`, which only constrains its width. */
-.hero.block .hero-text h1 {
+.hero.block .hero-title {
   max-width: 67%;
   margin: 0;
 }
 
-.hero.block .hero-text h1 .accent {
+.hero.block .hero-title .accent {
   color: var(--brand-red-color);
 }
 
-.hero.block .hero-description,
-.hero.block .hero-text > p {
+/* Eyebrow line above (or below) the title */
+.hero.block .hero-subtitle {
+  margin: 0 0 12px;
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-red-color);
+}
+
+.hero.block .hero-description {
   max-width: 420px;
   padding: 10px 0 0;
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
+}
+
+.hero.block .hero-description p {
+  margin: 0;
+}
+
+.hero.block .hero-description p + p {
+  margin-top: 12px;
 }
 
 .hero.block .hero-cta {
@@ -80,6 +97,12 @@ main > .section.hero-container {
   border: 1px solid #000;
   background-color: #fff;
   color: #000;
+}
+
+/* a margin rather than a flex gap, so the buttons keep following the
+   text alignment the content-* variants set */
+.hero.block .hero-cta .button + .button {
+  margin-left: 12px;
 }
 
 .hero.block .hero-cta .button:hover,
@@ -123,7 +146,7 @@ main > .section.hero-container {
   text-align: center;
 }
 
-.hero.block.content-center .hero-text h1 {
+.hero.block.content-center .hero-title {
   max-width: 100%;
 }
 
@@ -132,14 +155,20 @@ main > .section.hero-container {
   text-align: right;
 }
 
+/* Subtitle placement — hero.js moves the element itself, this only re-hangs
+   the gap so it sits between the subtitle and the title either way */
+.hero.block.subtitle-below .hero-subtitle {
+  margin: 12px 0;
+}
+
 /* Text colour */
-.hero.block.text-light .hero-text h1,
-.hero.block.text-light .hero-text > p,
+.hero.block.text-light .hero-title,
+.hero.block.text-light .hero-subtitle,
 .hero.block.text-light .hero-description {
   color: #fff;
 }
 
-.hero.block.text-light .hero-text h1 .accent {
+.hero.block.text-light .hero-title .accent {
   color: #fff;
 }
 
@@ -169,12 +198,11 @@ main > .section.hero-container {
     padding-left: 0;
   }
 
-  .hero.block .hero-text h1 {
+  .hero.block .hero-title {
     max-width: 100%;
   }
 
-  .hero.block .hero-description,
-  .hero.block .hero-text > p {
+  .hero.block .hero-description {
     max-width: 100%;
   }
 }
@@ -200,7 +228,7 @@ main > .section.hero-container {
   padding-left: 0;
 }
 
-.hero.block.no-image .hero-text h1 {
+.hero.block.no-image .hero-title {
   max-width: 100%;
   margin-bottom: 16px;
   color: var(--brand-plum-color);
@@ -208,8 +236,7 @@ main > .section.hero-container {
 
 /* the source constrains the description to 45% of the band, loosening it as
    the viewport narrows */
-.hero.block.no-image .hero-description,
-.hero.block.no-image .hero-text > p {
+.hero.block.no-image .hero-description {
   max-width: 45%;
   padding: 0;
   margin-inline: auto;
@@ -225,8 +252,7 @@ main > .section.hero-container {
   text-align: left;
 }
 
-.hero.block.no-image.content-left .hero-description,
-.hero.block.no-image.content-left .hero-text > p {
+.hero.block.no-image.content-left .hero-description {
   margin-inline: 0;
 }
 
@@ -235,15 +261,13 @@ main > .section.hero-container {
     padding: 72px 24px;
   }
 
-  .hero.block.no-image .hero-description,
-  .hero.block.no-image .hero-text > p {
+  .hero.block.no-image .hero-description {
     max-width: 75%;
   }
 }
 
 @media (width <= 768px) {
-  .hero.block.no-image .hero-description,
-  .hero.block.no-image .hero-text > p {
+  .hero.block.no-image .hero-description {
     max-width: 100%;
   }
 }
@@ -251,11 +275,11 @@ main > .section.hero-container {
 /* The band's title takes the plum brand colour above, which would otherwise
    out-order the shared `text-light` rule — so both light-type cases are
    restated here, at a specificity that beats it. */
-.hero.block.no-image.bg-plum .hero-text h1,
-.hero.block.no-image.bg-plum .hero-text > p,
+.hero.block.no-image.bg-plum .hero-title,
+.hero.block.no-image.bg-plum .hero-subtitle,
 .hero.block.no-image.bg-plum .hero-description,
-.hero.block.no-image.text-light .hero-text h1,
-.hero.block.no-image.text-light .hero-text > p,
+.hero.block.no-image.text-light .hero-title,
+.hero.block.no-image.text-light .hero-subtitle,
 .hero.block.no-image.text-light .hero-description {
   color: #fff;
 }

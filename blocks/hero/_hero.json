@@ -38,9 +38,33 @@
         },
         {
           "component": "richtext",
+          "name": "title",
+          "value": "",
+          "label": "Title",
+          "description": "Rendered as the page's H1. Use a line break and a span to colour the trailing run, or leave it plain and the block accents the last line.",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "subtitle",
+          "value": "",
+          "label": "Subtitle",
+          "description": "Optional short line above the title; move it below with the Subtitle style.",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Content (heading, description, CTA links)",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "cta",
+          "value": "",
+          "label": "CTA links",
+          "description": "Each link becomes a button, in the order authored.",
           "valueType": "string"
         },
         {
@@ -60,6 +84,9 @@
 
             { "name": "Text: dark", "value": "text-dark" },
             { "name": "Text: light", "value": "text-light" },
+
+            { "name": "Subtitle: above title", "value": "subtitle-above" },
+            { "name": "Subtitle: below title", "value": "subtitle-below" },
 
             { "name": "Height: standard", "value": "height-standard" },
             { "name": "Height: short", "value": "height-short" },
