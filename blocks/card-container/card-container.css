@@ -103,16 +103,69 @@ main > .section.card-container-container {
   border-image: linear-gradient(180deg, #eb0028, #760014, #5c2642) 1;
 }
 
-.card-container.block .product-card-image img {
-  max-width: 100%;
+.card-container.block .product-card-media img {
+  width: 100%;
   height: 94px;
-  object-fit: none;
-  object-position: 0;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-.card-container.block .product-card-links {
+/* Icon-led cards: the artwork sits inside the card body rather than bleeding
+   to the edges, so it is sized down and inset. */
+.card-container.block .product-card-media-icon {
+  padding: 32px 32px 0;
+}
+
+.card-container.block .product-card-media-icon img,
+.card-container.block .product-card-media-icon svg {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.card-container.block .product-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 34px 32px 40px;
+}
+
+.card-container.block .product-card-subtitle {
+  margin: 0 0 8px;
+  color: var(--brand-red-color);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.card-container.block .product-card-title {
+  margin: 0 0 16px;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-s);
+  line-height: var(--heading-line-height-s);
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.card-container.block .product-card-description {
+  margin-bottom: 34px;
+  font-size: var(--body-font-size-m);
+  line-height: 26px;
+}
+
+.card-container.block .product-card-description > :first-child {
+  margin-top: 0;
+}
+
+.card-container.block .product-card-description > :last-child {
+  margin-bottom: 0;
+}
+
+/* Links are pinned to the foot of the card so a row of cards with uneven
+   copy lengths still lines its calls to action up. */
+.card-container.block .product-card-links {
+  margin-top: auto;
 }
 
 .card-container.block .product-card-link {
@@ -166,6 +219,10 @@ main > .section.card-container-container {
   .card-container.block .product-card,
   .card-container.block.four-column .product-card {
     width: 342px;
+  }
+
+  .card-container.block .product-card-description {
+    margin-bottom: 24px;
   }
 
   .card-container.block .product-card-link {
