@@ -162,6 +162,9 @@ function buildCard(row) {
   fields.links?.querySelectorAll('a').forEach((link) => {
     const linkWrap = document.createElement('p');
     linkWrap.className = 'product-card-link';
+    // Card calls to action are plain forward links, not pill buttons, so the
+    // classes `decorateButtons` added upstream are dropped.
+    link.classList.remove('button', 'primary', 'secondary', 'accent');
     link.classList.add('forward-link-dark');
     linkWrap.append(link);
     linksWrap.append(linkWrap);
