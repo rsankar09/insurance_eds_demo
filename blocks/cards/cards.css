@@ -1,27 +1,475 @@
-.cards > ul {
-  list-style: none;
+/* Cards — Jackson card grid, ported from jackson.css.
+   Three card styles share one container: `product-cards` (image over a list of
+   forward links), `icon-cards` (gradient tile linking out as a whole) and
+   `icon-features` (icon, heading, copy and button, split by gradient rules). */
+
+/* Full-bleed section: the background spans the viewport while the inner content
+   is constrained to 1440px, matching jackson.com's `card-container__wrapper`. */
+main > .section.cards-container {
   margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
+.cards-container .cards-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.cards.block {
+  width: 100%;
   background-color: var(--background-color);
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+/* Author-selectable background themes */
+.cards.block.bg-white {
+  background-color: #fff;
 }
 
-.cards .cards-card-image {
+.cards.block.bg-gray {
+  background-color: #ebebeb;
+}
+
+.cards.block.bg-tan {
+  background-color: #f5f0eb;
+}
+
+.cards.block.bg-plum {
+  background-color: var(--brand-plum-color);
+}
+
+.cards.block.color-grad-red-plum-diag {
+  background: linear-gradient(135deg, #eb0028, #760014, #5c2642);
+}
+
+.cards.block .cards-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 104px 48px;
+}
+
+/* Icon features bleed to the section edges; only the heading keeps the gutter,
+   so the gradient dividers between cards can reach the full column width. */
+.cards.block.icon-features .cards-inner {
+  padding: 104px 0;
+}
+
+/* Heading — centred by default, matching jackson.com's center-align */
+.cards.block .cards-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cards.block.icon-features .cards-header {
+  padding: 0 48px;
+}
+
+.cards.block.title-left .cards-header {
+  text-align: left;
+}
+
+.cards.block.title-right .cards-header {
+  text-align: right;
+}
+
+.cards.block .cards-title {
+  margin: 0;
+  color: var(--brand-plum-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.cards.block .cards-description {
+  margin-top: 16px;
+  font-size: var(--body-font-size-m);
+}
+
+/* Dark section themes invert the heading and copy */
+.cards.block.bg-plum .cards-title,
+.cards.block.bg-plum .cards-description,
+.cards.block.color-grad-red-plum-diag .cards-title,
+.cards.block.color-grad-red-plum-diag .cards-description {
+  color: #fff;
+}
+
+.cards.block .cards-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.cards.block .cards-card {
+  box-sizing: border-box;
+  width: 318px;
+  display: flex;
+}
+
+.cards.block .cards-card-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Icons are drawn as a mask so they inherit the card's text colour. Named icons
+   resolve to a file in /icons; authors may also reference their own asset. */
+.cards.block .cards-card-icon {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  background-color: currentcolor;
+  mask: var(--cards-icon) center / contain no-repeat;
+}
+
+.cards.block .cards-card-icon-asset {
+  background-color: transparent;
+  mask: none;
   line-height: 0;
 }
 
-.cards > ul > li img {
+.cards.block .cards-card-icon-asset img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Headings follow the card's own colour rather than the global heading plum */
+.cards.block .cards-card-title {
+  margin: 0;
+  color: inherit;
+  font-family: var(--body-font-family);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.cards.block .cards-card-description p {
+  margin: 0 0 8px;
+}
+
+.cards.block .cards-card-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Product cards ---------------------------------------------------------- */
+
+.cards.block.product-cards .cards-card-inner {
+  background: #fff;
+  border-left: 12px solid transparent;
+  border-image: linear-gradient(180deg, #eb0028, #760014, #5c2642) 1;
+}
+
+.cards.block.product-cards .cards-card-image img {
+  display: block;
+  max-width: 100%;
+  height: 94px;
+  object-fit: none;
+  object-position: 0;
+}
+
+.cards.block.product-cards .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 34px 32px 40px;
+}
+
+.cards.block.product-cards .cards-card-title {
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.cards.block.product-cards .cards-card-text {
+  margin-bottom: 26px;
+}
+
+.cards.block.product-cards .cards-card-links {
+  margin-top: auto;
+}
+
+.cards.block .cards-card-link {
+  margin: 0 0 34px;
+}
+
+.cards.block .cards-card-link:last-child {
+  margin-bottom: 0;
+}
+
+.cards.block a.cards-forward-link {
+  display: inline-flex;
+  align-items: flex-end;
+  border-bottom: 2px solid transparent;
+  color: var(--text-color);
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.cards.block a.cards-forward-link:hover {
+  border-bottom-color: var(--brand-red-color);
+  text-decoration: none;
+}
+
+/* jackson.com renders this as Line Awesome's `arrow-alt-circle-right` (\f138).
+   That icon font isn't part of this project, so the glyph is drawn as an inline
+   SVG mask instead, which keeps it tintable from the brand token. */
+.cards.block a.cards-forward-link::after {
+  content: '';
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-left: 9px;
+  background-color: var(--brand-red-color);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10.25'/%3E%3Cpath d='M10.5 8.25 14.25 12l-3.75 3.75'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Icon cards ------------------------------------------------------------- */
+
+.cards.block.icon-cards .cards-card-anchor {
+  display: flex;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/* Hovering dims the whole tile, as on jackson.com */
+.cards.block.icon-cards .cards-card-anchor::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgb(0 0 0 / 20%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.cards.block.icon-cards .cards-card-anchor:hover::before,
+.cards.block.icon-cards .cards-card-anchor:focus-visible::before {
+  opacity: 1;
+}
+
+.cards.block.icon-cards .cards-card-inner {
+  padding: 40px;
+  background: linear-gradient(135deg, #eb0028, #760014, #5c2642);
+  color: #fff;
+}
+
+.cards.block.icon-cards .cards-card-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  z-index: 2;
+  padding-top: 96px;
+}
+
+.cards.block.icon-cards .cards-card-icon {
+  z-index: 2;
+}
+
+.cards.block.icon-cards .cards-card-title {
+  margin-bottom: 8px;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+/* Icon features ---------------------------------------------------------- */
+
+.cards.block.icon-features .cards-list {
+  gap: 48px 0;
+}
+
+.cards.block.icon-features .cards-card {
+  width: 432px;
+}
+
+.cards.block.icon-features .cards-card-icon {
+  margin-bottom: 40px;
+}
+
+.cards.block.icon-features .cards-card-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cards.block.icon-features .cards-card-title {
+  margin-bottom: 16px;
+  color: var(--brand-plum-color);
+  font-family: var(--heading-font-family);
+  font-size: 34px;
+  line-height: 46px;
+}
+
+.cards.block.icon-features .cards-card-description {
+  flex: 1;
+}
+
+.cards.block .cards-card-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cards.block .cards-card-cta a.button {
+  border-width: 1px;
+  border-radius: 27px;
+  padding: 15px 32px 14px;
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+}
+
+/* Two and three column icon features are separated by a gradient rule */
+.cards.block.icon-features.two-column .cards-card {
+  width: 682px;
+  padding: 0 125px;
+}
+
+.cards.block.icon-features.three-column .cards-card {
+  width: 455px;
+  padding: 0 45px;
+}
+
+/* Dark section themes invert the icon feature text */
+.cards.block.bg-plum.icon-features .cards-card,
+.cards.block.color-grad-red-plum-diag.icon-features .cards-card {
+  color: #fff;
+}
+
+.cards.block.bg-plum.icon-features .cards-card-title,
+.cards.block.color-grad-red-plum-diag.icon-features .cards-card-title {
+  color: #fff;
+}
+
+.cards.block.icon-features.three-column .cards-card:not(:nth-child(3n), :last-child),
+.cards.block.icon-features.two-column .cards-card:nth-child(odd):not(:last-child) {
+  border-right: 2px solid transparent;
+  border-image: linear-gradient(180deg, #eb0028, #760014, #5c2642) 1;
+}
+
+/* Hovering an icon card underlines its heading */
+.cards.block.icon-cards .cards-card-anchor:hover .cards-card-title,
+.cards.block.icon-cards .cards-card-anchor:focus-visible .cards-card-title {
+  text-decoration: underline;
+}
+
+/* Responsive ------------------------------------------------------------- */
+
+@media (width <= 1380px) {
+  .cards.block.icon-features.two-column .cards-list,
+  .cards.block.icon-features.three-column .cards-list {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0;
+  }
+
+  .cards.block.icon-features.two-column .cards-card,
+  .cards.block.icon-features.three-column .cards-card {
+    width: min(100%, 682px);
+    padding: 40px 48px 64px;
+  }
+
+  .cards.block.icon-features.two-column .cards-card:first-child,
+  .cards.block.icon-features.three-column .cards-card:first-child {
+    padding-top: 0;
+  }
+
+  .cards.block.icon-features.two-column .cards-card:last-child,
+  .cards.block.icon-features.three-column .cards-card:last-child {
+    padding-bottom: 0;
+  }
+
+  .cards.block.icon-features.two-column .cards-card:not(:last-child),
+  .cards.block.icon-features.three-column .cards-card:not(:last-child) {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, #eb0028, #760014, #5c2642) 1;
+  }
+
+  /* Stacked cards are divided by a rule below, never beside, them */
+  .cards.block.icon-features.three-column .cards-card:not(:nth-child(3n), :last-child),
+  .cards.block.icon-features.two-column .cards-card:nth-child(odd):not(:last-child) {
+    border-right: 0;
+  }
+}
+
+@media (width <= 900px) {
+  .cards.block .cards-inner {
+    padding: 80px 24px;
+  }
+
+  .cards.block.icon-features .cards-inner {
+    padding: 80px 0;
+  }
+
+  .cards.block.icon-features .cards-header {
+    padding: 0 24px;
+  }
+
+  .cards.block.icon-features.two-column .cards-card,
+  .cards.block.icon-features.three-column .cards-card {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+
+@media (width <= 768px) {
+  .cards.block .cards-header {
+    margin-bottom: 32px;
+  }
+
+  .cards.block .cards-card,
+  .cards.block.two-column .cards-card,
+  .cards.block.three-column .cards-card,
+  .cards.block.four-column .cards-card {
+    width: 342px;
+  }
+
+  .cards.block .cards-card-link {
+    margin-bottom: 24px;
+  }
+
+  /* Icon cards turn horizontal, with the icon beside the text */
+  .cards.block.icon-cards .cards-card-inner {
+    flex-direction: row;
+    padding: 40px 32px;
+  }
+
+  .cards.block.icon-cards .cards-card-text {
+    padding-top: 0;
+    padding-left: 27px;
+  }
+
+  .cards.block.icon-cards .cards-card-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .cards.block.icon-features .cards-card-title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .cards.block .cards-card-cta a.button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (width >= 769px) {
+  .cards.block.four-column .cards-card {
+    width: 318px;
+  }
+
+  .cards.block.product-cards.three-column .cards-card {
+    width: 432px;
+  }
+
+  .cards.block.product-cards.two-column .cards-card {
+    width: 615px;
+  }
 }

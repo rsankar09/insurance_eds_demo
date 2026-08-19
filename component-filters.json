@@ -39,9 +39,15 @@
     ]
   },
   {
-    "id": "cards",
+    "id": "cards-product",
     "components": [
-      "card"
+      "cards-product-card"
+    ]
+  },
+  {
+    "id": "cards-icon",
+    "components": [
+      "cards-icon-card"
     ]
   },
   {

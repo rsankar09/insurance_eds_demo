@@ -350,7 +350,91 @@
     ]
   },
   {
-    "id": "card",
+    "id": "cards",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Section Title",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Section Description",
+        "value": ""
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Style",
+        "description": "Card style, background theme, column count and heading alignment",
+        "options": [
+          {
+            "name": "Cards: product (image and links)",
+            "value": "product-cards"
+          },
+          {
+            "name": "Cards: icon tile (gradient, links out)",
+            "value": "icon-cards"
+          },
+          {
+            "name": "Cards: icon feature (icon, copy and button)",
+            "value": "icon-features"
+          },
+          {
+            "name": "Background: white",
+            "value": "bg-white"
+          },
+          {
+            "name": "Background: gray",
+            "value": "bg-gray"
+          },
+          {
+            "name": "Background: tan",
+            "value": "bg-tan"
+          },
+          {
+            "name": "Background: plum",
+            "value": "bg-plum"
+          },
+          {
+            "name": "Background: red-plum gradient",
+            "value": "color-grad-red-plum-diag"
+          },
+          {
+            "name": "Columns: four",
+            "value": "four-column"
+          },
+          {
+            "name": "Columns: three",
+            "value": "three-column"
+          },
+          {
+            "name": "Columns: two",
+            "value": "two-column"
+          },
+          {
+            "name": "Title: center",
+            "value": "title-center"
+          },
+          {
+            "name": "Title: left",
+            "value": "title-left"
+          },
+          {
+            "name": "Title: right",
+            "value": "title-right"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cards-product-card",
     "fields": [
       {
         "component": "reference",
@@ -360,11 +444,97 @@
         "multi": false
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Card Title",
+        "value": ""
+      },
+      {
         "component": "richtext",
-        "name": "text",
+        "valueType": "string",
+        "name": "description",
+        "label": "Card Description",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "links",
+        "label": "Links",
+        "description": "Each link renders as a forward link in the card",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "cards-icon-card",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon",
         "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Check circle",
+            "value": "check-circle"
+          },
+          {
+            "name": "Toolbox",
+            "value": "toolbox"
+          },
+          {
+            "name": "Calculator",
+            "value": "calculator"
+          },
+          {
+            "name": "Bar chart",
+            "value": "chart-bar"
+          },
+          {
+            "name": "Map marker",
+            "value": "map-marker"
+          },
+          {
+            "name": "Add user",
+            "value": "user-plus"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Card Title",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Card Description",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "links",
+        "label": "Link",
+        "description": "Icon tiles link out with the first link; icon features render links as buttons",
+        "value": ""
       }
     ]
   },
