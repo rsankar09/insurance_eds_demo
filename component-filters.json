@@ -33,9 +33,9 @@
     ]
   },
   {
-    "id": "card-container",
+    "id": "cardcontainer",
     "components": [
-      "product-card"
+      "productcard"
     ]
   },
   {

@@ -253,7 +253,7 @@
     ]
   },
   {
-    "id": "card-container",
+    "id": "cardcontainer",
     "fields": [
       {
         "component": "text",
@@ -324,7 +324,7 @@
     ]
   },
   {
-    "id": "product-card",
+    "id": "productcard",
     "fields": [
       {
         "component": "reference",
