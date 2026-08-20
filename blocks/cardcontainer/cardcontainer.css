@@ -1,63 +1,63 @@
-/* Card Container — Jackson card-container + product-card grid (ported from jackson.css) */
+/* Card Container — Jackson cardcontainer + productcard grid (ported from jackson.css) */
 
 /* Full-bleed section: the background spans the viewport and the inner content
-   is constrained to 1440px, matching jackson.com's `card-container__wrapper`. */
-main > .section.card-container-container {
+   is constrained to 1440px, matching jackson.com's `cardcontainer__wrapper`. */
+main > .section.cardcontainer-container {
   margin: 0;
 }
 
-.card-container-container .card-container-wrapper {
+.cardcontainer-container .cardcontainer-wrapper {
   max-width: unset;
   padding: 0;
 }
 
-.card-container.block {
+.cardcontainer.block {
   width: 100%;
   background-color: var(--background-color);
 }
 
 /* Author-selectable background themes */
-.card-container.block.bg-white {
+.cardcontainer.block.bg-white {
   background-color: #fff;
 }
 
-.card-container.block.bg-gray {
+.cardcontainer.block.bg-gray {
   background-color: #ebebeb;
 }
 
-.card-container.block.bg-tan {
+.cardcontainer.block.bg-tan {
   background-color: #f5f0eb;
 }
 
-.card-container.block.bg-plum {
+.cardcontainer.block.bg-plum {
   background-color: var(--brand-plum-color);
 }
 
-.card-container.block.color-grad-red-plum-diag {
+.cardcontainer.block.color-grad-red-plum-diag {
   background: linear-gradient(135deg, #eb0028, #760014, #5c2642);
 }
 
-.card-container.block .card-container-inner {
+.cardcontainer.block .cardcontainer-inner {
   max-width: 1440px;
   margin: 0 auto;
   padding: 104px 48px;
 }
 
 /* Heading alignment — centred by default, matching jackson.com's center-align */
-.card-container.block .card-container-header {
+.cardcontainer.block .cardcontainer-header {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.card-container.block.title-left .card-container-header {
+.cardcontainer.block.title-left .cardcontainer-header {
   text-align: left;
 }
 
-.card-container.block.title-right .card-container-header {
+.cardcontainer.block.title-right .cardcontainer-header {
   text-align: right;
 }
 
-.card-container.block .card-container-header h2 {
+.cardcontainer.block .cardcontainer-header h2 {
   color: var(--brand-plum-color);
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-xl);
@@ -66,20 +66,20 @@ main > .section.card-container-container {
   text-wrap: balance;
 }
 
-.card-container.block .card-container-description {
+.cardcontainer.block .cardcontainer-description {
   margin-top: 16px;
   font-size: 16px;
 }
 
 /* On dark themes the heading and description invert */
-.card-container.block.bg-plum .card-container-header h2,
-.card-container.block.color-grad-red-plum-diag .card-container-header h2,
-.card-container.block.bg-plum .card-container-description,
-.card-container.block.color-grad-red-plum-diag .card-container-description {
+.cardcontainer.block.bg-plum .cardcontainer-header h2,
+.cardcontainer.block.color-grad-red-plum-diag .cardcontainer-header h2,
+.cardcontainer.block.bg-plum .cardcontainer-description,
+.cardcontainer.block.color-grad-red-plum-diag .cardcontainer-description {
   color: #fff;
 }
 
-.card-container.block .card-container-cards {
+.cardcontainer.block .cardcontainer-cards {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -89,12 +89,12 @@ main > .section.card-container-container {
   gap: 24px;
 }
 
-.card-container.block .product-card {
+.cardcontainer.block .productcard {
   width: 318px;
   display: flex;
 }
 
-.card-container.block .product-card-block {
+.cardcontainer.block .productcard-block {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -103,7 +103,7 @@ main > .section.card-container-container {
   border-image: linear-gradient(180deg, #eb0028, #760014, #5c2642) 1;
 }
 
-.card-container.block .product-card-media img {
+.cardcontainer.block .productcard-media img {
   width: 100%;
   height: 94px;
   object-fit: cover;
@@ -113,32 +113,32 @@ main > .section.card-container-container {
 
 /* Icon-led cards: the artwork sits inside the card body rather than bleeding
    to the edges, so it is sized down and inset. */
-.card-container.block .product-card-media-icon {
+.cardcontainer.block .productcard-media-icon {
   padding: 32px 32px 0;
 }
 
-.card-container.block .product-card-media-icon img,
-.card-container.block .product-card-media-icon svg {
+.cardcontainer.block .productcard-media-icon img,
+.cardcontainer.block .productcard-media-icon svg {
   width: 48px;
   height: 48px;
   object-fit: contain;
 }
 
-.card-container.block .product-card-body {
+.cardcontainer.block .productcard-body {
   display: flex;
   flex-direction: column;
   flex: 1;
   padding: 34px 32px 40px;
 }
 
-.card-container.block .product-card-subtitle {
+.cardcontainer.block .productcard-subtitle {
   margin: 0 0 8px;
   color: var(--brand-red-color);
   font-size: 18px;
   line-height: 24px;
 }
 
-.card-container.block .product-card-title {
+.cardcontainer.block .productcard-title {
   margin: 0 0 16px;
   color: var(--text-color);
   font-family: var(--body-font-family);
@@ -148,35 +148,35 @@ main > .section.card-container-container {
   text-wrap: balance;
 }
 
-.card-container.block .product-card-description {
+.cardcontainer.block .productcard-description {
   margin-bottom: 34px;
   font-size: var(--body-font-size-m);
   line-height: 26px;
 }
 
-.card-container.block .product-card-description > :first-child {
+.cardcontainer.block .productcard-description > :first-child {
   margin-top: 0;
 }
 
-.card-container.block .product-card-description > :last-child {
+.cardcontainer.block .productcard-description > :last-child {
   margin-bottom: 0;
 }
 
 /* Links are pinned to the foot of the card so a row of cards with uneven
    copy lengths still lines its calls to action up. */
-.card-container.block .product-card-links {
+.cardcontainer.block .productcard-links {
   margin-top: auto;
 }
 
-.card-container.block .product-card-link {
+.cardcontainer.block .productcard-link {
   margin: 0 0 34px;
 }
 
-.card-container.block .product-card-link:last-child {
+.cardcontainer.block .productcard-link:last-child {
   margin-bottom: 0;
 }
 
-.card-container.block .product-card-link a.forward-link-dark {
+.cardcontainer.block .productcard-link a.forward-link-dark {
   display: inline-flex;
   align-items: flex-end;
   font-size: 21px;
@@ -187,7 +187,7 @@ main > .section.card-container-container {
   border-bottom: 2px solid transparent;
 }
 
-.card-container.block .product-card-link a.forward-link-dark:hover {
+.cardcontainer.block .productcard-link a.forward-link-dark:hover {
   border-bottom-color: var(--brand-red-color);
   text-decoration: none;
 }
@@ -195,7 +195,7 @@ main > .section.card-container-container {
 /* jackson.com renders this as Line Awesome's `arrow-alt-circle-right` (\f138).
    That icon font isn't part of this project, so the glyph is drawn as an inline
    SVG mask instead, which keeps it tintable from the brand token. */
-.card-container.block .product-card-link a.forward-link-dark::after {
+.cardcontainer.block .productcard-link a.forward-link-dark::after {
   content: '';
   flex: none;
   width: 20px;
@@ -206,40 +206,40 @@ main > .section.card-container-container {
 }
 
 @media (width <= 900px) {
-  .card-container.block .card-container-inner {
+  .cardcontainer.block .cardcontainer-inner {
     padding: 80px 24px;
   }
 }
 
 @media (width <= 768px) {
-  .card-container.block .card-container-header {
+  .cardcontainer.block .cardcontainer-header {
     margin-bottom: 32px;
   }
 
-  .card-container.block .product-card,
-  .card-container.block.four-column .product-card {
+  .cardcontainer.block .productcard,
+  .cardcontainer.block.four-column .productcard {
     width: 342px;
   }
 
-  .card-container.block .product-card-description {
+  .cardcontainer.block .productcard-description {
     margin-bottom: 24px;
   }
 
-  .card-container.block .product-card-link {
+  .cardcontainer.block .productcard-link {
     margin-bottom: 24px;
   }
 }
 
 @media (width >= 769px) {
-  .card-container.block.four-column .product-card {
+  .cardcontainer.block.four-column .productcard {
     width: 318px;
   }
 
-  .card-container.block.three-column .product-card {
+  .cardcontainer.block.three-column .productcard {
     width: 432px;
   }
 
-  .card-container.block.two-column .product-card {
+  .cardcontainer.block.two-column .productcard {
     width: 615px;
   }
 }
