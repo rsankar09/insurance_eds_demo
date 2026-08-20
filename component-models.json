@@ -422,6 +422,10 @@
             "value": "icon-feature"
           },
           {
+            "name": "Card style: feature card",
+            "value": "feature-card"
+          },
+          {
             "name": "Columns: four",
             "value": "four-column"
           },

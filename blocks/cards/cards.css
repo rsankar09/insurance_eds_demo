@@ -176,15 +176,23 @@ main > .section.cards-container {
   margin-bottom: 0;
 }
 
-.cards.block .card-link a.forward-link-dark {
+.cards.block .card-link a.forward-link-dark,
+.cards.block .card-link a.forward-link-light {
   display: inline-flex;
   align-items: flex-end;
   font-size: 21px;
   font-weight: 700;
   line-height: 22px;
   text-decoration: none;
-  color: var(--text-color);
   border-bottom: 2px solid transparent;
+}
+
+.cards.block .card-link a.forward-link-dark {
+  color: var(--text-color);
+}
+
+.cards.block .card-link a.forward-link-light {
+  color: #fff;
 }
 
 .cards.block .card-link a.forward-link-dark:hover {
@@ -192,17 +200,30 @@ main > .section.cards-container {
   text-decoration: none;
 }
 
+.cards.block .card-link a.forward-link-light:hover {
+  border-bottom-color: #fff;
+  text-decoration: none;
+}
+
 /* jackson.com renders this as Line Awesome's `arrow-alt-circle-right` (\f138).
    That icon font isn't part of this project, so the glyph is drawn as an inline
    SVG mask instead, which keeps it tintable from the brand token. */
-.cards.block .card-link a.forward-link-dark::after {
+.cards.block .card-link a.forward-link-dark::after,
+.cards.block .card-link a.forward-link-light::after {
   content: '';
   flex: none;
   width: 20px;
   height: 20px;
   margin-left: 9px;
-  background-color: var(--brand-red-color);
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10.25'/%3E%3Cpath d='M10.5 8.25 14.25 12l-3.75 3.75'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.cards.block .card-link a.forward-link-dark::after {
+  background-color: var(--brand-red-color);
+}
+
+.cards.block .card-link a.forward-link-light::after {
+  background-color: #fff;
 }
 
 /* ==========================================================================
@@ -337,6 +358,56 @@ main > .section.cards-container {
   border-color: #fff;
   color: #fff;
 }
+
+/* ==========================================================================
+   Card style: feature card
+   A photo over a solid tile of light-on-dark copy closed by a forward link,
+   matching jackson.com's `feature-card`.
+   ========================================================================== */
+
+/* stylelint-disable no-descending-specificity -- feature-card and icon-feature are mutually exclusive style modifiers, never applied together */
+
+.cards.block.feature-card {
+  --cards-feature-bg: #474546;
+}
+
+/* The tiles read as a row of promos rather than a filled grid, so they line up
+   from the left instead of centring the way the icon features do. */
+.cards.block.feature-card .cards-cards {
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.cards.block.feature-card .card-block {
+  background: var(--cards-feature-bg);
+  border: none;
+  color: #fff;
+}
+
+/* The photo bleeds to the tile's edges on a 3:2 crop, rather than the product
+   card's letterboxed strip. */
+.cards.block.feature-card .card-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.cards.block.feature-card .card-body {
+  padding: 32px;
+}
+
+.cards.block.feature-card .card-title,
+.cards.block.feature-card .card-description {
+  color: inherit;
+}
+
+/* The eyebrow's brand red does not carry enough contrast on the dark tile */
+.cards.block.feature-card .card-subtitle {
+  color: #fff;
+}
+
+/* stylelint-enable no-descending-specificity */
 
 @media (width <= 900px) {
   .cards.block .cards-inner {

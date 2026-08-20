@@ -5,6 +5,10 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
    first field, so it is pulled out before these are matched up by position. */
 const CARD_FIELDS = ['title', 'subtitle', 'description', 'links'];
 
+/* Card styles the block can render, matching jackson.com's card types.
+   `product-card` is the default and so carries no class of its own. */
+const CARD_STYLES = ['icon-feature', 'feature-card'];
+
 /**
  * Returns the authored markup of a cell.
  * Plain-text fields pass `unwrapParagraph` so the lone wrapping `<p>` is
@@ -85,14 +89,15 @@ function readCard(row) {
  * optimized pictures; icons and inline SVGs are passed through so the block
  * can also be used for icon-led cards.
  * @param {Element} cell The media cell
- * @param {boolean} [iconFeature] Whether the icon feature variant is active,
- * in which case the artwork is always treated as an icon
+ * @param {string} style The card style, which decides whether the artwork is
+ * always treated as an icon
  * @returns {Element|null} The media wrapper, or null when nothing was authored
  */
-function buildMedia(cell, iconFeature = false) {
+function buildMedia(cell, style) {
   const wrap = document.createElement('div');
   wrap.className = 'card-media';
 
+  const iconFeature = style === 'icon-feature';
   const img = cell.querySelector('img');
   const icon = cell.querySelector('.icon, svg');
 
@@ -124,13 +129,14 @@ function buildMedia(cell, iconFeature = false) {
 /**
  * Builds a single card from an item row.
  * In the product card variant the subtitle renders above the title as a
- * category eyebrow, matching the jackson.com product card; in the icon feature
- * variant the row renders as an icon, copy, and a pill call to action.
+ * category eyebrow, matching the jackson.com product card; the icon feature
+ * variant renders an icon, copy, and a pill call to action; the feature card
+ * variant renders a photo over a dark tile of copy.
  * @param {Element} row The item row
- * @param {boolean} [iconFeature] Whether the icon feature variant is active
+ * @param {string} style The card style
  * @returns {Element} The card list item
  */
-function buildCard(row, iconFeature = false) {
+function buildCard(row, style) {
   const li = document.createElement('li');
   li.className = 'card';
   moveInstrumentation(row, li);
@@ -140,7 +146,7 @@ function buildCard(row, iconFeature = false) {
 
   const { media, fields } = readCard(row);
   if (media) {
-    const mediaWrap = buildMedia(media, iconFeature);
+    const mediaWrap = buildMedia(media, style);
     if (mediaWrap) cardBlock.append(mediaWrap);
   }
 
@@ -179,7 +185,7 @@ function buildCard(row, iconFeature = false) {
   fields.links?.querySelectorAll('a').forEach((link) => {
     const linkWrap = document.createElement('p');
     linkWrap.className = 'card-link';
-    if (iconFeature) {
+    if (style === 'icon-feature') {
       // Icon feature calls to action are pill buttons. `decorateButtons` only
       // buttonizes links the author emphasised, so the classes are ensured here
       // and an unemphasised link falls back to the primary style.
@@ -188,10 +194,11 @@ function buildCard(row, iconFeature = false) {
         link.classList.add('primary');
       }
     } else {
-      // Product card calls to action are plain forward links, not pill buttons,
-      // so the classes `decorateButtons` added upstream are dropped.
+      // The other calls to action are plain forward links, not pill buttons, so
+      // the classes `decorateButtons` added upstream are dropped. The light
+      // variant is the one that reads against the feature card's dark tile.
       link.classList.remove('button', 'primary', 'secondary', 'accent');
-      link.classList.add('forward-link-dark');
+      link.classList.add(style === 'feature-card' ? 'forward-link-light' : 'forward-link-dark');
     }
     linkWrap.append(link);
     linksWrap.append(linkWrap);
@@ -207,15 +214,15 @@ function buildCard(row, iconFeature = false) {
 /**
  * Decorate cards block — Jackson card grid with section heading.
  * Block-level rows (title, description) render as the section header; item rows,
- * which expose one cell per card field, render as cards. Cards render as product
- * cards by default, or as icon features when the `icon-feature` style is picked.
+ * which expose one cell per card field, render as cards in the style the author
+ * picked.
  * @param {Element} block The block element
  */
 export default function decorate(block) {
   const rows = [...block.children];
   if (!rows.length) return;
 
-  const iconFeature = block.classList.contains('icon-feature');
+  const style = CARD_STYLES.find((name) => block.classList.contains(name)) || 'product-card';
 
   // Item rows expose a cell per card field; block-level fields expose one.
   const firstCardIndex = rows.findIndex((row) => row.children.length >= 2);
@@ -232,7 +239,7 @@ export default function decorate(block) {
   if (cardRows.length) {
     const grid = document.createElement('ul');
     grid.className = 'cards-cards';
-    cardRows.forEach((row) => grid.append(buildCard(row, iconFeature)));
+    cardRows.forEach((row) => grid.append(buildCard(row, style)));
     wrapper.append(grid);
   }
 

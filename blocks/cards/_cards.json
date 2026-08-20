@@ -65,6 +65,7 @@
 
             { "name": "Card style: product card", "value": "product-card" },
             { "name": "Card style: icon feature", "value": "icon-feature" },
+            { "name": "Card style: feature card", "value": "feature-card" },
 
             { "name": "Columns: four", "value": "four-column" },
             { "name": "Columns: three", "value": "three-column" },
