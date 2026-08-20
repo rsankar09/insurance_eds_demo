@@ -371,7 +371,125 @@
     ]
   },
   {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Section Title",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Section Description",
+        "value": ""
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Background: white",
+            "value": "bg-white"
+          },
+          {
+            "name": "Background: gray",
+            "value": "bg-gray"
+          },
+          {
+            "name": "Background: tan",
+            "value": "bg-tan"
+          },
+          {
+            "name": "Background: plum",
+            "value": "bg-plum"
+          },
+          {
+            "name": "Background: red-plum gradient",
+            "value": "color-grad-red-plum-diag"
+          },
+          {
+            "name": "Columns: four",
+            "value": "four-column"
+          },
+          {
+            "name": "Columns: three",
+            "value": "three-column"
+          },
+          {
+            "name": "Columns: two",
+            "value": "two-column"
+          },
+          {
+            "name": "Title: center",
+            "value": "title-center"
+          },
+          {
+            "name": "Title: left",
+            "value": "title-left"
+          },
+          {
+            "name": "Title: right",
+            "value": "title-right"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle (category eyebrow)",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "links",
+        "label": "Links",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "cardsntt-item",
     "fields": [
       {
         "component": "reference",
@@ -390,7 +508,7 @@
     ]
   },
   {
-    "id": "cardsntt-item",
+    "id": "card",
     "fields": [
       {
         "component": "reference",
