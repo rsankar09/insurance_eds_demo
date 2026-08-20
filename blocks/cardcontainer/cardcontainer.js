@@ -1,7 +1,7 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
-/* Text cells of an item row, in `product-card` model order. The image is the
+/* Text cells of an item row, in `productcard` model order. The image is the
    first field, so it is pulled out before these are matched up by position. */
 const CARD_FIELDS = ['title', 'subtitle', 'description', 'links'];
 
@@ -28,7 +28,7 @@ function cellHtml(cell, unwrapParagraph = false) {
  */
 function buildHeader(headerRows) {
   const header = document.createElement('div');
-  header.className = 'card-container-header';
+  header.className = 'cardcontainer-header';
 
   headerRows.forEach((row, index) => {
     const cell = row.firstElementChild;
@@ -45,7 +45,7 @@ function buildHeader(headerRows) {
     }
 
     const description = document.createElement('div');
-    description.className = 'card-container-description';
+    description.className = 'cardcontainer-description';
     description.innerHTML = html;
     moveInstrumentation(row, description);
     header.append(description);
@@ -87,7 +87,7 @@ function readCard(row) {
  */
 function buildMedia(cell) {
   const wrap = document.createElement('div');
-  wrap.className = 'product-card-media';
+  wrap.className = 'productcard-media';
 
   const img = cell.querySelector('img');
   const icon = cell.querySelector('.icon, svg');
@@ -97,7 +97,7 @@ function buildMedia(cell) {
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     wrap.append(optimizedPic);
   } else if (img || icon) {
-    wrap.classList.add('product-card-media-icon');
+    wrap.classList.add('productcard-media-icon');
     wrap.append(img?.closest('picture') || img || icon);
   } else {
     return null;
@@ -115,11 +115,11 @@ function buildMedia(cell) {
  */
 function buildCard(row) {
   const li = document.createElement('li');
-  li.className = 'product-card';
+  li.className = 'productcard';
   moveInstrumentation(row, li);
 
   const cardBlock = document.createElement('div');
-  cardBlock.className = 'product-card-block';
+  cardBlock.className = 'productcard-block';
 
   const { media, fields } = readCard(row);
   if (media) {
@@ -128,12 +128,12 @@ function buildCard(row) {
   }
 
   const body = document.createElement('div');
-  body.className = 'product-card-body';
+  body.className = 'productcard-body';
 
   const subtitleHtml = cellHtml(fields.subtitle, true);
   if (subtitleHtml) {
     const subtitle = document.createElement('p');
-    subtitle.className = 'product-card-subtitle';
+    subtitle.className = 'productcard-subtitle';
     subtitle.innerHTML = subtitleHtml;
     moveInstrumentation(fields.subtitle, subtitle);
     body.append(subtitle);
@@ -142,7 +142,7 @@ function buildCard(row) {
   const titleHtml = cellHtml(fields.title, true);
   if (titleHtml) {
     const title = document.createElement('h3');
-    title.className = 'product-card-title';
+    title.className = 'productcard-title';
     title.innerHTML = titleHtml;
     moveInstrumentation(fields.title, title);
     body.append(title);
@@ -151,17 +151,17 @@ function buildCard(row) {
   const descriptionHtml = cellHtml(fields.description);
   if (descriptionHtml) {
     const description = document.createElement('div');
-    description.className = 'product-card-description';
+    description.className = 'productcard-description';
     description.innerHTML = descriptionHtml;
     moveInstrumentation(fields.description, description);
     body.append(description);
   }
 
   const linksWrap = document.createElement('div');
-  linksWrap.className = 'product-card-links';
+  linksWrap.className = 'productcard-links';
   fields.links?.querySelectorAll('a').forEach((link) => {
     const linkWrap = document.createElement('p');
-    linkWrap.className = 'product-card-link';
+    linkWrap.className = 'productcard-link';
     // Card calls to action are plain forward links, not pill buttons, so the
     // classes `decorateButtons` added upstream are dropped.
     link.classList.remove('button', 'primary', 'secondary', 'accent');
@@ -178,30 +178,30 @@ function buildCard(row) {
 }
 
 /**
- * Decorate card-container block — Jackson product-card grid with section heading.
+ * Decorate cardcontainer block — Jackson productcard grid with section heading.
  * Block-level rows (title, description) render as the section header; item rows,
- * which expose one cell per product-card field, render as product cards.
+ * which expose one cell per productcard field, render as product cards.
  * @param {Element} block The block element
  */
 export default function decorate(block) {
   const rows = [...block.children];
   if (!rows.length) return;
 
-  // Item rows expose a cell per product-card field; block-level fields expose one.
+  // Item rows expose a cell per productcard field; block-level fields expose one.
   const firstCardIndex = rows.findIndex((row) => row.children.length >= 2);
   const hasCards = firstCardIndex !== -1;
   const headerRows = hasCards ? rows.slice(0, firstCardIndex) : rows;
   const cardRows = hasCards ? rows.slice(firstCardIndex) : [];
 
   const wrapper = document.createElement('div');
-  wrapper.className = 'card-container-inner';
+  wrapper.className = 'cardcontainer-inner';
 
   const header = buildHeader(headerRows);
   if (header) wrapper.append(header);
 
   if (cardRows.length) {
     const grid = document.createElement('ul');
-    grid.className = 'card-container-cards';
+    grid.className = 'cardcontainer-cards';
     cardRows.forEach((row) => grid.append(buildCard(row)));
     wrapper.append(grid);
   }
