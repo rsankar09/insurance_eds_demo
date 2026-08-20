@@ -212,23 +212,26 @@ main > .section.cards-container {
    ========================================================================== */
 
 /* Without a card panel there is nothing to hold a fixed width, so the icon
-   features lay out on a fluid grid whose column count comes from the style. */
+   features lay out on a fluid grid whose column count comes from the style.
+   The columns are capped and the grid is centred, so a short row sits in the
+   middle of the section rather than bunching up against its left edge. */
 .cards.block.icon-feature .cards-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 400px));
+  justify-content: center;
   gap: 48px;
 }
 
 .cards.block.icon-feature.two-column .cards-cards {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 536px));
 }
 
 .cards.block.icon-feature.three-column .cards-cards {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 400px));
 }
 
 .cards.block.icon-feature.four-column .cards-cards {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 318px));
 }
 
 .cards.block.icon-feature .card {
@@ -268,10 +271,21 @@ main > .section.cards-container {
   padding: 0;
 }
 
+/* Icon feature headings use the plum display face, as on jackson.com. They
+   step down once three or four are across, where the display size would eat
+   the column. */
 .cards.block.icon-feature .card-title {
-  font-size: var(--heading-font-size-xs);
-  line-height: 1.3;
-  margin-bottom: 12px;
+  color: var(--brand-plum-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  text-wrap: balance;
+}
+
+.cards.block.icon-feature.three-column .card-title,
+.cards.block.icon-feature.four-column .card-title {
+  font-size: var(--heading-font-size-s);
 }
 
 .cards.block.icon-feature .card-description {
@@ -381,12 +395,38 @@ main > .section.cards-container {
   .cards.block.icon-feature.four-column .card {
     width: auto;
   }
+
+  /* A gradient rule divides the columns, matching jackson.com's icon feature.
+     Only cards that do not open a row are ruled, so the line never shows up
+     at the left edge of the grid. The 48px inset mirrors the column gap, which
+     leaves the rule sitting midway between the two columns of copy. */
+  .cards.block.icon-feature.two-column .card:not(:nth-child(2n + 1)) .card-block,
+  .cards.block.icon-feature.three-column .card:not(:nth-child(3n + 1)) .card-block,
+  .cards.block.icon-feature.four-column .card:not(:nth-child(4n + 1)) .card-block {
+    padding-left: 48px;
+    border-left: 1px solid transparent;
+    border-image: linear-gradient(180deg, #eb0028, #760014, #5c2642) 1;
+  }
 }
 
-/* Three and four across is too tight on tablets, so they halve */
+/* Three and four across is too tight on tablets, so they halve — which moves
+   which cards open a row, and so which of them carry the rule. */
 @media (769px <= width <= 1024px) {
   .cards.block.icon-feature.three-column .cards-cards,
   .cards.block.icon-feature.four-column .cards-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 400px));
+  }
+
+  .cards.block.icon-feature.three-column .card:not(:nth-child(2n + 1)) .card-block,
+  .cards.block.icon-feature.four-column .card:not(:nth-child(2n + 1)) .card-block {
+    padding-left: 48px;
+    border-left: 1px solid transparent;
+    border-image: linear-gradient(180deg, #eb0028, #760014, #5c2642) 1;
+  }
+
+  .cards.block.icon-feature.three-column .card:nth-child(2n + 1) .card-block,
+  .cards.block.icon-feature.four-column .card:nth-child(2n + 1) .card-block {
+    padding-left: 0;
+    border-left: 0;
   }
 }
