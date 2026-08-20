@@ -508,7 +508,7 @@
     ]
   },
   {
-    "id": "card",
+    "id": "cardold",
     "fields": [
       {
         "component": "reference",

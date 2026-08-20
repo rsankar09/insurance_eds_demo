@@ -51,7 +51,7 @@
     ]
   },
   {
-    "id": "cards",
+    "id": "cardsold",
     "components": [
       "card"
     ]

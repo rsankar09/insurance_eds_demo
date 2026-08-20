@@ -1,29 +1,29 @@
 {
   "definitions": [
     {
-      "title": "Cards",
-      "id": "cards",
+      "title": "CardsOLD",
+      "id": "cardsold",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Cards",
-              "filter": "cards"
+              "filter": "cardsold"
             }
           }
         }
       }
     },
     {
-      "title": "Card",
-      "id": "card",
+      "title": "CardOLD",
+      "id": "cardold",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Card",
+              "name": "CardOLD",
               "model": "card"
             }
           }
@@ -33,7 +33,7 @@
   ],
   "models": [
     {
-      "id": "card",
+      "id": "cardold",
       "fields": [
         {
           "component": "reference",
@@ -54,7 +54,7 @@
   ],
   "filters": [
     {
-      "id": "cards",
+      "id": "cardsold",
       "components": [
         "card"
       ]
