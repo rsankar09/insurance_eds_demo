@@ -414,6 +414,14 @@
             "value": "color-grad-red-plum-diag"
           },
           {
+            "name": "Card style: product card",
+            "value": "product-card"
+          },
+          {
+            "name": "Card style: icon feature",
+            "value": "icon-feature"
+          },
+          {
             "name": "Columns: four",
             "value": "four-column"
           },

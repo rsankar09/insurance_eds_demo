@@ -63,6 +63,9 @@
             { "name": "Background: plum", "value": "bg-plum" },
             { "name": "Background: red-plum gradient", "value": "color-grad-red-plum-diag" },
 
+            { "name": "Card style: product card", "value": "product-card" },
+            { "name": "Card style: icon feature", "value": "icon-feature" },
+
             { "name": "Columns: four", "value": "four-column" },
             { "name": "Columns: three", "value": "three-column" },
             { "name": "Columns: two", "value": "two-column" },

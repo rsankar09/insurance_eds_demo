@@ -75,7 +75,9 @@ function readCard(row) {
     if (cells[index]) fields[name] = cells[index];
   });
 
-  return { media: mediaCell?.querySelector('img, svg, .icon') ? mediaCell : null, fields };
+  // The cell is handed over whatever it holds; `buildMedia` decides whether
+  // there is anything renderable in it.
+  return { media: mediaCell || null, fields };
 }
 
 /**
@@ -83,16 +85,18 @@ function readCard(row) {
  * optimized pictures; icons and inline SVGs are passed through so the block
  * can also be used for icon-led cards.
  * @param {Element} cell The media cell
+ * @param {boolean} [iconFeature] Whether the icon feature variant is active,
+ * in which case the artwork is always treated as an icon
  * @returns {Element|null} The media wrapper, or null when nothing was authored
  */
-function buildMedia(cell) {
+function buildMedia(cell, iconFeature = false) {
   const wrap = document.createElement('div');
   wrap.className = 'card-media';
 
   const img = cell.querySelector('img');
   const icon = cell.querySelector('.icon, svg');
 
-  if (img && !img.src.endsWith('.svg')) {
+  if (img && !iconFeature && !img.src.endsWith('.svg')) {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '400' }]);
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     wrap.append(optimizedPic);
@@ -100,20 +104,33 @@ function buildMedia(cell) {
     wrap.classList.add('card-media-icon');
     wrap.append(img?.closest('picture') || img || icon);
   } else {
-    return null;
+    // Icon feature cards may name one of the SVGs shipped in `/icons` instead
+    // of referencing an asset. Named icons are drawn as a CSS mask so they take
+    // the card's text colour on both light and dark themes.
+    const name = cell.textContent.trim().toLowerCase();
+    if (!iconFeature || !/^[a-z0-9-]+$/.test(name)) return null;
+
+    const glyph = document.createElement('span');
+    glyph.className = 'card-media-glyph';
+    glyph.style.setProperty('--card-icon', `url("/icons/${name}.svg")`);
+    glyph.setAttribute('aria-hidden', 'true');
+    wrap.classList.add('card-media-icon');
+    wrap.append(glyph);
   }
 
   return wrap;
 }
 
 /**
- * Builds a single product card from an item row.
- * The subtitle renders above the title as a category eyebrow, matching the
- * jackson.com product card.
+ * Builds a single card from an item row.
+ * In the product card variant the subtitle renders above the title as a
+ * category eyebrow, matching the jackson.com product card; in the icon feature
+ * variant the row renders as an icon, copy, and a pill call to action.
  * @param {Element} row The item row
+ * @param {boolean} [iconFeature] Whether the icon feature variant is active
  * @returns {Element} The card list item
  */
-function buildCard(row) {
+function buildCard(row, iconFeature = false) {
   const li = document.createElement('li');
   li.className = 'card';
   moveInstrumentation(row, li);
@@ -123,7 +140,7 @@ function buildCard(row) {
 
   const { media, fields } = readCard(row);
   if (media) {
-    const mediaWrap = buildMedia(media);
+    const mediaWrap = buildMedia(media, iconFeature);
     if (mediaWrap) cardBlock.append(mediaWrap);
   }
 
@@ -162,10 +179,20 @@ function buildCard(row) {
   fields.links?.querySelectorAll('a').forEach((link) => {
     const linkWrap = document.createElement('p');
     linkWrap.className = 'card-link';
-    // Card calls to action are plain forward links, not pill buttons, so the
-    // classes `decorateButtons` added upstream are dropped.
-    link.classList.remove('button', 'primary', 'secondary', 'accent');
-    link.classList.add('forward-link-dark');
+    if (iconFeature) {
+      // Icon feature calls to action are pill buttons. `decorateButtons` only
+      // buttonizes links the author emphasised, so the classes are ensured here
+      // and an unemphasised link falls back to the primary style.
+      link.classList.add('button');
+      if (!link.classList.contains('secondary') && !link.classList.contains('accent')) {
+        link.classList.add('primary');
+      }
+    } else {
+      // Product card calls to action are plain forward links, not pill buttons,
+      // so the classes `decorateButtons` added upstream are dropped.
+      link.classList.remove('button', 'primary', 'secondary', 'accent');
+      link.classList.add('forward-link-dark');
+    }
     linkWrap.append(link);
     linksWrap.append(linkWrap);
   });
@@ -180,12 +207,15 @@ function buildCard(row) {
 /**
  * Decorate cards block — Jackson card grid with section heading.
  * Block-level rows (title, description) render as the section header; item rows,
- * which expose one cell per card field, render as product cards.
+ * which expose one cell per card field, render as cards. Cards render as product
+ * cards by default, or as icon features when the `icon-feature` style is picked.
  * @param {Element} block The block element
  */
 export default function decorate(block) {
   const rows = [...block.children];
   if (!rows.length) return;
+
+  const iconFeature = block.classList.contains('icon-feature');
 
   // Item rows expose a cell per card field; block-level fields expose one.
   const firstCardIndex = rows.findIndex((row) => row.children.length >= 2);
@@ -202,7 +232,7 @@ export default function decorate(block) {
   if (cardRows.length) {
     const grid = document.createElement('ul');
     grid.className = 'cards-cards';
-    cardRows.forEach((row) => grid.append(buildCard(row)));
+    cardRows.forEach((row) => grid.append(buildCard(row, iconFeature)));
     wrapper.append(grid);
   }
 

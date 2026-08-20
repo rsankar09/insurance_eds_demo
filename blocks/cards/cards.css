@@ -205,6 +205,125 @@ main > .section.cards-container {
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10.25'/%3E%3Cpath d='M10.5 8.25 14.25 12l-3.75 3.75'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
+/* ==========================================================================
+   Card style: icon feature
+   Drops the white product-card panel in favour of an icon above left-aligned
+   copy and a pill call to action, matching jackson.com's `icon-feature`.
+   ========================================================================== */
+
+/* Without a card panel there is nothing to hold a fixed width, so the icon
+   features lay out on a fluid grid whose column count comes from the style. */
+.cards.block.icon-feature .cards-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 48px;
+}
+
+.cards.block.icon-feature.two-column .cards-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cards.block.icon-feature.three-column .cards-cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cards.block.icon-feature.four-column .cards-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cards.block.icon-feature .card {
+  width: auto;
+}
+
+.cards.block.icon-feature .card-block {
+  background: none;
+  border: none;
+}
+
+.cards.block.icon-feature .card-media,
+.cards.block.icon-feature .card-media-icon {
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.cards.block.icon-feature .card-media img,
+.cards.block.icon-feature .card-media svg,
+.cards.block.icon-feature .card-media .icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Icons picked by name from `/icons` are masked so they inherit the card's
+   text colour, which keeps them legible on the dark themes. */
+.cards.block .card-media-glyph {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: currentcolor;
+  mask: var(--card-icon) center / contain no-repeat;
+}
+
+.cards.block.icon-feature .card-body {
+  padding: 0;
+}
+
+.cards.block.icon-feature .card-title {
+  font-size: var(--heading-font-size-xs);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.cards.block.icon-feature .card-description {
+  margin-bottom: 24px;
+}
+
+.cards.block.icon-feature .card-link {
+  margin-bottom: 16px;
+}
+
+.cards.block.icon-feature .card-link a.button {
+  display: inline-block;
+  padding: 15px 32px 14px;
+  border: 1px solid #000;
+  border-radius: 27px;
+  background-color: #fff;
+  color: #000;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.cards.block.icon-feature .card-link a.button:hover,
+.cards.block.icon-feature .card-link a.button:focus-visible {
+  background-color: var(--brand-red-color);
+  border-color: var(--brand-red-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* On dark themes the copy inverts and the pill flips to an outlined light one.
+   The colour is set on the card so the masked icon inverts with it. */
+.cards.block.icon-feature.bg-plum .card-block,
+.cards.block.icon-feature.color-grad-red-plum-diag .card-block {
+  color: #fff;
+}
+
+/* The title carries its own colour, so it needs inverting explicitly */
+.cards.block.icon-feature.bg-plum .card-title,
+.cards.block.icon-feature.color-grad-red-plum-diag .card-title {
+  color: inherit;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- the dark themes are modifiers of the rule above, never applied alongside it */
+.cards.block.icon-feature.bg-plum .card-link a.button,
+.cards.block.icon-feature.color-grad-red-plum-diag .card-link a.button {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
 @media (width <= 900px) {
   .cards.block .cards-inner {
     padding: 80px 24px;
@@ -228,6 +347,20 @@ main > .section.cards-container {
   .cards.block .card-link {
     margin-bottom: 24px;
   }
+
+  /* Icon features stack into a single fluid column on phones */
+  .cards.block.icon-feature .card,
+  .cards.block.icon-feature.four-column .card {
+    width: auto;
+  }
+
+  .cards.block.icon-feature .cards-cards,
+  .cards.block.icon-feature.two-column .cards-cards,
+  .cards.block.icon-feature.three-column .cards-cards,
+  .cards.block.icon-feature.four-column .cards-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
 }
 
 @media (width >= 769px) {
@@ -241,5 +374,19 @@ main > .section.cards-container {
 
   .cards.block.two-column .card {
     width: 615px;
+  }
+
+  .cards.block.icon-feature.two-column .card,
+  .cards.block.icon-feature.three-column .card,
+  .cards.block.icon-feature.four-column .card {
+    width: auto;
+  }
+}
+
+/* Three and four across is too tight on tablets, so they halve */
+@media (769px <= width <= 1024px) {
+  .cards.block.icon-feature.three-column .cards-cards,
+  .cards.block.icon-feature.four-column .cards-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
