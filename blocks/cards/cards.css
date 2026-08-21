@@ -118,6 +118,9 @@ main > .section.cards-container {
 .cards.block .card.accent-turquoise {
   --card-accent: #8aced3;
 }
+.cards.block .card.accent-dark-sea-green {
+  --card-accent: #a8d7af;
+}
 .cards.block .card.surface-white {
   --card-bg: #fff;
 }

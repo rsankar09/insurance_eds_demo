@@ -529,6 +529,10 @@
             "value": "accent-turquoise"
           },
           {
+            "name": "Accent: dark-sea-green",
+            "value": "accent-dark-sea-green"
+          },
+          {
             "name": "Surface: white",
             "value": "surface-white"
           },

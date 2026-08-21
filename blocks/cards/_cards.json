@@ -135,6 +135,7 @@
             { "name": "Accent: gray", "value": "accent-gray" },
             { "name": "Accent: yellow-green", "value": "accent-yellow-green" },
             { "name": "Accent: turquoise", "value": "accent-turquoise" },
+            { "name": "Accent: dark-sea-green", "value": "accent-dark-sea-green" },
 
             { "name": "Surface: white", "value": "surface-white" },
             { "name": "Surface: tan", "value": "surface-tan" },
