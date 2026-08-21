@@ -3,11 +3,14 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 /* Text cells of an item row, in `card` model order. The image is the
    first field, so it is pulled out before these are matched up by position. */
-const CARD_FIELDS = ['title', 'subtitle', 'description', 'links'];
+const CARD_FIELDS = ['title', 'subtitle', 'description', 'links', 'classes'];
 
 /* Card styles the block can render, matching jackson.com's card types.
    `product-card` is the default and so carries no class of its own. */
 const CARD_STYLES = ['icon-feature', 'feature-card'];
+
+/* Shape of a per-card style class, so nothing else reaches the class list */
+const STYLE_CLASS = /^[a-z][a-z0-9-]*$/i;
 
 /**
  * Returns the authored markup of a cell.
@@ -127,6 +130,20 @@ function buildMedia(cell, style) {
 }
 
 /**
+ * Applies the style classes an author picked for a single card. The classes
+ * set the custom properties the styles' CSS falls back out of, so a card with
+ * none keeps its style's own colours.
+ * @param {Element} li The card element
+ * @param {Element} cell The classes cell
+ */
+function applyCardClasses(li, cell) {
+  const classes = (cell?.textContent.trim() || '')
+    .split(/[\s,]+/)
+    .filter((name) => STYLE_CLASS.test(name));
+  if (classes.length) li.classList.add(...classes);
+}
+
+/**
  * Builds a single card from an item row.
  * In the product card variant the subtitle renders above the title as a
  * category eyebrow, matching the jackson.com product card; the icon feature
@@ -145,6 +162,8 @@ function buildCard(row, style) {
   cardBlock.className = 'card-block';
 
   const { media, fields } = readCard(row);
+  applyCardClasses(li, fields.classes);
+
   if (media) {
     const mediaWrap = buildMedia(media, style);
     if (mediaWrap) cardBlock.append(mediaWrap);

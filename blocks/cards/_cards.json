@@ -122,6 +122,23 @@
           "name": "links",
           "label": "Links",
           "value": ""
+        },
+        {
+          "component": "multiselect",
+          "valueType": "string",
+          "name": "classes",
+          "label": "Style",
+          "options": [
+            { "name": "Accent: red", "value": "accent-red" },
+            { "name": "Accent: plum", "value": "accent-plum" },
+            { "name": "Accent: tan", "value": "accent-tan" },
+            { "name": "Accent: gray", "value": "accent-gray" },
+
+            { "name": "Surface: white", "value": "surface-white" },
+            { "name": "Surface: tan", "value": "surface-tan" },
+            { "name": "Surface: gray", "value": "surface-gray" },
+            { "name": "Surface: plum", "value": "surface-plum" }
+          ]
         }
       ]
     }

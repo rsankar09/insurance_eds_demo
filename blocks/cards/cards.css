@@ -94,13 +94,56 @@ main > .section.cards-container {
   display: flex;
 }
 
+/* Per-card style classes. They only set the two custom properties the card
+   styles below read, so a card left unstyled keeps its style's own colours.
+   Custom properties inherit, so setting them on the card reaches the block. */
+.cards.block .card.accent-red {
+  --card-accent: var(--brand-red-color);
+}
+
+.cards.block .card.accent-plum {
+  --card-accent: var(--brand-plum-color);
+}
+
+.cards.block .card.accent-tan {
+  --card-accent: #f5f0eb;
+}
+
+.cards.block .card.accent-gray {
+  --card-accent: #ebebeb;
+}
+
+.cards.block .card.surface-white {
+  --card-bg: #fff;
+}
+
+.cards.block .card.surface-tan {
+  --card-bg: #f5f0eb;
+}
+
+.cards.block .card.surface-gray {
+  --card-bg: #ebebeb;
+}
+
+.cards.block .card.surface-plum {
+  --card-bg: var(--brand-plum-color);
+}
+
+/* `--card-accent` and `--card-bg` are the per-card colours an author may set.
+   Collapsing all three gradient stops onto the accent turns the brand gradient
+   into the solid product bar, so one property covers both cases. */
 .cards.block .card-block {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: var(--card-bg, #fff);
   border-left: 12px solid transparent;
-  border-image: linear-gradient(180deg, #eb0028, #760014, #5c2642) 1;
+  border-image: linear-gradient(
+    180deg,
+    var(--card-accent, #eb0028),
+    var(--card-accent, #760014),
+    var(--card-accent, #5c2642)
+  ) 1;
 }
 
 .cards.block .card-media img {
@@ -260,7 +303,7 @@ main > .section.cards-container {
 }
 
 .cards.block.icon-feature .card-block {
-  background: none;
+  background: var(--card-bg, none);
   border: none;
 }
 
@@ -379,7 +422,7 @@ main > .section.cards-container {
 }
 
 .cards.block.feature-card .card-block {
-  background: var(--cards-feature-bg);
+  background: var(--card-bg, var(--cards-feature-bg));
   border: none;
   color: #fff;
 }
@@ -405,6 +448,34 @@ main > .section.cards-container {
 /* The eyebrow's brand red does not carry enough contrast on the dark tile */
 .cards.block.feature-card .card-subtitle {
   color: #fff;
+}
+
+/* stylelint-enable no-descending-specificity */
+
+/* ==========================================================================
+   Dark surface
+   `surface-plum` is the one card surface dark enough to need its copy
+   inverting. It sits after the styles above so it wins for any of them.
+   ========================================================================== */
+
+/* stylelint-disable no-descending-specificity -- this inverts the card styles above and so has to come after them */
+
+.cards.block .card.surface-plum .card-block,
+.cards.block .card.surface-plum .card-title,
+.cards.block .card.surface-plum .card-subtitle {
+  color: #fff;
+}
+
+.cards.block .card.surface-plum .card-link a.forward-link-dark {
+  color: #fff;
+}
+
+.cards.block .card.surface-plum .card-link a.forward-link-dark::after {
+  background-color: #fff;
+}
+
+.cards.block .card.surface-plum .card-link a.forward-link-dark:hover {
+  border-bottom-color: #fff;
 }
 
 /* stylelint-enable no-descending-specificity */
@@ -476,7 +547,12 @@ main > .section.cards-container {
   .cards.block.icon-feature.four-column .card:not(:nth-child(4n + 1)) .card-block {
     padding-left: 48px;
     border-left: 1px solid transparent;
-    border-image: linear-gradient(180deg, #eb0028, #760014, #5c2642) 1;
+    border-image: linear-gradient(
+      180deg,
+      var(--card-accent, #eb0028),
+      var(--card-accent, #760014),
+      var(--card-accent, #5c2642)
+    ) 1;
   }
 }
 
@@ -492,7 +568,12 @@ main > .section.cards-container {
   .cards.block.icon-feature.four-column .card:not(:nth-child(2n + 1)) .card-block {
     padding-left: 48px;
     border-left: 1px solid transparent;
-    border-image: linear-gradient(180deg, #eb0028, #760014, #5c2642) 1;
+    border-image: linear-gradient(
+      180deg,
+      var(--card-accent, #eb0028),
+      var(--card-accent, #760014),
+      var(--card-accent, #5c2642)
+    ) 1;
   }
 
   .cards.block.icon-feature.three-column .card:nth-child(2n + 1) .card-block,
